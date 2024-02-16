@@ -21,7 +21,7 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<artifactId>Hello-World</artifactId>
+	<artifactId>Acme-SF-D01</artifactId>
 	
 	<packaging>war</packaging>
 	
