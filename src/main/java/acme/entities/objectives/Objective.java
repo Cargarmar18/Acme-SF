@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -56,6 +57,16 @@ public class Objective extends AbstractEntity {
 	private String				optionalLink;
 
 	// Derived attributes -----------------------------------------------------
+
+
+	@Transient
+	private Date executionPeriod() {
+		Date result;
+
+		result = new Date(this.finalMoment.getTime() - this.beginningMoment.getTime());
+
+		return result;
+	}
 
 	// Relationships ----------------------------------------------------------
 
