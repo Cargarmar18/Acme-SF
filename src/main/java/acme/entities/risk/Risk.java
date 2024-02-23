@@ -1,5 +1,5 @@
 
-package entities.risk;
+package acme.entities.risk;
 
 import java.util.Date;
 
