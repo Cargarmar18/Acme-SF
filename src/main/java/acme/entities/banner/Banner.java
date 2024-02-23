@@ -7,19 +7,21 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.client.data.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Banner {
+public class Banner extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -32,7 +34,7 @@ public class Banner {
 	private Date				instUpdMoment;
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@PastOrPresent
+	@Future
 	private Date				dispPeriod;
 
 	@URL
