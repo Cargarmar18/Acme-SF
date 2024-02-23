@@ -8,15 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
-import org.springframework.lang.Nullable;
 
 import acme.client.data.AbstractEntity;
 import lombok.Getter;
@@ -38,24 +39,27 @@ public class Risk extends AbstractEntity {
 	@Pattern(regexp = "R-[0-9]{3}")
 	private String				reference;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	private Date				idDate;
 
+	@NotNull
 	@Min(0)
 	private double				impact;
 
+	@NotNull
 	@Min(0)
 	@Max(100)
+	@Digits(integer = 3, fraction = 2)
 	private double				probability;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	private String				description;
 
-	@Nullable
 	@URL
-	private String				optLink;
+	private String				optionalLink;
 
 
 	// Derived attributes -----------------------------------------------------
@@ -63,7 +67,7 @@ public class Risk extends AbstractEntity {
 	public double value() {
 		Double result;
 
-		result = this.impact * this.probability;
+		result = this.impact * this.probability / 100.0;
 
 		return result;
 	}
