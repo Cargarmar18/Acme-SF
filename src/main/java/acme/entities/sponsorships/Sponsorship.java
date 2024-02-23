@@ -36,12 +36,13 @@ public class Sponsorship extends AbstractEntity {
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
-	private String				reference;
+	private String				code;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	private Date				moment;
 
+	//needs temporal addition
 	@Temporal(TemporalType.TIMESTAMP)
 	@Future
 	private Date				duration;
