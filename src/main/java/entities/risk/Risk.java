@@ -1,5 +1,5 @@
 
-package entities;
+package entities.risk;
 
 import java.util.Date;
 
@@ -8,9 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
@@ -36,9 +36,8 @@ public class Risk extends AbstractEntity {
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "R-[0-9]{3}")
-	private double				reference;
+	private String				reference;
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
 	private Date				idDate;
@@ -46,6 +45,8 @@ public class Risk extends AbstractEntity {
 	@Min(0)
 	private double				impact;
 
+	@Min(0)
+	@Max(100)
 	private double				probability;
 
 	@NotBlank
@@ -59,7 +60,7 @@ public class Risk extends AbstractEntity {
 
 	// Derived attributes -----------------------------------------------------
 	@Transient
-	public double isAvailable() {
+	public double value() {
 		Double result;
 
 		result = this.impact * this.probability;
