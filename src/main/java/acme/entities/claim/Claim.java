@@ -5,9 +5,11 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Past;
+import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
@@ -33,7 +35,8 @@ public class Claim extends AbstractEntity {
 	@Column(unique = true)
 	private String				code;
 
-	@Past
+	@PastOrPresent
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date				instantiationMoment;
 
 	@NotBlank
@@ -48,9 +51,11 @@ public class Claim extends AbstractEntity {
 	@Length(max = 101)
 	private String				department;
 
+	@Column(name = "optional_email_address")
 	@Email
 	private String				email;
 
+	@Column(name = "optional_link")
 	@URL
 	private String				link;
 
