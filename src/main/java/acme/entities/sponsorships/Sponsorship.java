@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -51,7 +52,7 @@ public class Sponsorship extends AbstractEntity {
 	private SponsorshipDatatype	sponsorshipType;
 
 	@Nullable
-	@URL
+	@Email
 	private String				email;
 
 	@Nullable
