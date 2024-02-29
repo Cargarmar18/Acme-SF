@@ -1,17 +1,17 @@
 
 package acme.entities.banner;
 
+import java.io.Serializable;
 import java.time.Instant;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Size;
 
-import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -21,56 +21,35 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity {
-
-	// Serialisation identifier -----------------------------------------------
+public class Banner extends AbstractEntity implements Serializable {
 
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
-
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	private Date				instUpdMoment;
+	private Instant				updateMoment;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future
-	private Date				dispPeriod;
+	private Instant				startDisplay;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	private Instant				endDisplay;
 
 	@URL
-	@Length(max = 255)
+	@NotBlank
 	private String				pictureLink;
 
 	@NotBlank
-	@Length(max = 76)
+	@Size(max = 75)
 	private String				slogan;
 
 	@URL
-	private String				link;
+	@NotBlank
+	private String				targetLink;
 
-	// Derived attributes -----------------------------------------------------
+	// Additional business logic or relationships can be added as needed
 
-	// Relationships ----------------------------------------------------------
-
-
-	// Setter modificado para incluir la lógica de validación del execution period
-	public void setDispPeriod(final Date dispPeriod) {
-		if (this.isValidPeriod(dispPeriod))
-			this.dispPeriod = dispPeriod;
-		else
-			throw new IllegalArgumentException("El execution period no cumple con la duración mínima requerida.");
-	}
-
-	private boolean isValidPeriod(final Date dispPeriod) {
-		if (dispPeriod == null)
-			return false;
-
-		Instant now = Instant.now();
-
-		Instant inicioExecutionPeriod = dispPeriod.toInstant();
-
-		long duracionMinimaSegundos = 7 * 24 * 60 * 60;
-
-		return inicioExecutionPeriod.plusSeconds(duracionMinimaSegundos).isBefore(now);
-	}
 }
