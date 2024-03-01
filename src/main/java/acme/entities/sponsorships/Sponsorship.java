@@ -1,7 +1,6 @@
 
 package acme.entities.sponsorships;
 
-import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -46,15 +45,17 @@ public class Sponsorship extends AbstractEntity {
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Instant				startSponsor;
+	private Date				startSponsor;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Instant				endSponsor;
+	private Date				endSponsor;
 
 	@NotNull
 	@Min(0)
 	private Money				amount;
+
+	@NotNull
 	private SponsorshipDatatype	sponsorshipType;
 
 	@Email
