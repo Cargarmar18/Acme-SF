@@ -2,7 +2,7 @@
 package acme.entities.banner;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
@@ -28,15 +28,15 @@ public class Banner extends AbstractEntity implements Serializable {
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	private Instant				updateMoment;
+	private Date				updateMoment;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Instant				startDisplay;
+	private Date				startDisplay;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Instant				endDisplay;
+	private Date				endDisplay;
 
 	@URL
 	@NotBlank
