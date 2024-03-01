@@ -1,7 +1,6 @@
 
 package acme.entities.banner;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -21,7 +20,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Banner extends AbstractEntity implements Serializable {
+public class Banner extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
