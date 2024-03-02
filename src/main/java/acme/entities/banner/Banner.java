@@ -1,14 +1,13 @@
 
 package acme.entities.banner;
 
-import java.time.Instant;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
@@ -23,54 +22,33 @@ import lombok.Setter;
 @Setter
 public class Banner extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
-
 	private static final long	serialVersionUID	= 1L;
 
-	// Attributes -------------------------------------------------------------
-
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	private Date				instUpdMoment;
+	private Date				updateMoment;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	@Future
-	private Date				dispPeriod;
+	private Date				startDisplay;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endDisplay;
 
 	@URL
-	@Length(max = 255)
+	@NotBlank
 	private String				pictureLink;
 
 	@NotBlank
-	@Length(max = 76)
+	@Length(max = 75)
 	private String				slogan;
 
 	@URL
-	private String				link;
+	@NotBlank
+	private String				targetLink;
 
-	// Derived attributes -----------------------------------------------------
+	// Additional business logic or relationships can be added as needed
 
-	// Relationships ----------------------------------------------------------
-
-
-	// Setter modificado para incluir la lógica de validación del execution period
-	public void setDispPeriod(final Date dispPeriod) {
-		if (this.isValidPeriod(dispPeriod))
-			this.dispPeriod = dispPeriod;
-		else
-			throw new IllegalArgumentException("El execution period no cumple con la duración mínima requerida.");
-	}
-
-	private boolean isValidPeriod(final Date dispPeriod) {
-		if (dispPeriod == null)
-			return false;
-
-		Instant now = Instant.now();
-
-		Instant inicioExecutionPeriod = dispPeriod.toInstant();
-
-		long duracionMinimaSegundos = 7 * 24 * 60 * 60;
-
-		return inicioExecutionPeriod.plusSeconds(duracionMinimaSegundos).isBefore(now);
-	}
 }
