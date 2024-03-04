@@ -5,8 +5,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -19,6 +21,7 @@ import org.hibernate.validator.constraints.URL;
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
 import acme.datatypes.SponsorshipDatatype;
+import acme.entities.project.Project;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -68,4 +71,9 @@ public class Sponsorship extends AbstractEntity {
 
 	// Relationships ----------------------------------------------------------
 	//relationship with project?
+	@NotNull
+	@Valid
+	@ManyToOne(optional = true)
+	private Project				project;
+
 }
