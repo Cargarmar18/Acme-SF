@@ -70,7 +70,6 @@ public class Sponsorship extends AbstractEntity {
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
-	//relationship with project?
 	@NotNull
 	@Valid
 	@ManyToOne(optional = true)
