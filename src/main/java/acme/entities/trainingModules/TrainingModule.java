@@ -1,7 +1,7 @@
 
 package acme.entities.trainingModules;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -37,9 +37,9 @@ public class TrainingModule extends AbstractEntity {
 	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}")
 	private String				code;
 
+	@NotNull
 	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
-	@NotNull
 	private Date				creationMoment;
 
 	@NotBlank
