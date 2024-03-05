@@ -1,0 +1,8 @@
+key,code,cost,indication,link,synopsis,title
+project-01,"ABC-1234",1000000,1,,"This synopsis has an exact amount of 100 characters. For this to happen I’m improvising random words","This title has a total amount of 75 characters. It’s the placeholder title."
+project-02,"XYZ-7890",0,0,"http://www.example.com","Я огромный педик","?¿^*¨`¡`´*?*´¡*^¨^¡"
+project-03,"RWP-3108",1,0,"http://www.example.jp","ぽぴぽぴぽぽぴぽ","This title has a total amount of 74 characters. It’s the placeholder title"
+project-04,"ZYX-0987",999999,1,"http://www.example.fr","This synopsis has an exact amount of 99 characters. For this to happen I’m improvising random words","<script>window.location='http://www.example.com'</script>"
+project-05,"BCD-2345",563987,0,"https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza","<script>alert('hi')</script>","ノンブレス ノンブレス ノンブレス ノンブレス・オブリージュ I love you 息苦しい日々の水面下 ゆらゆらと煙る血の花"
+project-06,"DUY-5678",813290,0,"https://www.apple.com/shop/buy-iphone/iphone-13?icid=main-iphone-ip13","εε","εε"
+project-07,"PKO-1209",333333,0,"https://github.com/search?q=python+language&type=Repositories","س","ص"
