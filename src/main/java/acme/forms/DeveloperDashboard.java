@@ -11,19 +11,18 @@ public class DeveloperDashboard extends AbstractForm {
 
 	// Serialisation identifier -----------------------------------------------
 	private static final long	serialVersionUID	= 1L;
-
 	// Query attributes -------------------------------------------------------------
 
-	private int					numberWithUpdateMoment;
+	int				numberWithUpdateMoment;
 
-	private int					numberWithLink;
+	int				numberWithLink;
 
-	private Double				averageTotalTime;
+	Double				averageTotalTime;
 
-	private Double				deviationTotalTime;
+	Double				deviationTotalTime;
 
-	private Integer				minTotalTime;
+	Integer				minTotalTime;
 
-	private Integer				maxTotalTime;
+	Integer				maxTotalTime;
 
 }
