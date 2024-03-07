@@ -8,9 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.Valid;
+
+import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
+
 import javax.validation.constraints.Email;
+
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -54,8 +60,8 @@ public class Sponsorship extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endSponsor;
 
+	//to do constraint that can not be smaller than 0
 	@NotNull
-	@Min(0)
 	private Money				amount;
 
 	@NotNull
@@ -67,12 +73,41 @@ public class Sponsorship extends AbstractEntity {
 	@URL
 	private String				moreInfo;
 
+	@Column(unique = true)
+	@NotBlank
+	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
+	private String				invoiceCode;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	@PastOrPresent
+	private Date				registrationTime;
+
+	// TO DO applying constraint of 1 month
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				dueDate;
+
+	// 	TO DO add constraint positive or 0 on money datatype
+	@NotNull
+	private Money				invoiceQuantity;
+
+	@Digits(integer = 3, fraction = 2)
+	@Min(0)
+	@Max(100)
+	private double				tax;
+
+	@URL
+	private String				InvoiceLink;
+
 	// Derived attributes -----------------------------------------------------
 
+
+	@Transient
+	public double totalAmount() {
+		return this.invoiceQuantity.getAmount() + this.tax * this.invoiceQuantity.getAmount() / 100;
+	}
+
 	// Relationships ----------------------------------------------------------
-	@NotNull
-	@Valid
-	@ManyToOne(optional = true)
-	private Project				project;
 
 }

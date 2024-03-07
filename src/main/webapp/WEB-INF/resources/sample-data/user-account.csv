@@ -7,3 +7,7 @@ user-account-manager-01,true,"UserIdentity{name: 'Carlos', surname: 'García', e
 user-account-manager-02,true,"UserIdentity{name: 'Carla', surname: 'García', email: 'carla@acme.com'}",manager2,manager2
 user-account-developer-01,true,"UserIdentity{name: 'María', surname: 'Rodríguez', email: 'maria@acme.com'}", developer1,developer1
 user-account-developer-02,true,"UserIdentity{name: 'Mario', surname: 'Rodríguez', email: 'mario@acme.com'}", developer2,developer2
+user-account-sponsor-01,true,"UserIdentity{name: 'Manuel', surname: 'Castillejo', email: 'manuel@acme.com'}",sponsor1,sponsor1
+user-account-sponsor-02,true,"UserIdentity{name: 'Manuela', surname: 'Castillejo', email: 'manuela@acme.com'}",sponsor2,sponsor2
+user-account-administrator-02, true, "UserIdentity{name: 'Omar', surname: 'наличные', email: 'omar@acme.com'}", administrator1, administrator1
+user-account-administrator-03, true, "UserIdentity{name: 'Clarise', surname: 'μετρητά', email: 'clarise@acme.com'}", administrator2, administrator2
