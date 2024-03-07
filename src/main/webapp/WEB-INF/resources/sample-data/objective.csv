@@ -1,4 +1,4 @@
-key, instantiationMoment, title, description, priority, isCritical, beginningMoment, finalMoment, link
+key, instantiation-moment, title, description, priority, is-critical, beginning-moment, final-moment, link
 objective-01, 2000/01/01 00:00, "title", "This is a sample description.", MEDIUM, false, 2023/01/01 00:00, 2023/02/01 00:00, "https://www.sampleweb.com"
 objective-02, 2000/01/01 00:01, "title", "This is a sample description.", MEDIUM, false, 2023/01/01 00:00, 2023/02/01 00:00, "https://www.sampleweb.com"
 objective-03, 2020/03/14 15:32, "title", "This is a sample description.", MEDIUM, false, 2023/01/01 00:00, 2023/02/01 00:00, "https://www.sampleweb.com"
