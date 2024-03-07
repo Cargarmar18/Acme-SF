@@ -13,8 +13,10 @@ import javax.persistence.Transient;
 import javax.validation.constraints.Digits;
 
 import javax.validation.constraints.Email;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -58,8 +60,8 @@ public class Sponsorship extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endSponsor;
 
+	//to do constraint that can not be smaller than 0
 	@NotNull
-	@Min(0)
 	private Money				amount;
 
 	@NotNull
