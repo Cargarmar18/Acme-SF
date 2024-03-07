@@ -19,31 +19,33 @@ training-module-17,"ABC-134",2020/03/14 15:32,"Αυτά είναι μερικά 
 training-module-18,"ABC-135",2020/03/14 15:32,"هذه بعض تفاصيل العينة",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
 training-module-19,"ABC-136",2020/03/14 15:32,"Это некоторые примеры деталей",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
 training-module-20,"ABC-137",2020/03/14 15:32,"這些是一些示例詳細信息",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
-training-module-21,"ABC-138",2020/03/14 15:32,"These are the details.",Basic,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
-training-module-22,"ABC-139",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
-training-module-23,"ABC-140",2020/03/14 15:32,"These are the details.",Advanced,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
-training-module-24,"ABC-141",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:33,"https://www.sampleweb.com",32,project-01
-training-module-25,"ABC-142",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:34,"https://www.sampleweb.com",32,project-01
-training-module-26,"ABC-143",2020/03/14 15:32,"These are the details.",Intermediate,2021/01/01 00:00,"https://www.sampleweb.com",32,project-01
-training-module-27,"ABC-144",2020/03/14 15:32,"These are the details.",Intermediate,2022/07/30 00:00,"https://www.sampleweb.com",32,project-01
-training-module-28,"ABC-145",2020/03/14 15:32,"These are the details.",Intermediate,2022/07/29 23:59,"https://www.sampleweb.com",32,project-01
-training-module-29,"ABC-146",2020/03/14 15:32,"These are the details.",Intermediate,null,"https://www.sampleweb.com",32,project-01
-training-module-30,"ABC-147",2020/03/14 15:32,"These are the details.",Intermediate,,"https://www.sampleweb.com",32,project-01
-training-module-31,"ABC-148",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"null",32,project-01
-training-module-32,"ABC-149",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,,32,project-01
-training-module-33,"ABC-150",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"",32,project-01
-training-module-34,"ABC-151",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"ftp://user:password@ftp.example.org:8080/files/file.txt",32,project-01
-training-module-35,"ABC-152",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.youtube.com/watch?v=LA-MZl_w0Zc&list=LL&index=1",32,project-01
-training-module-36,"ABC-153",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sample.org",32,project-01
-training-module-37,"ABC-154",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sample.io",32,project-01
-training-module-38,"ABC-155",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.samplewebtoreachthemaximumof255charactersfjekjndfiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffeggh553tt.com",32,project-01
-training-module-39,"ABC-156",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.samplewebtoreachthemaximumof255charactersminus1fiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffegghf553tt.es",32,project-01
-training-module-40,"ABC-157",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",0,project-01
-training-module-41,"ABC-158",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",1,project-01
-training-module-42,"ABC-159",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
-training-module-43,"ABC-160",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",1000000,project-01
-training-module-44,"ABC-161",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",999999,project-01
-training-module-45,"ABC-162",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-02
-training-module-46,"ABC-163",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-03
-training-module-47,"ABC-164",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-04
-training-module-48,"ABC-165",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-18
+training-module-21,"ABC-189",2020/03/14 15:32,"*/``´`ç!?'¿|º¨¨¡(´´",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
+training-module-22,"ABC-187",2020/03/14 15:32,"ये विवरण हैं",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
+training-module-23,"ABC-138",2020/03/14 15:32,"These are the details.",Basic,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
+training-module-24,"ABC-139",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
+training-module-25,"ABC-140",2020/03/14 15:32,"These are the details.",Advanced,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
+training-module-26,"ABC-141",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:33,"https://www.sampleweb.com",32,project-01
+training-module-27,"ABC-142",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:34,"https://www.sampleweb.com",32,project-01
+training-module-28,"ABC-143",2020/03/14 15:32,"These are the details.",Intermediate,2021/01/01 00:00,"https://www.sampleweb.com",32,project-01
+training-module-29,"ABC-144",2020/03/14 15:32,"These are the details.",Intermediate,2022/07/30 00:00,"https://www.sampleweb.com",32,project-01
+training-module-30,"ABC-145",2020/03/14 15:32,"These are the details.",Intermediate,2022/07/29 23:59,"https://www.sampleweb.com",32,project-01
+training-module-31,"ABC-146",2020/03/14 15:32,"These are the details.",Intermediate,null,"https://www.sampleweb.com",32,project-01
+training-module-32,"ABC-147",2020/03/14 15:32,"These are the details.",Intermediate,,"https://www.sampleweb.com",32,project-01
+training-module-33,"ABC-148",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"null",32,project-01
+training-module-34,"ABC-149",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,,32,project-01
+training-module-35,"ABC-150",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"",32,project-01
+training-module-36,"ABC-151",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"ftp://user:password@ftp.example.org:8080/files/file.txt",32,project-01
+training-module-37,"ABC-152",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.youtube.com/watch?v=LA-MZl_w0Zc&list=LL&index=1",32,project-01
+training-module-38,"ABC-153",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sample.org",32,project-01
+training-module-39,"ABC-154",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sample.io",32,project-01
+training-module-40,"ABC-155",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.samplewebtoreachthemaximumof255charactersfjekjndfiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffeggh553tt.com",32,project-01
+training-module-41,"ABC-156",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.samplewebtoreachthemaximumof255charactersminus1fiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffegghf553tt.es",32,project-01
+training-module-42,"ABC-157",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",0,project-01
+training-module-43,"ABC-158",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",1,project-01
+training-module-44,"ABC-159",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-01
+training-module-45,"ABC-160",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",1000000,project-01
+training-module-46,"ABC-161",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",999999,project-01
+training-module-47,"ABC-162",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-02
+training-module-48,"ABC-163",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-03
+training-module-49,"ABC-164",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-04
+training-module-50,"ABC-165",2020/03/14 15:32,"These are the details.",Intermediate,2020/04/14 15:32,"https://www.sampleweb.com",32,project-18
