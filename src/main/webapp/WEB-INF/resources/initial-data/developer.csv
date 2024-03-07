@@ -1,2 +1,2 @@
-key,key:user-account,degree,skills,email,link
-developer-91,user-account-developer-91,"Computer Sciencie", "Hard-working, adapts to deadlines, knows to work in teams.","developer@acme.com","https://www.example.com"
+key,key:userAccount,degree,specialisation,skills,email,link
+developer-91,user-account-developer-91,"Computer Sciencie","Informatic Technologies" "Hard-working, adapts to deadlines, knows to work in teams.","developer@acme.com","https://www.example.com"
