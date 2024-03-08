@@ -1,3 +1,3 @@
-key,code,time-period,location,instructor,contact-email,link,key:training-module
-training-session-91,"TS-ABC-111",12,"Sample location.","Sample instructor.","trainingsession@gmail.com","https://www.sampleweb.com",training-module-91
-training-session-92,"TS-ABC-222",10,"Sample location.2","Sample instructor.2","trainingsession2@gmail.com","https://www.sampleweb2.com",training-module-92
+key,code,beginning-moment,end-moment,location,instructor,contact-email,link,key:training-module
+training-session-91,"TS-ABC-111",2022/03/22 15:32,2022/04/22 15:32,"Sample location.","Sample instructor.","trainingsession@gmail.com","https://www.sampleweb.com",training-module-91
+training-session-92,"TS-ABC-222",2022/03/22 15:32,2022/04/22 15:32,"Sample location.2","Sample instructor.2","trainingsession2@gmail.com","https://www.sampleweb2.com",training-module-92
