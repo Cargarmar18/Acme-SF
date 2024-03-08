@@ -1,26 +1,25 @@
 
-package acme.entities.objectives;
+package acme.roles;
 
-import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.client.data.AbstractEntity;
+import acme.client.data.AbstractRole;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class Objective extends AbstractEntity {
+public class Developer extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -28,36 +27,26 @@ public class Objective extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@NotNull
-	@PastOrPresent
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				instantiationMoment;
-
 	@NotBlank
 	@Length(max = 75)
-	private String				title;
+	private String				degree;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				description;
+	private String				specialisation;
+
+	@NotBlank
+	@Length(max = 100)
+	private String				skills;
 
 	@NotNull
-	private PriorityValue		priority;
-
-	private boolean				isCritical;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				beginningMoment;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				finalMoment;
+	@Email
+	@Length(max = 255)
+	private String				email;
 
 	@URL
 	@Length(max = 255)
 	private String				link;
-
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
