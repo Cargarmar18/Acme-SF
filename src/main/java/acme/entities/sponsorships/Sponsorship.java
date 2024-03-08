@@ -72,7 +72,7 @@ public class Sponsorship extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "IN-[0-9]{4}-[0-9]{4}")
+	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$", message = "The risk code does not follow the IN-XXXX-YYYY pattern")
 	private String				invoiceCode;
 
 	@NotNull
