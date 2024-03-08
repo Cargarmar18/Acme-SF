@@ -55,6 +55,7 @@ public class Objective extends AbstractEntity {
 	private Date				finalMoment;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------------
