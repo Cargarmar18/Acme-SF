@@ -1,13 +1,15 @@
 
 package acme.entities.trainingSessions;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -35,9 +37,12 @@ public class TrainingSession extends AbstractEntity {
 	private String				code;
 
 	@NotNull
-	@Min(1)
-	@Max(2600)
-	private int					timePeriod;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				beginningMoment;
+
+	@NotNull
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date				endMoment;
 
 	@NotBlank
 	@Length(max = 75)
