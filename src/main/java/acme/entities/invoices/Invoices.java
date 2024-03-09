@@ -17,8 +17,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.datatypes.Money;
@@ -29,12 +29,12 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Invoices {
+public class Invoices extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$", message = "{validation.Invoices.reference}")
-	private String	invoiceCode;
+	private String	code;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -55,9 +55,9 @@ public class Invoices {
 	@Max(100)
 	private double	tax;
 
-	@Size(max = 255)
+	@Length(max = 255)
 	@URL
-	private String	InvoiceLink;
+	private String	link;
 
 	// Derived attributes -----------------------------------------------------
 
