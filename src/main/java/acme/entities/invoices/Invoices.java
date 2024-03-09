@@ -33,7 +33,7 @@ public class Invoices {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$", message = "")
+	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$", message = "{validation.Invoices.reference}")
 	private String	invoiceCode;
 
 	@NotNull
