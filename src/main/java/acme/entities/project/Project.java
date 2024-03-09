@@ -46,6 +46,7 @@ public class Project extends AbstractEntity {
 	private Integer				cost;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 }
