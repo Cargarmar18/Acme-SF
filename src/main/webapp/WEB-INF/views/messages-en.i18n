@@ -1,0 +1,12 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+validation.traininSession.reference    = The code must follow a pattern TS-XXX-YYY where XXX are 1,2 or 3 letters (A-Z) and YYY are three numbers (0-9).
+validation.trainingModule.reference    = The code must follow a pattern XXX-YYY where XXX are 1,2 or 3 letters (A-Z) and YYY are three numbers (0-9).
