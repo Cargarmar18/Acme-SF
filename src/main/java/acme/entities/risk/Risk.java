@@ -15,6 +15,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -36,7 +37,7 @@ public class Risk extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^R-[0-9]{3}$", message = "The risk code does not follow the R-XXX pattern")
+	@Pattern(regexp = "^R-[0-9]{3}$", message = "validation.Risk.reference")
 	private String				reference;
 
 	@NotNull
@@ -46,6 +47,8 @@ public class Risk extends AbstractEntity {
 
 	@NotNull
 	@Min(0)
+	@Max(100)
+	@Digits(integer = 3, fraction = 2)
 	private double				impact;
 
 	@NotNull
@@ -58,6 +61,7 @@ public class Risk extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
+	@Size(max = 255)
 	@URL
 	private String				link;
 
