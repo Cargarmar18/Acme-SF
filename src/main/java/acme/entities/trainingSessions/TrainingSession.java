@@ -33,7 +33,7 @@ public class TrainingSession extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "TS-[A-Z]{1,3}-[0-9]{3}")
+	@Pattern(regexp = "^TS-[A-Z]{1,3}-[0-9]{3}$", message = "{validation.traininSession.reference}")
 	private String				code;
 
 	@NotNull
@@ -54,11 +54,9 @@ public class TrainingSession extends AbstractEntity {
 
 	@NotNull
 	@Email
-	@Length(max = 255)
 	private String				contactEmail;
 
 	@URL
-	@Length(max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------------
