@@ -10,3 +10,5 @@
 
 validation.traininSession.reference    = El código debe seguir el patrón TS-XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9).
 validation.trainingModule.reference    = El código debe seguir el patrón XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9).
+validation.project.reference    = El código debe seguir el patrón XXX-YYYY, donde XXX son 3 letras (A-Z) e YYYY son cuatro números (0-9).
+validation.claim.reference    = El código debe seguir el patrón C-XXXX, donde XXXX son cuatro números (0-9).
