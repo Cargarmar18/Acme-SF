@@ -1,7 +1,6 @@
 
 package acme.entities.configuration;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -22,12 +21,10 @@ public class Configuration extends AbstractEntity {
 	// Attributes -------------------------------------------------------------
 	@Pattern(regexp = "[A-Z]{3}")
 	@NotBlank
-	@Column(unique = true)
 	private String				initialCurrency;
 
 	@Pattern(regexp = "[A-Z]{3}(,[A-Z]{3}){2}")
 	@NotBlank
-	@Column(unique = true)
 	private String				acceptedCurrencies;
 
 }
