@@ -22,6 +22,7 @@ import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
 import acme.datatypes.SponsorshipDatatype;
 import acme.entities.project.Project;
+import acme.roles.Sponsor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,7 +39,7 @@ public class Sponsorship extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "[A-Z]{1,3}-[0-9]{3}", message = "{validation.Sponsorship.reference}")
+	@Pattern(regexp = "^[A-Z]{1,3}-[0-9]{3}$", message = "{validation.Sponsorship.reference}")
 	private String				code;
 
 	@NotNull
@@ -74,4 +75,9 @@ public class Sponsorship extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Project				project;
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Sponsor				sponsor;
 }
