@@ -15,7 +15,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -61,7 +60,7 @@ public class Risk extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
-	@Size(max = 255)
+	@Length(max = 255)
 	@URL
 	private String				link;
 

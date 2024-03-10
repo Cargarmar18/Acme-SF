@@ -14,7 +14,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -65,7 +64,7 @@ public class Sponsorship extends AbstractEntity {
 	@Email
 	private String				email;
 
-	@Size(max = 255)
+	@Length(max = 255)
 	@URL
 	private String				moreInfo;
 
