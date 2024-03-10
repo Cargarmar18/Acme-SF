@@ -32,33 +32,35 @@ import lombok.Setter;
 @Setter
 public class Invoices extends AbstractEntity {
 
+	private static final long	serialVersionUID	= 1L;
+
 	@Column(unique = true)
 	@NotBlank
 	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$", message = "{validation.Invoices.reference}")
-	private String	code;
+	private String				code;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@PastOrPresent
-	private Date	registrationTime;
+	private Date				registrationTime;
 
 	// TO DO applying constraint of 1 month
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date	dueDate;
+	private Date				dueDate;
 
 	// 	TO DO add constraint positive or 0 on money datatype
 	@NotNull
-	private Money	invoiceQuantity;
+	private Money				invoiceQuantity;
 
 	@Digits(integer = 3, fraction = 2)
 	@Min(0)
 	@Max(100)
-	private double	tax;
+	private double				tax;
 
 	@Length(max = 255)
 	@URL
-	private String	link;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 
