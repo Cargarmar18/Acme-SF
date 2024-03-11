@@ -44,7 +44,7 @@ public class Objective extends AbstractEntity {
 	@NotNull
 	private PriorityValue		priority;
 
-	private boolean				isCritical;
+	private boolean				critical;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
@@ -55,6 +55,7 @@ public class Objective extends AbstractEntity {
 	private Date				finalMoment;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------------

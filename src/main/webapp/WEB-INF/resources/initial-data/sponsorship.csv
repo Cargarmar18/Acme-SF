@@ -1,3 +1,0 @@
-key,code,moment,startSponsor,endSponsor,amount,sponsorship-type,email,more-info,key:project,invoiceCode,registrationTime,dueDate,invoiceQuantity,tax,InvoiceLink
-sponsorship-91,SP-912,2020/09/05 00:00,2022/10/01 00:00,2022/11/01 00:00,"GBP 30,000.00",Financial,"gbptry@example.com","https://example.com/sponsor3",project-91,IN-0003-0091,2010/10/30 23:58,2010/11/30 23:58,"USD 500,345.00",10.00,"https://example.com/sponsor8"
-sponsorship-92,SP-913,2021/10/20 00:00,2022/11/01 00:00,2022/12/01 00:00,"THB 1,000.00",In_kind,"thbtry@example.com","https://example.com/sponsor4",project-92,IN-0004-0092,2010/10/30 23:58,2010/11/30 23:58,"USD 500,345.00",10.00,"https://example.com/sponsor8"
