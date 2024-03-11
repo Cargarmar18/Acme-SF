@@ -10,3 +10,7 @@
 
 validation.traininSession.reference    = The code must follow a pattern TS-XXX-YYY where XXX are 1,2 or 3 letters (A-Z) and YYY are three numbers (0-9).
 validation.trainingModule.reference    = The code must follow a pattern XXX-YYY where XXX are 1,2 or 3 letters (A-Z) and YYY are three numbers (0-9).
+
+validation.Sponsorship.reference    = The code must follow a pattern XXX-YYY where XXX are 1,2 or 3 letters (A-Z) and YYY are three numbers (0-9).
+validation.Invoices.reference    = The code must follow a pattern IN-XXXX-YYYY where XXXX are four numbers (0-9) and YYYY are four numbers (0-9).
+validation.Risk.reference = The code must follow a pattern R-XXX where XXX are three numbers (0-9).

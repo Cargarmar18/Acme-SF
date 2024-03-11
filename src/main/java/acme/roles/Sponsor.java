@@ -28,9 +28,10 @@ public class Sponsor extends AbstractRole {
 	private String				name;
 
 	@NotBlank
-	@Length(max = 101)
+	@Length(max = 100)
 	private String				benefits;
 
+	@Length(max = 255)
 	@URL
 	private String				webPage;
 
