@@ -9,8 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -59,10 +57,7 @@ public class TrainingModule extends AbstractEntity {
 	@Length(max = 255)
 	private String				link;
 
-	//TO DO: custom derived attribute
-	@Min(0)
-	@Max(1000000)
-	private int					totalTime;
+	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
