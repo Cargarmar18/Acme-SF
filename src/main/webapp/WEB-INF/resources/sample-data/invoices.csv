@@ -1,2 +1,2 @@
 key,code,registrationTime,dueDate,invoiceQuantity,tax,link,key:sponsorship
-invoice-01,IN-0001-0001,2021/07/25 00:00,2021/10/25 00:00,"USD 500,345.00",50.00,"https://example.com/invoices,sponsorship-01"
+invoice-01,IN-0001-0001,2021/07/25 00:00,2021/10/25 00:00,"USD 500,345.00",50.00,"https://example.com/invoices",sponsorship-01
