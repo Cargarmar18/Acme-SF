@@ -1,0 +1,16 @@
+# messages-es.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+validation.traininSession.reference    = El código debe seguir el patrón TS-XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9).
+validation.trainingModule.reference    = El código debe seguir el patrón XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9).
+
+validation.Sponsorship.reference    = El código debe seguir el patrón XXX-YYY , donde XXX son 1,2 o 3 letras (A-Z) e YYY son tres números (0-9).
+validation.Invoices.reference    = El código debe seguir el patrón IN-XXXX-YYYY donde XXXX son 4 números (0-9) y YYYY son cuatro números (0-9).
+validation.Risk.reference = El código debe seguir el patrón R-XXX donde XXX son tres números (0-9).

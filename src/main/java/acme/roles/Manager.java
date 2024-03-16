@@ -1,8 +1,18 @@
+/*
+ * Consumer.java
+ *
+ * Copyright (C) 2012-2024 Rafael Corchuelo.
+ *
+ * In keeping with the traditional purpose of furthering education and research, it is
+ * the policy of the copyright owner to permit non-commercial use and redistribution of
+ * this software. It has been tested carefully, but it is not guaranteed for any particular
+ * purposes. The copyright owner does not offer any warranties or representations, nor do
+ * they accept any liabilities with respect to them.
+ */
 
 package acme.roles;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
@@ -15,7 +25,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Sponsor extends AbstractRole {
+public class Manager extends AbstractRole {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -25,18 +35,18 @@ public class Sponsor extends AbstractRole {
 
 	@NotBlank
 	@Length(max = 75)
-	private String				name;
+	private String				degree;
 
 	@NotBlank
 	@Length(max = 100)
-	private String				benefits;
+	private String				overview;
 
-	@Length(max = 255)
+	@NotBlank
+	@Length(max = 100)
+	private String				certifications;
+
 	@URL
-	private String				webPage;
-
-	@Email
-	private String				email;
+	private String				link;
 
 	// Derived attributes -----------------------------------------------------
 

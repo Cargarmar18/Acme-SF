@@ -1,16 +1,14 @@
 
-package acme.entities.objectives;
-
-import java.util.Date;
+package acme.entities.project;
 
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.PastOrPresent;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -20,18 +18,13 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Objective extends AbstractEntity {
+public class UserStory extends AbstractEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
-	@NotNull
-	@PastOrPresent
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				instantiationMoment;
 
 	@NotBlank
 	@Length(max = 75)
@@ -41,25 +34,26 @@ public class Objective extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
+	@Range(min = 0, max = 200)
 	@NotNull
-	private PriorityValue		priority;
+	private Integer				cost;
 
-	private boolean				critical;
-
-	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				beginningMoment;
+	@NotBlank
+	@Length(max = 100)
+	private String				acceptanceCriteria;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date				finalMoment;
+	private PriorityStatus		priority;
 
 	@URL
 	@Length(max = 255)
 	private String				link;
 
-	// Derived attributes -----------------------------------------------------
-
 	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Project				project;
 
 }

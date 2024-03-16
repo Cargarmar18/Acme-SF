@@ -3,12 +3,12 @@ package acme.entities.project;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
@@ -41,11 +41,12 @@ public class Project extends AbstractEntity {
 
 	private boolean				indication;
 
-	@Min(0)
+	@Range(min = 0, max = 2000)
 	@NotNull
 	private Integer				cost;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 }
