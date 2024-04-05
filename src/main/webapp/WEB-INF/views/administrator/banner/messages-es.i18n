@@ -1,7 +1,8 @@
-authenticated.consumer.form.title = Detalles de consumidor
 
-authenticated.consumer.form.label.company = Compañía
-authenticated.consumer.form.label.sector = Sector
 
-authenticated.consumer.form.button.create = Registrar
-authenticated.consumer.form.button.update = Actualizar
+administrator.banner.list.label.instatiationUpdateMoment = Momento de instanciación o actualización
+administrator.banner.list.label.startDisplay = Comienzo del muestreo
+administrator.banner.list.label.endDisplay = Fin del muestreo
+administrator.banner.list.label.pictureLink = Enlace a la foto
+administrator.banner.list.label.slogan = Eslogan
+administrator.banner.list.label.targetLink = Enlace señalado

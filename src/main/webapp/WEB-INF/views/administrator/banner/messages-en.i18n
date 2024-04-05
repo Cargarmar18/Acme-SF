@@ -1,7 +1,8 @@
-authenticated.consumer.form.title = Consumer form
 
-authenticated.consumer.form.label.company = Company
-authenticated.consumer.form.label.sector = Sector
 
-authenticated.consumer.form.button.create = Register
-authenticated.consumer.form.button.update = Update
+administrator.banner.list.label.instatiationUpdateMoment = Instatiation or Update moment
+administrator.banner.list.label.startDisplay = Start display
+administrator.banner.list.label.endDisplay = End display
+administrator.banner.list.label.pictureLink = Picture link
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.targetLink = Target link
