@@ -1,0 +1,7 @@
+authenticated.consumer.form.title = Detalles de consumidor
+
+authenticated.consumer.form.label.company = Compañía
+authenticated.consumer.form.label.sector = Sector
+
+authenticated.consumer.form.button.create = Registrar
+authenticated.consumer.form.button.update = Actualizar
