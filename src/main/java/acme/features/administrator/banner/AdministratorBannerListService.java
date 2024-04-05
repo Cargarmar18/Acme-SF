@@ -12,7 +12,7 @@ import acme.client.services.AbstractService;
 import acme.entities.banner.Banner;
 
 @Service
-public class AdministratorBannerListAllService extends AbstractService<Administrator, Banner> {
+public class AdministratorBannerListService extends AbstractService<Administrator, Banner> {
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
