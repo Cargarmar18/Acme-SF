@@ -18,10 +18,18 @@
 <acme:form>
 	<acme:input-textbox code="any.claim.form.label.heading" path="heading"/>
 	<acme:input-textarea code="any.claim.form.label.description" path="description"/>
-	<acme:input-double code="any.claim.form.label.code" path="code"/>
-	<acme:input-url code="any.claim.form.label.instantiationMoment" path="instantiationMoment"/>
+	<acme:input-double code="any.claim.form.label.code" path="code" placeholder="C-XXXX"/>
 	<acme:input-url code="any.claim.form.label.department" path="department"/>
 	<acme:input-url code="any.claim.form.label.link" path="link"/>			
-	<acme:input-url code="any.claim.form.label.email" path="email"/>	
+	<acme:input-url code="any.claim.form.label.email" path="email"/>
+	
+	<jstl:choose>	 
+		<jstl:when test="${_command == 'show'}">
+			<acme:input-url code="any.claim.form.label.instantiationMoment" path="instantiationMoment"/>		
+		</jstl:when>
+		<jstl:when test="${_command == 'create'}">
+			<acme:submit code="any.claim.form.button.create" action="/any/claim/create"/>
+		</jstl:when>		
+	</jstl:choose>	
 </acme:form>
 

@@ -14,7 +14,7 @@ any.claim.list.title = Lista de reclamaciones
 any.claim.form.label.heading = Cabecera
 any.claim.form.label.description = Descripción
 any.claim.form.label.code = Código
-any.claim.form.label.instantiationMoment = Momneto de instanciación
+any.claim.form.label.instantiationMoment = Momento de instanciación
 any.claim.form.label.department = Departamento
 any.claim.form.label.link = Enlace
 any.claim.form.label.email = Correo electrónico
@@ -22,3 +22,6 @@ any.claim.form.label.email = Correo electrónico
 any.claim.list.label.heading = Cabecera
 any.claim.list.label.description = Descripción
 any.claim.list.label.department = Departamento
+
+any.claim.list.button.create = Crear
+any.claim.form.button.create = Crear

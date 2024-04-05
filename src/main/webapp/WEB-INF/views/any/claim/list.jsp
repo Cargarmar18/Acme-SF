@@ -20,3 +20,7 @@
 	<acme:list-column code="any.claim.list.label.description" path="description" width="20%"/>
 	<acme:list-column code="any.claim.list.label.department" path="department" width="20%"/>
 </acme:list>
+
+
+<acme:button code="any.claim.list.button.create" action="/any/claim/create"/>
+

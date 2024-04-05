@@ -23,3 +23,6 @@ any.claim.form.label.email = Email
 any.claim.list.label.heading = Heading
 any.claim.list.label.description = Description
 any.claim.list.label.department = Department
+
+any.claim.list.button.create = Create
+any.claim.form.button.create = Create
