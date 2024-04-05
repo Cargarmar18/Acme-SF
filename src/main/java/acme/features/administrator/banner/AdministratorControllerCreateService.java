@@ -59,7 +59,7 @@ public class AdministratorControllerCreateService extends AbstractService<Admini
 	}
 
 	@Override
-	public void perform(final Employer object) {
+	public void perform(final Banner object) {
 		assert object != null;
 
 		this.repository.save(object);
