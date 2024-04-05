@@ -23,6 +23,12 @@ master.menu.anonymous.45143276A = 45143276A: García Martínez, Carlos
 master.menu.anonymous.favourite-link-rodriguez = 53962032F: Rodríguez Millán, María C.
 master.menu.anonymous.favourite-link-castillejo = 77874609J: Castillejo Vela, Manuel
 
+
+# master.menu.authenticated ###################################################
+
+master.menu.authenticated = Autentificado
+master.menu.authenticated.all-claims = Todas las reclamaciones
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
