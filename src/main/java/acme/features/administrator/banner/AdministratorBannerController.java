@@ -30,10 +30,10 @@ public class AdministratorBannerController extends AbstractController<Administra
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("list all", this.listAllService);
+		super.addBasicCommand("list", this.listAllService);
 		super.addBasicCommand("create", this.createService);
-		super.addBasicCommand("update", this.updateService);
-		super.addBasicCommand("show", this.showBanner);
+		// super.addBasicCommand("update", this.updateService);
+		// super.addBasicCommand("show", this.showBanner);
 	}
 
 }
