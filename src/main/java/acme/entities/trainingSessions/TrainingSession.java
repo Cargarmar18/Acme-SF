@@ -52,11 +52,12 @@ public class TrainingSession extends AbstractEntity {
 	@Length(max = 75)
 	private String				instructor;
 
-	@NotNull
+	@NotBlank
 	@Email
 	private String				contactEmail;
 
 	@URL
+	@Length(max = 255)
 	private String				link;
 
 	// Derived attributes -----------------------------------------------------

@@ -1,5 +1,5 @@
 
-package acme.entities.trainingModules;
+package acme.entities.invoices;
 
 import java.util.Date;
 
@@ -8,7 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PastOrPresent;
@@ -18,56 +22,57 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
-import acme.entities.project.Project;
-import acme.roles.Developer;
+import acme.client.data.datatypes.Money;
+import acme.entities.sponsorships.Sponsorship;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
-public class TrainingModule extends AbstractEntity {
+public class Invoices extends AbstractEntity {
 
-	// Serialisation identifier -----------------------------------------------
 	private static final long	serialVersionUID	= 1L;
-	// Attributes -------------------------------------------------------------
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{1,3}-[0-9]{3}$", message = "{validation.trainingModule.reference}")
+	@Pattern(regexp = "^IN-[0-9]{4}-[0-9]{4}$", message = "{validation.Invoices.reference}")
 	private String				code;
 
 	@NotNull
-	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				creationMoment;
+	@PastOrPresent
+	private Date				registrationTime;
 
-	@NotBlank
-	@Length(max = 100)
-	private String				details;
-
+	// TO DO applying constraint of 1 month
 	@NotNull
-	private DifficultyLevel		difficultyLevel;
-
-	@PastOrPresent
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date				updateMoment;
+	private Date				dueDate;
 
-	@URL
+	// 	TO DO add constraint positive or 0 on money datatype
+	@NotNull
+	private Money				invoiceQuantity;
+
+	@Digits(integer = 3, fraction = 2)
+	@Min(0)
+	@Max(100)
+	private double				tax;
+
 	@Length(max = 255)
+	@URL
 	private String				link;
 
-	private boolean				draftMode;
 	// Derived attributes -----------------------------------------------------
 
-	// Relationships ----------------------------------------------------------
-	@NotNull
-	@Valid
-	@ManyToOne(optional = false)
-	private Project				project;
+
+	@Transient
+	public double totalAmount() {
+		return this.invoiceQuantity.getAmount() + this.tax * this.invoiceQuantity.getAmount() / 100;
+	}
+
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Developer			developer;
+	private Sponsorship sponsorship;
 }

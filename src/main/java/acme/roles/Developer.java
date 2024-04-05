@@ -1,17 +1,14 @@
 
 package acme.roles;
 
-
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractRole;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -38,9 +35,8 @@ public class Developer extends AbstractRole {
 	@Length(max = 100)
 	private String				skills;
 
-	@NotNull
+	@NotBlank
 	@Email
-	@Length(max = 255)
 	private String				email;
 
 	@URL

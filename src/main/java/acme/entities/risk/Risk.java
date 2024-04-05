@@ -36,7 +36,7 @@ public class Risk extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "R-[0-9]{3}")
+	@Pattern(regexp = "^R-[0-9]{3}$", message = "validation.Risk.reference")
 	private String				reference;
 
 	@NotNull
@@ -46,6 +46,8 @@ public class Risk extends AbstractEntity {
 
 	@NotNull
 	@Min(0)
+	@Max(100)
+	@Digits(integer = 3, fraction = 2)
 	private double				impact;
 
 	@NotNull
@@ -58,6 +60,7 @@ public class Risk extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
+	@Length(max = 255)
 	@URL
 	private String				link;
 
