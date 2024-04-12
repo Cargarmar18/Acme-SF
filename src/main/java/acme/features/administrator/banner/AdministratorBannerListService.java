@@ -30,7 +30,7 @@ public class AdministratorBannerListService extends AbstractService<Administrato
 	public void load() {
 		Collection<Banner> objects;
 
-		objects = this.repository.findAllBanner();
+		objects = (Collection<Banner>) this.repository.findRandomBanner();
 
 		super.getBuffer().addData(objects);
 	}
