@@ -69,7 +69,7 @@ public class Sponsorship extends AbstractEntity {
 	@URL
 	private String				moreInfo;
 
-	private boolean				draftmode;
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
