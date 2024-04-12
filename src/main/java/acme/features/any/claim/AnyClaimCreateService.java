@@ -55,13 +55,23 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 		Date moment;
 
 		moment = MomentHelper.getCurrentMoment();
-		super.bind(object, "heading", "description", "code", "department", "link", "email");
+		super.bind(object, "heading", "description", "code", "department", "link", "email", "confirmation");
 		object.setInstantiationMoment(moment);
 	}
 
 	@Override
 	public void validate(final Claim object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Claim codeValid;
+
+			codeValid = this.repository.findOneClaimByCode(object.getCode());
+			super.state(codeValid == null, "code", "any.claim.form.error.duplicated");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("confirmation"))
+			super.state(object.isConfirmation() == true, "confirmation", "any.claim.form.error.notConfirmed");
 	}
 
 	@Override
@@ -77,7 +87,7 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "heading", "description", "code", "department", "link", "email");
+		dataset = super.unbind(object, "heading", "description", "code", "department", "link", "email", "confirmation");
 
 		super.getResponse().addData(dataset);
 

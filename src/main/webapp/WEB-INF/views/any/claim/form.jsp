@@ -19,9 +19,10 @@
 	<acme:input-textbox code="any.claim.form.label.heading" path="heading"/>
 	<acme:input-textarea code="any.claim.form.label.description" path="description"/>
 	<acme:input-double code="any.claim.form.label.code" path="code" placeholder="C-XXXX"/>
-	<acme:input-url code="any.claim.form.label.department" path="department"/>
+	<acme:input-url code="any.claim.form.label.department" path="department" placeholder="Lorem ipsum"/>
 	<acme:input-url code="any.claim.form.label.link" path="link"/>			
-	<acme:input-url code="any.claim.form.label.email" path="email"/>
+	<acme:input-url code="any.claim.form.label.email" path="email" placeholder="example@acme.com"/>
+	<acme:input-checkbox code="any.claim.form.label.confirmation" path="confirmation"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show'}">
