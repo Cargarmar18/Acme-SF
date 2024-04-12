@@ -13,15 +13,11 @@
 
 package acme.features.administrator.banner;
 
-import java.util.List;
+import java.util.Collection;
 
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.client.helpers.RandomHelper;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.banner.Banner;
 
@@ -32,26 +28,6 @@ public interface AdministratorBannerRepository extends AbstractRepository {
 	int countBanners();
 
 	@Query("select a from Banner a")
-	List<Banner> findManyBanners(PageRequest pageRequest);
-
-	default Banner findRandomBanner() {
-		Banner result;
-		int count, index;
-		PageRequest page;
-		List<Banner> list;
-
-		count = this.countBanners();
-		if (count == 0)
-			result = null;
-		else {
-			index = RandomHelper.nextInt(0, count);
-
-			page = PageRequest.of(index, 1, Sort.by(Direction.ASC, "id"));
-			list = this.findManyBanners(page);
-			result = list.isEmpty() ? null : list.get(0);
-		}
-
-		return result;
-	}
+	Collection<Banner> findAllBanners();
 
 }
