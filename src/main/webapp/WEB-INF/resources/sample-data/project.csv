@@ -1,41 +1,42 @@
-key,code,cost,indication,link,$abstract,title,draftMode
-project-01,"ABC-1234",20,1,,"synopsis","Title",0
-project-02,"AAA-0000",20,1,,"synopsis","Title",0
-project-03,"ZZZ-9999",20,1,,"synopsis","Title",0
-project-04,"RWP-3108",20,1,,"synopsis","Title",0
-project-05,"XYZ-7890",20,1,,"synopsis","Title",0
-project-06,"ABF-1000",0,1,,"synopsis","Title",0
-project-07,"ABF-1001",1,1,,"synopsis","Title",0
-project-08,"ABF-1002",1999,1,,"synopsis","Title",0
-project-09,"ABF-1003",639,1,,"synopsis","Title",0
-project-10,"ABF-1004",2000,1,,"synopsis","Title",0
-project-11,"ABG-1005",20,0,,"synopsis","Title",0
-project-12,"ABE-1006",20,1,"http://www.example.com","synopsis","Title",0
-project-13,"ABE-1007",20,1,"http://www.example.jp","synopsis","Title",0
-project-14,"ABE-1008",20,1,"http://www.example.fr","synopsis","Title",0
-project-15,"ABE-1009",20,1,"https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza","synopsis","Title",0
-project-16,"ABE-1010",20,1,"https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz","synopsis","Title",0
-project-17,"ABE-1011",20,1,"https://www.apple.com/shop/buy-iphone/iphone-13?icid=main-iphone-ip13","synopsis","Title",0
-project-18,"ABE-1012",20,1,"https://github.com/search?q=python+language&type=Repositories","synopsis","Title",0
-project-19,"ABC-1013",20,1,,"S","Title",0
-project-20,"ABC-1014",20,1,,"sy","Title",0
-project-21,"ABC-1015",20,1,,"This synopsis has an exact amount of 100 characters. For this to happen I’m improvising random words","Title",0
-project-22,"ABC-1016",20,1,,"This synopsis has an exact amount of 99 characters. For this to happen I’m improvising random words","Title",0
-project-23,"ABC-1017",20,1,,"Я огомй пик","Title",0
-project-24,"ABC-1018",20,1,,"?¿^*¨`¡`´*?*´¡*^¨^¡","Title",0
-project-25,"ABC-1019",20,1,,"ぽぴぽぴぽぽぴぽ","Title",0
-project-26,"ABC-1020",20,1,,"<script>alert('hi')</script>","Title",0
-project-27,"ABC-1021",20,1,,"ص","Title",0
-project-28,"ABC-1022",20,1,,"εε","Title",0
-project-29,"ABD-1023",20,1,,"synopsis","t",0
-project-30,"ABD-1024",20,1,,"synopsis","Ti",0
-project-31,"ABD-1025",20,1,,"synopsis","This title has a total amount of 74 characters. It’s the placeholder title",0
-project-32,"ABD-1026",20,1,,"synopsis","This title has a total amount of 75 characters. It’s the placeholder title.",0
-project-33,"ABD-1027",20,1,,"synopsis","Я огромный педик",0
-project-34,"ABD-1028",20,1,,"synopsis","?¿^*¨`¡`´*?*´¡*^¨^¡",0
-project-35,"ABD-1029",20,1,,"synopsis","<script>window.location='http://www.example.com'</script>",0
-project-36,"ABD-1030",20,1,,"synopsis","ぽぴぽぴぽぽぴぽ",0
-project-37,"ABD-1031",20,1,,"synopsis","εε",0
-project-38,"ABD-1032",20,1,,"synopsis","س",0
-project-39,"ABD-1033",20,1,,"synopsis","Title",0
-project-40,"ABD-1034",20,1,,"synopsis","Title",1
+key,code,cost,indication,link,$abstract,title,draftMode,key:manager
+project-01,"ABC-1234",20,1,,"synopsis","Title",0,manager-01
+project-02,"AAA-0000",20,1,,"synopsis","Title",0,manager-01
+project-03,"ZZZ-9999",20,1,,"synopsis","Title",0,manager-01
+project-04,"RWP-3108",20,1,,"synopsis","Title",0,manager-01
+project-05,"XYZ-7890",20,1,,"synopsis","Title",0,manager-01
+project-06,"ABF-1000",0,1,,"synopsis","Title",0,manager-01
+project-07,"ABF-1001",1,1,,"synopsis","Title",0,manager-01
+project-08,"ABF-1002",1999,1,,"synopsis","Title",0,manager-01
+project-09,"ABF-1003",639,1,,"synopsis","Title",0,manager-01
+project-10,"ABF-1004",2000,1,,"synopsis","Title",0,manager-01
+project-11,"ABG-1005",20,0,,"synopsis","Title",0,manager-01
+project-12,"ABE-1006",20,1,"http://www.example.com","synopsis","Title",0,manager-01
+project-13,"ABE-1007",20,1,"http://www.example.jp","synopsis","Title",0,manager-01
+project-14,"ABE-1008",20,1,"http://www.example.fr","synopsis","Title",0,manager-01
+project-15,"ABE-1009",20,1,"https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza","synopsis","Title",0,manager-01
+project-16,"ABE-1010",20,1,"https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz","synopsis","Title",0,manager-01
+project-17,"ABE-1011",20,1,"https://www.apple.com/shop/buy-iphone/iphone-13?icid=main-iphone-ip13","synopsis","Title",0,manager-01
+project-18,"ABE-1012",20,1,"https://github.com/search?q=python+language&type=Repositories","synopsis","Title",0,manager-01
+project-19,"ABC-1013",20,1,,"S","Title",0,manager-01
+project-20,"ABC-1014",20,1,,"sy","Title",0,manager-01
+project-21,"ABC-1015",20,1,,"This synopsis has an exact amount of 100 characters. For this to happen I’m improvising random words","Title",0,manager-01
+project-22,"ABC-1016",20,1,,"This synopsis has an exact amount of 99 characters. For this to happen I’m improvising random words","Title",0,manager-01
+project-23,"ABC-1017",20,1,,"Я огомй пик","Title",0,manager-01
+project-24,"ABC-1018",20,1,,"?¿^*¨`¡`´*?*´¡*^¨^¡","Title",0,manager-01
+project-25,"ABC-1019",20,1,,"ぽぴぽぴぽぽぴぽ","Title",0,manager-01
+project-26,"ABC-1020",20,1,,"<script>alert('hi')</script>","Title",0,manager-01
+project-27,"ABC-1021",20,1,,"ص","Title",0,manager-01
+project-28,"ABC-1022",20,1,,"εε","Title",0,manager-01
+project-29,"ABD-1023",20,1,,"synopsis","t",0,manager-01
+project-30,"ABD-1024",20,1,,"synopsis","Ti",0,manager-01
+project-31,"ABD-1025",20,1,,"synopsis","This title has a total amount of 74 characters. It’s the placeholder title",0,manager-01
+project-32,"ABD-1026",20,1,,"synopsis","This title has a total amount of 75 characters. It’s the placeholder title.",0,manager-01
+project-33,"ABD-1027",20,1,,"synopsis","Я огромный педик",0,manager-01
+project-34,"ABD-1028",20,1,,"synopsis","?¿^*¨`¡`´*?*´¡*^¨^¡",0,manager-01
+project-35,"ABD-1029",20,1,,"synopsis","<script>window.location='http://www.example.com'</script>",0,manager-01
+project-36,"ABD-1030",20,1,,"synopsis","ぽぴぽぴぽぽぴぽ",0,manager-01
+project-37,"ABD-1031",20,1,,"synopsis","εε",0,manager-01
+project-38,"ABD-1032",20,1,,"synopsis","س",0,manager-01
+project-39,"ABD-1033",20,1,,"synopsis","Title",0,manager-01
+project-40,"ABD-1034",20,1,,"synopsis","Title",1,manager-01
+project-41,"ABD-1035",20,1,,"synopsis","Title",0,manager-02
