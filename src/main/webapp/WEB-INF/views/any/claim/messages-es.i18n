@@ -18,10 +18,14 @@ any.claim.form.label.instantiationMoment = Momento de instanciación
 any.claim.form.label.department = Departamento
 any.claim.form.label.link = Enlace
 any.claim.form.label.email = Correo electrónico
+any.claim.form.label.confirmation = Confirmación
 
 any.claim.list.label.heading = Cabecera
 any.claim.list.label.description = Descripción
 any.claim.list.label.department = Departamento
+
+any.claim.form.error.duplicated = El código esta tomado
+any.claim.form.error.notConfirmed = Confirme antes de crear
 
 any.claim.list.button.create = Crear
 any.claim.form.button.create = Crear
