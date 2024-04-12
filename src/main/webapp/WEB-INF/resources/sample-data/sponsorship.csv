@@ -1,4 +1,4 @@
-key,code,moment,startSponsor,endSponsor,amount,sponsorship-type,email,more-info,key:project,key:sponsor
+key,code,moment,startSponsor,endSponsor,amount,sponsorshipType,email,moreInfo,key:project,key:sponsor
 sponsorship-01,SP-001,2016/07/16 00:00,2020/09/30 00:00,2021/08/30 00:00,"EUR 12,345.00",Financial,example@example.com,https://example.com/sponsor1,project-01,sponsor-001
 sponsorship-02,SP-002,2022/07/30 00:00,2020/09/30 00:00,2021/08/30 00:00,"USD 12,345.00",Financial,example@example.com,https://example.com/sponsor1,project-01,sponsor-001
 sponsorship-03,SP-003,2022/07/29 23:59,2020/09/30 00:00,2021/08/30 00:00,"USD 12,345.00",Financial,example@example.com,https://example.com/sponsor1,project-01,sponsor-001
