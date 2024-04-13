@@ -14,7 +14,7 @@ claim-12,C-1231,τμήμα,description,,heading,2020/03/14 15:32,,1
 claim-13,C-1232,قسم,description,,heading,2020/03/14 15:32,,1
 claim-14,C-1233,部門,description,,heading,2020/03/14 15:32,,1
 claim-15,C-1244,?¿^*¨`¡`´*?*´¡*^¨^¡,description,,heading,2020/03/14 15:32,,1
-claim-16,C-1334,SELECT * FROM users WHERE username = '' OR 1=1,description,,heading,2020/03/14 15:32,,1
+claim-16,C-1334,';X;--,description,,heading,2020/03/14 15:32,,1
 claim-17,C-1240,department,d,,heading,2020/03/14 15:32,,1
 claim-18,C-1241,department,de,,heading,2020/03/14 15:32,,1
 claim-19,C-1242,department,descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription,,heading,2020/03/14 15:32,,1
@@ -25,7 +25,7 @@ claim-23,C-1247,department,説明,,heading,2020/03/14 15:32,,1
 claim-24,C-1248,department,περιγραφή,,heading,2020/03/14 15:32,,1
 claim-25,C-1249,department,وصف,,heading,2020/03/14 15:32,,1
 claim-26,C-1250,department,описание,,heading,2020/03/14 15:32,,1
-claim-27,C-1251,department,SELECT * FROM users WHERE username = '' OR 1=1,,heading,2020/03/14 15:32,,1
+claim-27,C-1251,department,';X;--,,heading,2020/03/14 15:32,,1
 claim-28,C-1252,department,description,example@acme.com,heading,2020/03/14 15:32,,1
 claim-29,C-1253,department,description,example@alum.us.es,heading,2020/03/14 15:32,,1
 claim-30,C-1254,department,description,example@yahoo.es,heading,2020/03/14 15:32,,1
@@ -44,7 +44,7 @@ claim-42,C-1264,department,description,,заголовок,2020/07/30 00:00,,1
 claim-43,C-1265,department,description,,επικεφαλίδα,2020/03/14 15:32,,1
 claim-44,C-1266,department,description,,عنوان,2020/03/14 15:32,,1
 claim-45,C-1267,department,description,,見出し,2020/03/14 15:32,,1
-claim-46,C-1268,department,description,,SELECT * FROM users WHERE username = '' OR 1=1,2020/03/14 15:32,,1
+claim-46,C-1268,department,description,,';X;--,2020/03/14 15:32,,1
 claim-47,C-1269,department,description,,heading,2000/01/01 00:00,,1
 claim-48,C-1270,department,description,,heading,2000/01/01 00:01,,1
 claim-49,C-1271,department,description,,heading,2022/07/29 23:59,,1

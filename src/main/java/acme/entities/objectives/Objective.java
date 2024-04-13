@@ -46,10 +46,12 @@ public class Objective extends AbstractEntity {
 
 	private boolean				critical;
 
+	//TO DO: momento de inicio debe ser posterior al momento de instanciación
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				beginningMoment;
 
+	// TO DO: implement minimum duration of an hour, finalMoment after beginningMoment
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				finalMoment;
