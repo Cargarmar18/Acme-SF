@@ -15,5 +15,3 @@ validation.Sponsorship.reference    = The code must follow a pattern XXX-YYY whe
 validation.Invoices.reference    = The code must follow a pattern IN-XXXX-YYYY where XXXX are four numbers (0-9) and YYYY are four numbers (0-9).
 validation.Risk.reference = The code must follow a pattern R-XXX where XXX are three numbers (0-9).
 
-administrator.banner.list.title = List of banners
- administrator.banner.form.button.create = Create banner
