@@ -1,8 +1,24 @@
 
 
+
+administrator.announcement.form.title = Banner form
+administrator.announcement.list.title = Listing of Banners
+
+
+administrator.banner.form.label.startDisplay = Start display:
+administrator.banner.form.label.endDisplay = End display:
+administrator.banner.form.label.pictureLink = Picture link:
+administrator.banner.form.label.slogan = Slogan:
+administrator.banner.form.label.targetLink = Target link: (Optional)
+administrator.banner.form.label.confirmation = Confirm that the banner is correct
+
+administrator.announcement.form.button.create = Create
+
 administrator.banner.list.label.instatiationUpdateMoment = Instatiation or Update moment
 administrator.banner.list.label.startDisplay = Start display
 administrator.banner.list.label.endDisplay = End display
 administrator.banner.list.label.pictureLink = Picture link
 administrator.banner.list.label.slogan = Slogan
 administrator.banner.list.label.targetLink = Target link
+
+
