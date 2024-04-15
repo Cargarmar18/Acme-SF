@@ -1,7 +1,10 @@
 
 package acme.forms;
 
+import java.util.Map;
+
 import acme.client.data.AbstractForm;
+import acme.entities.project.PriorityStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,24 +14,21 @@ public class ManagerDashboard extends AbstractForm {
 
 	// Serialisation identifier -----------------------------------------------
 
-	private static final long	serialVersionUID	= 1L;
+	private static final long		serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
 
-	int						numberOfMustUserStories;
-	int						numberOfShouldUserStories;
-	int						numberOfCouldUserStories;
-	int						numberOfWillNotUserStories;
+	Map<PriorityStatus, Integer>	numberOfPrioritiesUserStories;
 
-	Double						averageCostUserStories;
-	Double						deviationCostUserStories;
-	Integer						maximumCostUserStories;
-	Integer						minimumCostUserStories;
+	Double							averageCostUserStories;
+	Double							deviationCostUserStories;
+	Integer							maximumCostUserStories;
+	Integer							minimumCostUserStories;
 
-	Double						averageCostProjects;
-	Double						deviationCostProjects;
-	Integer						maximumCostProjects;
-	Integer						minimumCostProjects;
+	Double							averageCostProjects;
+	Double							deviationCostProjects;
+	Integer							maximumCostProjects;
+	Integer							minimumCostProjects;
 
 	// Derived attributes -----------------------------------------------------
 

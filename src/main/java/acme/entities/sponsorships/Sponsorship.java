@@ -20,7 +20,6 @@ import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
 import acme.client.data.datatypes.Money;
-import acme.datatypes.SponsorshipDatatype;
 import acme.entities.project.Project;
 import acme.roles.Sponsor;
 import lombok.Getter;
@@ -60,14 +59,17 @@ public class Sponsorship extends AbstractEntity {
 	private Money				amount;
 
 	@NotNull
-	private SponsorshipDatatype	sponsorshipType;
+	private SponsorshipType		sponsorshipType;
 
 	@Email
+	@Length(max = 255)
 	private String				email;
 
 	@Length(max = 255)
 	@URL
 	private String				moreInfo;
+
+	private boolean				draftMode;
 
 	// Relationships ----------------------------------------------------------
 
