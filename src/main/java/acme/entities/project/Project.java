@@ -3,6 +3,8 @@ package acme.entities.project;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -12,6 +14,7 @@ import org.hibernate.validator.constraints.Range;
 import org.hibernate.validator.constraints.URL;
 
 import acme.client.data.AbstractEntity;
+import acme.roles.Manager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,7 +29,7 @@ public class Project extends AbstractEntity {
 
 	// Attributes -------------------------------------------------------------
 
-	@Pattern(regexp = "[A-Z]{3}-[0-9]{4}")
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{4}$", message = "{validation.project.reference}")
 	@NotBlank
 	@Column(unique = true)
 	private String				code;
@@ -37,16 +40,24 @@ public class Project extends AbstractEntity {
 
 	@NotBlank
 	@Length(max = 100)
-	private String				synopsis;
+	private String				$abstract;
 
 	private boolean				indication;
 
 	@Range(min = 0, max = 2000)
-	@NotNull
-	private Integer				cost;
+	private int					cost;
 
 	@URL
 	@Length(max = 255)
 	private String				link;
+
+	private boolean				draftMode;
+
+	// Relationships ----------------------------------------------------------
+
+	@NotNull
+	@Valid
+	@ManyToOne(optional = false)
+	private Manager				manager;
 
 }

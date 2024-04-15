@@ -19,11 +19,11 @@ public class Configuration extends AbstractEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-	@Pattern(regexp = "[A-Z]{3}")
+	@Pattern(regexp = "^[A-Z]{3}$")
 	@NotBlank
-	private String				initialCurrency;
+	private String				defaultCurrency;
 
-	@Pattern(regexp = "[A-Z]{3}(,[A-Z]{3}){2}")
+	@Pattern(regexp = "^[A-Z]{3}(,[A-Z]{3}){2}$")
 	@NotBlank
 	private String				acceptedCurrencies;
 
