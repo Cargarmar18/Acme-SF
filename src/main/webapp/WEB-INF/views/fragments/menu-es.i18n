@@ -33,6 +33,7 @@ master.menu.authenticated.all-claims = Todas las reclamaciones
 
 master.menu.administrator = Administrador
 master.menu.administrator.dashboard = Panel de indicadores
+master.menu.administrator.banner = Banners
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.populate-initial = Poblar BD (inicial)
 master.menu.administrator.populate-sample = Poblar BD (ejemplos)

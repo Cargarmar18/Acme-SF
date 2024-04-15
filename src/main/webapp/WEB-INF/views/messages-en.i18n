@@ -18,3 +18,4 @@ validation.Risk.reference = The code must follow a pattern R-XXX where XXX are t
 validation.project.reference    = The code must follow a pattern XXX-YYYY, where XXX are 3 letters (A-Z) and YYYY are four numbers (0-9).
 validation.claim.reference    = The code must follow a pattern C-XXXX, where XXXX are four numbers (0-9).
 
+
