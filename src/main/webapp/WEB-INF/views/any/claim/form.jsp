@@ -18,17 +18,17 @@
 <acme:form>
 	<acme:input-textbox code="any.claim.form.label.heading" path="heading"/>
 	<acme:input-textarea code="any.claim.form.label.description" path="description"/>
-	<acme:input-double code="any.claim.form.label.code" path="code" placeholder="C-XXXX"/>
-	<acme:input-url code="any.claim.form.label.department" path="department" placeholder="Lorem ipsum"/>
+	<acme:input-textbox code="any.claim.form.label.code" path="code" placeholder="C-XXXX"/>
+	<acme:input-textbox code="any.claim.form.label.department" path="department" placeholder="Lorem ipsum"/>
 	<acme:input-url code="any.claim.form.label.link" path="link"/>			
-	<acme:input-url code="any.claim.form.label.email" path="email" placeholder="example@acme.com"/>
-	<acme:input-checkbox code="any.claim.form.label.confirmation" path="confirmation"/>
+	<acme:input-textbox code="any.claim.form.label.email" path="email" placeholder="example@acme.com"/>
 	
 	<jstl:choose>	 
 		<jstl:when test="${_command == 'show'}">
 			<acme:input-url code="any.claim.form.label.instantiationMoment" path="instantiationMoment"/>		
 		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
+			<acme:input-checkbox code="any.claim.form.label.confirmation" path="confirmation"/>
 			<acme:submit code="any.claim.form.button.create" action="/any/claim/create"/>
 		</jstl:when>		
 	</jstl:choose>	

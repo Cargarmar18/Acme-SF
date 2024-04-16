@@ -1,0 +1,28 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.user-story.list.title = Lista de historias de usuario
+manager.user-story.form.title = Detalles de historia de usuario
+
+manager.user-story.form.label.title = Título
+manager.user-story.form.label.description = Descripción
+manager.user-story.form.label.cost = Coste
+manager.user-story.form.label.acceptance-criteria = Criterio de aceptación
+manager.user-story.form.label.priority = Prioridad
+manager.user-story.form.label.link = Enlace
+manager.user-story.form.label.draft-mode = Modo boceto
+manager.user-story.form.button.publish = Publicar
+manager.user-story.form.button.create = Crear
+
+manager.user-story.list.label.title = Título
+manager.user-story.list.label.description = Descripción
+manager.user-story.list.label.cost = Coste
+manager.user-story.list.label.draft-mode = Modo boceto
+manager.user-story.list.button.create = Crear
