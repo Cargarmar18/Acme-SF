@@ -4,10 +4,10 @@ project-02,"AAA-0000",20,1,,"synopsis","Title",0,manager-01
 project-03,"ZZZ-9999",20,1,,"synopsis","Title",0,manager-01
 project-04,"RWP-3108",20,1,,"synopsis","Title",0,manager-01
 project-05,"XYZ-7890",20,1,,"synopsis","Title",0,manager-01
-project-06,"ABF-1000",0,1,,"synopsis","Title",0,manager-01
-project-07,"ABF-1001",1,1,,"synopsis","Title",0,manager-01
-project-08,"ABF-1002",1999,1,,"synopsis","Title",0,manager-01
-project-09,"ABF-1003",639,1,,"synopsis","Title",0,manager-01
+project-06,"ABF-1003",639,1,,"synopsis","Title",0,manager-01
+project-07,"ABF-1000",0,1,,"synopsis","Title",0,manager-01
+project-08,"ABF-1001",1,1,,"synopsis","Title",0,manager-01
+project-09,"ABF-1002",1999,1,,"synopsis","Title",0,manager-01
 project-10,"ABF-1004",2000,1,,"synopsis","Title",0,manager-01
 project-11,"ABG-1005",20,0,,"synopsis","Title",0,manager-01
 project-12,"ABE-1006",20,1,"http://www.example.com","synopsis","Title",0,manager-01
