@@ -1,5 +1,5 @@
 /*
- * AnyShoutCreateService.java
+ * EmployerJobCreateService.java
  *
  * Copyright (C) 2012-2024 Rafael Corchuelo.
  *
@@ -10,26 +10,23 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.any.claim;
-
-import java.util.Date;
+package acme.features.manager.project;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
-import acme.entities.claim.Claim;
+import acme.entities.project.Project;
+import acme.roles.Manager;
 
 @Service
-public class AnyClaimCreateService extends AbstractService<Any, Claim> {
+public class ManagerProjectCreateService extends AbstractService<Manager, Project> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AnyClaimRepository repository;
+	private ManagerProjectRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -41,59 +38,51 @@ public class AnyClaimCreateService extends AbstractService<Any, Claim> {
 
 	@Override
 	public void load() {
-		Claim object;
+		Project object;
+		Manager manager;
 
-		object = new Claim();
+		manager = this.repository.findOneManagerById(super.getRequest().getPrincipal().getActiveRoleId());
+		object = new Project();
+		object.setDraftMode(true);
+		object.setManager(manager);
 
 		super.getBuffer().addData(object);
 	}
 
 	@Override
-	public void bind(final Claim object) {
+	public void bind(final Project object) {
 		assert object != null;
 
-		Date moment;
-
-		moment = MomentHelper.getCurrentMoment();
-		super.bind(object, "heading", "description", "code", "department", "link", "email");
-		object.setInstantiationMoment(moment);
+		super.bind(object, "code", "title", "abstractDescription", "indication", "cost", "link");
 	}
 
 	@Override
-	public void validate(final Claim object) {
+	public void validate(final Project object) {
 		assert object != null;
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Claim codeValid;
+			Project codeValid;
 
-			codeValid = this.repository.findOneClaimByCode(object.getCode());
-			super.state(codeValid == null, "code", "any.claim.form.error.duplicated");
+			codeValid = this.repository.findOneProjectByCode(object.getCode());
+			super.state(codeValid == null, "code", "manager.project.form.error.duplicated");
 		}
-
-		boolean confirmation;
-
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "confirmation", "any.claim.form.error.notConfirmed");
 	}
 
 	@Override
-	public void perform(final Claim object) {
+	public void perform(final Project object) {
 		assert object != null;
 
 		this.repository.save(object);
 	}
 
 	@Override
-	public void unbind(final Claim object) {
+	public void unbind(final Project object) {
 		assert object != null;
-
 		Dataset dataset;
 
-		dataset = super.unbind(object, "heading", "description", "code", "department", "link", "email");
-		dataset.put("confirmation", false);
+		dataset = super.unbind(object, "code", "title", "abstractDescription", "indication", "cost", "link", "draftMode");
 
 		super.getResponse().addData(dataset);
-
 	}
 
 }

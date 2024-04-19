@@ -1,0 +1,17 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.user-story-project.form.title = User story-project form
+
+manager.user-story-project.form.label.project = Project
+manager.user-story-project.form.label.user-story = User story
+manager.user-story-project.form.button.create = Create
+manager.user-story-project.form.button.delete = Delete
+manager.user-story-project.form.error.draftMode = The project is not in draft mode
