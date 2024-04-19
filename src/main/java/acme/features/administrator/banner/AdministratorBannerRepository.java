@@ -20,7 +20,6 @@ import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
 import acme.entities.banner.Banner;
-import acme.entities.claim.Claim;
 
 @Repository
 public interface AdministratorBannerRepository extends AbstractRepository {
@@ -30,8 +29,8 @@ public interface AdministratorBannerRepository extends AbstractRepository {
 
 	@Query("select a from Banner a")
 	Collection<Banner> findAllBanners();
-	
+
 	@Query("select a from Banner a where a.id = :id")
-	Claim findBannerById(int id);
+	Banner findBannerById(int id);
 
 }
