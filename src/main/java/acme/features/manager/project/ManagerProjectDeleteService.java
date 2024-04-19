@@ -1,5 +1,5 @@
 /*
- * AdministratorCompanyShowService.java
+ * EmployerDutyDeleteService.java
  *
  * Copyright (C) 2012-2024 Rafael Corchuelo.
  *
@@ -12,16 +12,19 @@
 
 package acme.features.manager.project;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
+import acme.entities.project.UserStoryProject;
 import acme.roles.Manager;
 
 @Service
-public class ManagerProjectShowService extends AbstractService<Manager, Project> {
+public class ManagerProjectDeleteService extends AbstractService<Manager, Project> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -33,7 +36,17 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int projectId;
+		Project project;
+		Manager manager;
+
+		projectId = super.getRequest().getData("id", int.class);
+		project = this.repository.findProjectById(projectId);
+		manager = project == null ? null : project.getManager();
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -45,6 +58,32 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 		object = this.repository.findProjectById(id);
 
 		super.getBuffer().addData(object);
+	}
+
+	@Override
+	public void bind(final Project object) {
+		assert object != null;
+
+		super.bind(object, "code", "title", "abstractDescription", "indication", "cost", "link");
+	}
+
+	@Override
+	public void validate(final Project object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode() == true, "draftMode", "manager.user-story.form.error.draftMode");
+	}
+
+	@Override
+	public void perform(final Project object) {
+		assert object != null;
+
+		Collection<UserStoryProject> userStoryProjects;
+
+		userStoryProjects = this.repository.findManyUserStoryProjectsByProjectId(object.getId());
+		this.repository.deleteAll(userStoryProjects);
+		this.repository.delete(object);
 	}
 
 	@Override

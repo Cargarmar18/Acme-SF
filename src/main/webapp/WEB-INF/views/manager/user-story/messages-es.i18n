@@ -20,9 +20,14 @@ manager.user-story.form.label.link = Enlace
 manager.user-story.form.label.draft-mode = Modo boceto
 manager.user-story.form.button.publish = Publicar
 manager.user-story.form.button.create = Crear
+manager.user-story.form.button.delete = Borrar
+
+manager.user-story.form.error.draftMode = La historia de usuario no se puede eliminar puesto que no esta en modo boceto
 
 manager.user-story.list.label.title = Título
 manager.user-story.list.label.description = Descripción
 manager.user-story.list.label.cost = Coste
 manager.user-story.list.label.draft-mode = Modo boceto
 manager.user-story.list.button.create = Crear
+manager.user-story.list.button.create-project = Añadir historia de usuario a proyecto
+manager.user-story.list.button.delete-project = Eliminar historia de usuario de proyecto

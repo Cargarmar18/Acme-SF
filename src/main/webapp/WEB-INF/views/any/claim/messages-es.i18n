@@ -18,7 +18,7 @@ any.claim.form.label.instantiationMoment = Momento de instanciación
 any.claim.form.label.department = Departamento
 any.claim.form.label.link = Enlace
 any.claim.form.label.email = Correo electrónico
-any.claim.form.label.confirmation = Confirmación
+any.claim.form.label.confirmation = Por favor, confirme antes de crear
 
 any.claim.list.label.heading = Cabecera
 any.claim.list.label.description = Descripción

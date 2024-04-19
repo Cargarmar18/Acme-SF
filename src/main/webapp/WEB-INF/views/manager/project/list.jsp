@@ -18,8 +18,10 @@
 <acme:list>
 	<acme:list-column code="manager.project.list-mine.label.code" path="code" width="80%"/>	
 	<acme:list-column code="manager.project.list-mine.label.title" path="title" width="20%"/>
-	<acme:list-column code="manager.project.list-mine.label.$abstract" path="$abstract" width="20%"/>
+	<acme:list-column code="manager.project.list-mine.label.$abstract" path="abstractDescription" width="20%"/>
 	<acme:list-column code="manager.project.list-mine.label.cost" path="cost" width="20%"/>
+	<acme:list-column code="manager.project.list-mine.label.draft-mode" path="draftMode" width="20%"/>
 </acme:list>
+	<acme:button code="manager.project.list-mine.button.create" action="/manager/project/create"/>	
 
 

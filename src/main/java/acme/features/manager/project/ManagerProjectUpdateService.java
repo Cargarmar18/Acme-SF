@@ -1,5 +1,5 @@
 /*
- * AdministratorCompanyShowService.java
+ * EmployerDutyUpdateService.java
  *
  * Copyright (C) 2012-2024 Rafael Corchuelo.
  *
@@ -21,7 +21,7 @@ import acme.entities.project.Project;
 import acme.roles.Manager;
 
 @Service
-public class ManagerProjectShowService extends AbstractService<Manager, Project> {
+public class ManagerProjectUpdateService extends AbstractService<Manager, Project> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -33,7 +33,17 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int projectId;
+		Project project;
+		Manager manager;
+
+		projectId = super.getRequest().getData("id", int.class);
+		project = this.repository.findProjectById(projectId);
+		manager = project == null ? null : project.getManager();
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -48,9 +58,30 @@ public class ManagerProjectShowService extends AbstractService<Manager, Project>
 	}
 
 	@Override
-	public void unbind(final Project object) {
+	public void bind(final Project object) {
 		assert object != null;
 
+		super.bind(object, "code", "title", "abstractDescription", "indication", "cost", "link");
+	}
+
+	@Override
+	public void validate(final Project object) {
+		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode() == true, "draftMode", "manager.user-story.form.error.draftMode");
+	}
+
+	@Override
+	public void perform(final Project object) {
+		assert object != null;
+
+		this.repository.save(object);
+	}
+
+	@Override
+	public void unbind(final Project object) {
+		assert object != null;
 		Dataset dataset;
 
 		dataset = super.unbind(object, "code", "title", "abstractDescription", "indication", "cost", "link", "draftMode");

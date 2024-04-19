@@ -14,12 +14,23 @@ manager.project.form.title = Detalles de proyecto
 manager.project.form.label.code = Código
 manager.project.form.label.title = Título
 manager.project.form.label.$abstract = Abstracto
-manager.project.form.label.indication = Indicación
+manager.project.form.label.indication = No tiene errores fatales
 manager.project.form.label.cost = Coste
 manager.project.form.label.link = Enlace
 manager.project.form.button.user-stories = Historias de usuario
+manager.project.form.button.create = Crear
+manager.project.form.button.publish = Publicar
+manager.project.form.button.delete = Eliminar
+manager.project.form.button.update = Editar
+
+manager.project.form.error.duplicated = El código esta tomado
+manager.project.form.error.fatalError = No puede subir un proyecto con errores fatales
+manager.project.form.error.userStoryNotPublished = No puede publicar un proyecto con historias de usuario sin publicar
+manager.project.form.error.noUserStory = No puede publicar un proyecto sin historias de usuario
 
 manager.project.list-mine.label.code = Código
 manager.project.list-mine.label.title = Título
 manager.project.list-mine.label.$abstract = Abstracto
 manager.project.list-mine.label.cost = Coste
+manager.project.list-mine.label.draft-mode = Modo boceto
+manager.project.list-mine.button.create = Crear
