@@ -1,4 +1,6 @@
 
+package acme.features.administrator.banner;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import acme.client.data.accounts.Administrator;
@@ -20,7 +22,7 @@ public class AdministratorBannerDeleteService extends AbstractService<Administra
 		boolean status;
 		int BannerId;
 		Banner Banner;
-		Administrator admin;
+		Administrator admin = null;
 
 		BannerId = super.getRequest().getData("id", int.class);
 		Banner = this.repository.findBannerById(BannerId);
@@ -57,7 +59,7 @@ public class AdministratorBannerDeleteService extends AbstractService<Administra
 	public void perform(final Banner object) {
 		assert object != null;
 
-		Banner Banner;
+		Banner Banner = null;
 
 		this.repository.delete(Banner);
 		this.repository.delete(object);
