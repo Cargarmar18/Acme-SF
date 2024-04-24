@@ -20,7 +20,6 @@ import acme.client.data.accounts.Administrator;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.banner.Banner;
-import acme.roles.Manager;
 
 @Service
 public class AdministratorBannerUpdateService extends AbstractService<Administrator, Banner> {
@@ -38,11 +37,11 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		boolean status;
 		int BannerId;
 		Banner Banner;
-		Manager manager;
+		Administrator admin = null;
 
 		BannerId = super.getRequest().getData("id", int.class);
 		Banner = this.repository.findBannerById(BannerId);
-		// status = Banner != null && Banner.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+		status = Banner != null && super.getRequest().getPrincipal().hasRole(admin);
 
 		super.getResponse();
 	}
@@ -62,15 +61,13 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void bind(final Banner object) {
 		assert object != null;
 
-		super.bind(object, "code", "title", "abstractDescription", "indication", "cost", "link");
+		super.bind(object, "instatiationUpdateMoment", "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
 	}
 
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
 
-		//if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-		// super.state(object.isDraftMode() == true, "draftMode", "manager.user-story.form.error.draftMode");
 	}
 
 	@Override
@@ -85,7 +82,7 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		assert object != null;
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "title", "abstractDescription", "indication", "cost", "link", "draftMode");
+		dataset = super.unbind(object, "instatiationUpdateMoment", "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
 
 		super.getResponse().addData(dataset);
 	}
