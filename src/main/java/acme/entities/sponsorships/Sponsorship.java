@@ -46,10 +46,12 @@ public class Sponsorship extends AbstractEntity {
 	@PastOrPresent
 	private Date				moment;
 
+	//TO DO: start sponsor must be after the instantiationMoment and before the startSponsor 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				startSponsor;
 
+	//TO DO: constraint sponsors should be at least of 1 month long and endSponsor should be after startSponsor (talked in the forum)
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				endSponsor;

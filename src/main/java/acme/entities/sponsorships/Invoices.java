@@ -47,7 +47,7 @@ public class Invoices extends AbstractEntity {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				dueDate;
 
-	// 	TO DO add constraint positive or 0 on money datatype
+	// 	TO DO add constraint positive not 0 on money datatype
 	@NotNull
 	private Money				invoiceQuantity;
 
