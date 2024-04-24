@@ -20,14 +20,21 @@
 	<acme:menu-left>
 		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.45143276A" action="https://ev.us.es/home"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-rodriguez" action="https://ev.us.es/home"/>
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link-castillejo" action="https://bitwarden.com"/>
-			<acme:menu-suboption code="master.menu.authenticated.all-claims" action="/any/claim/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.all-claims" action="/any/claim/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.anonymous.published-projects" action="/any/project/list"/>
+			
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.all-claims" action="/any/claim/list"/>
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.published-projects" action="/any/project/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -56,6 +63,7 @@
 		<acme:menu-option code="master.menu.manager" access="hasRole('Manager')">
 			<acme:menu-suboption code="master.menu.manager.list-mine" action="/manager/project/list-mine"/>
 			<acme:menu-suboption code="master.menu.manager.list-mine2" action="/manager/user-story/list-mine"/>
+			<acme:menu-suboption code="master.menu.manager.show" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
 	</acme:menu-left>
 

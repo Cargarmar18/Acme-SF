@@ -1,0 +1,24 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.manager-dashboard.form.title = Panel de gestor
+
+manager.manager-dashboard.form.label.average-cost-user-stories = Coste promedio de mis historias de usuario
+manager.manager-dashboard.form.label.deviation-cost-user-stories = Desviación de coste de mis historias de usuario
+manager.manager-dashboard.form.label.maximum-cost-user-stories = Máximo coste de mis historias de usuario
+manager.manager-dashboard.form.label.minimum-cost-user-stories = Mínimo coste de mis historias de usuario
+manager.manager-dashboard.form.label.average-cost-projects = Coste promedio de mis proyectos
+manager.manager-dashboard.form.label.deviation-cost-projects = Desviación de coste de mis proyectos
+manager.manager-dashboard.form.label.maximum-cost-projects = Máximo coste de mis proyectos
+manager.manager-dashboard.form.label.minimum-cost-projects = Mínimo coste de mis proyectos
+manager.manager-dashboard.form.label.number-priority-must = Número de historias de usuario con prioridad "must"
+manager.manager-dashboard.form.label.number-priority-could = Número de historias de usuario con prioridad "could"
+manager.manager-dashboard.form.label.number-priority-should = Número de historias de usuario con prioridad "should"
+manager.manager-dashboard.form.label.number-priority-willnot = Número de historias de usuario con prioridad "will not"
