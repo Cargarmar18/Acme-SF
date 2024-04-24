@@ -53,8 +53,6 @@ public class Claim extends AbstractEntity {
 	@Length(max = 100)
 	private String				department;
 
-	private boolean				confirmation;
-
 	@Email
 	private String				email;
 
