@@ -54,6 +54,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.manager = Gestor
 master.menu.manager.list-mine = Lista de mis proyectos
 master.menu.manager.list-mine2 = Lista de mis historias de usuario
+master.menu.manager.show = Panel de gestor
 
 # master.menu.user-account ####################################################
 
