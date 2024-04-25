@@ -49,6 +49,13 @@ master.menu.provider.favourite-link = Enlace favorito
 master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor.sponsorship-list = Listar todos los patrocinios
+master.menu.sponsor.sponsorship-list-mine = Listar mis patrocinios
+master.menu.sponsor.sponsorship-create = Crear un patrocinio
+master.menu.sponsor.sponsorship-list-mine2 = Listar mis facturas
+
 # master.menu.manager ##########################################################
 
 master.menu.manager = Gestor

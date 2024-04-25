@@ -21,7 +21,7 @@
 	<acme:input-textarea code="manager.project.form.label.$abstract" path="abstractDescription"/>
 	<acme:input-checkbox code="manager.project.form.label.indication" path="indication"/>
 	<acme:input-integer code="manager.project.form.label.cost" path="cost"/>			
-	<acme:input-url code="manager.project.form.label.link" path="link" placeholder="example@acme.com"/>
+	<acme:input-url code="manager.project.form.label.link" path="link"/>
 	
 	<jstl:choose>	 	
 		<jstl:when test="${acme:anyOf(_command, 'show|delete|update') && draftMode == true}">

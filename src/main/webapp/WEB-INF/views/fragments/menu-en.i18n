@@ -49,6 +49,14 @@ master.menu.provider.favourite-link = Favourite link
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
 
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsorships
+master.menu.sponsor.sponsorship-list = List all sponsorships
+master.menu.sponsor.sponsorship-list-mine = List my sponsorship
+master.menu.sponsor.sponsorship-create = Create an sponsorship
+master.menu.sponsor.sponsorship-list-mine2 = List my invoices
+
 # master.menu.manager ##########################################################
 
 master.menu.manager = Manager
