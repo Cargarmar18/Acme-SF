@@ -57,6 +57,10 @@
 			<acme:menu-suboption code="master.menu.manager.list-mine" action="/manager/project/list-mine"/>
 			<acme:menu-suboption code="master.menu.manager.list-mine2" action="/manager/user-story/list-mine"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
+			<acme:menu-suboption code="master.menu.developer.list" action="/developer/training-module/list"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
