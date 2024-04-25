@@ -6,13 +6,13 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.trainingModules.TrainingModule;
+import acme.roles.Developer;
 
 @Service
-public class DeveloperTrainingModuleListService extends AbstractService<Any, TrainingModule> {
+public class DeveloperTrainingModuleListService extends AbstractService<Developer, TrainingModule> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -30,21 +30,21 @@ public class DeveloperTrainingModuleListService extends AbstractService<Any, Tra
 	@Override
 	public void load() {
 		Collection<TrainingModule> objects;
+		int developerId;
 
-		objects = this.repository.findAllTrainingModules();
+		developerId = super.getRequest().getPrincipal().getActiveRoleId();
+		objects = this.repository.findManyTrainingModulesByDeveloper(developerId);
 
 		super.getBuffer().addData(objects);
 	}
-
 	@Override
 	public void unbind(final TrainingModule object) {
 		assert object != null;
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "details", "difficultyLevel", "link", "totalTime");
+		dataset = super.unbind(object, "code", "details", "difficultyLevel");
 
 		super.getResponse().addData(dataset);
 	}
-
 }

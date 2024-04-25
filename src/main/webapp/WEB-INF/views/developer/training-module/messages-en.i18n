@@ -1,0 +1,13 @@
+developer.training-module.list.title = Listing of my training modules
+developer.training-module.form.title = Training module details
+
+developer.training-module.form.label.code = Code
+developer.training-module.form.label.creationMoment = Creation moment
+developer.training-module.form.label.details = Details
+developer.training-module.form.label.difficultyLevel = Difficulty level
+developer.training-module.form.label.updateMoment = Update moment
+developer.training-module.form.label.link = Link
+
+developer.training-module.list.label.code = Code
+developer.training-module.list.label.difficultyLevel = Difficulty level
+developer.training-module.list.label.details = Details

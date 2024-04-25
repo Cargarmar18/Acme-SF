@@ -12,17 +12,10 @@ import acme.entities.trainingModules.TrainingModule;
 @Repository
 public interface DeveloperTrainingModuleRepository extends AbstractRepository {
 
-	@Query("select t from training-module t")
-	Collection<TrainingModule> findAllTrainingModules();
+	@Query("select t from TrainingModule t where t.developer.id = :developerId")
+	Collection<TrainingModule> findManyTrainingModulesByDeveloper(int developerId);
 
-	/*
-	 * @Query("select j from Job j where j.id = :id")
-	 * TrainingModule findOneJobById(int id);
-	 * 
-	 * @Query("select j from Job j where j.draftMode = false and j.deadline > :currentMoment")
-	 * Collection<TrainingModule> findManyJobsByAvailability(Date currentMoment);
-	 * 
-	 * @Query("select c from Company c")
-	 * Collection<TrainingModule> findAllContractors();
-	 */
+	@Query("select t from TrainingModule t where t.id = :id")
+	TrainingModule findOneTrainingModuleById(int id);
+
 }
