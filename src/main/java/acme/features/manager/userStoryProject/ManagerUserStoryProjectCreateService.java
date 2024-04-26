@@ -38,7 +38,15 @@ public class ManagerUserStoryProjectCreateService extends AbstractService<Manage
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int masterId;
+		Project project;
+
+		masterId = super.getRequest().getData("masterId", int.class);
+		project = this.repository.findOneProjectById(masterId);
+		status = project != null && super.getRequest().getPrincipal().hasRole(project.getManager()) && project.getManager().getId() == super.getRequest().getPrincipal().getActiveRoleId();
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -73,8 +81,8 @@ public class ManagerUserStoryProjectCreateService extends AbstractService<Manage
 	public void validate(final UserStoryProject object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("project"))
-			super.state(object.getProject().isDraftMode() == true, "indication", "manager.user-story-project.form.error.draftMode");
+		super.state(object.getProject().isDraftMode() == true, "*", "manager.user-story-project.form.error.draftMode");
+
 	}
 
 	@Override

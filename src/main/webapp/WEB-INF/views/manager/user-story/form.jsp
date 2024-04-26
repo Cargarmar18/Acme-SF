@@ -20,7 +20,7 @@
 	<acme:input-textarea code="manager.user-story.form.label.description" path="description"/>
 	<acme:input-integer code="manager.user-story.form.label.cost" path="cost"/>
 	<acme:input-textarea code="manager.user-story.form.label.acceptance-criteria" path="acceptanceCriteria"/>
-	<acme:input-select code="manager.user-story.form.label.priority" path="priority" choices = "${priorities}"/>			
+	<acme:input-select code="manager.user-story.form.label.priority" path="priority" choices="${priorities}"/>			
 	<acme:input-url code="manager.user-story.form.label.link" path="link"/>
 	
 	<jstl:choose>

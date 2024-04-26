@@ -41,7 +41,7 @@ public class ManagerProjectUpdateService extends AbstractService<Manager, Projec
 		projectId = super.getRequest().getData("id", int.class);
 		project = this.repository.findProjectById(projectId);
 		manager = project == null ? null : project.getManager();
-		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager);
+		status = project != null && project.isDraftMode() && super.getRequest().getPrincipal().hasRole(manager) && project.getManager().getId() == super.getRequest().getPrincipal().getActiveRoleId();
 
 		super.getResponse().setAuthorised(status);
 	}
