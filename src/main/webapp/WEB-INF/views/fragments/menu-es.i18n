@@ -58,6 +58,11 @@ master.menu.manager.list-mine = Lista de mis proyectos
 master.menu.manager.list-mine2 = Lista de mis historias de usuario
 master.menu.manager.show = Panel de gestor
 
+# master.menu.developer ##########################################################
+
+master.menu.developer = Desarrollador
+master.menu.developer.list-mine = Lista de mis módulos de entrenamiento
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Cuenta

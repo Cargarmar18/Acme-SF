@@ -59,6 +59,12 @@ master.menu.manager.list-mine = List my projects
 master.menu.manager.list-mine2 = List my users stories
 master.menu.manager.show = Manager dashboard
 
+# master.menu.developer ##########################################################
+
+master.menu.developer = Developer
+master.menu.developer.list-mine = List my training modules
+
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account
