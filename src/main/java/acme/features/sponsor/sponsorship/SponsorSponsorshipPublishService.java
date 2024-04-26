@@ -41,18 +41,17 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 	@Override
 	public void authorise() {
-		boolean status;
+		boolean drafted;
 		int id;
 		Sponsor sponsor;
 		Sponsorship sponsorship;
 
 		id = super.getRequest().getData("id", int.class);
 		sponsorship = this.repository.findOneSponsorshipById(id);
-
 		sponsor = sponsorship == null ? null : sponsorship.getSponsor();
-		status = sponsorship != null && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsor);
+		drafted = sponsorship != null && sponsorship.isDraftMode() && super.getRequest().getPrincipal().hasRole(sponsor);
 
-		super.getResponse().setAuthorised(status);
+		super.getResponse().setAuthorised(drafted);
 	}
 
 	@Override
@@ -72,14 +71,14 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	@Override
 	public void bind(final Sponsorship object) {
 		assert object != null;
-		super.bind(object, "published");
+		super.bind(object, "draftMode");
 	}
 
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("published")) {
+		if (!super.getBuffer().getErrors().hasErrors("draftMode")) {
 			Double amount = object.getAmount().getAmount();
 			Double total = 0.0;
 			Collection<Invoice> invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
@@ -87,7 +86,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 				if (!invoice.isDraftMode())
 					total += invoice.getInvoiceQuantity().getAmount();
 
-			super.state(amount.equals(total), "published", "sponsor.sponsorship.form.error.amount");
+			super.state(amount.equals(total), "draftMode", "sponsor.sponsorship.form.error.amount");
 		}
 
 	}
@@ -103,17 +102,17 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	public void unbind(final Sponsorship object) {
 		assert object != null;
 		Dataset dataset;
-		SelectChoices choices;
+		SelectChoices sponsorshipTypes;
 		SelectChoices projects;
 
 		Collection<Project> unpublishedProjects = this.repository.findAllDraftModeProjects();
 		projects = SelectChoices.from(unpublishedProjects, "code", object.getProject());
 
-		choices = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
+		sponsorshipTypes = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 
 		dataset = super.unbind(object, "code", "moment", "startDate", "endDate", "type", "amount", "email", "link", "published");
-		dataset.put("types", choices);
 
+		dataset.put("types", sponsorshipTypes);
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);
 

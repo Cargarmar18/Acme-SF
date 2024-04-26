@@ -30,6 +30,9 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select s from Sponsorship s where s.sponsor.id = :sponsorId")
 	Collection<Sponsorship> findManySponsorshipsBySponsorId(int sponsorId);
 
+	@Query("select s from Sponsorship s where s.code = :code")
+	Sponsorship findOneSponsorshipByCode(String code);
+
 	@Query("select s from Sponsorship s where s.id = :id")
 	Sponsorship findSponsorshipById(int id);
 
@@ -39,19 +42,16 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select s from Sponsor s where s.id = :id")
 	Sponsor findOneSponsorById(int id);
 
-	@Query("select s from Sponsorship s where s.code = :code")
-	Sponsorship findOneSponsorshipByCode(String code);
-
 	@Query("select p from Project p where p.draftMode = true")
 	Collection<Project> findAllDraftModeProjects();
 
 	@Query("select p from Project p where p.id = :projectId")
 	Project findOneProjectById(int projectId);
 
-	@Query("SELECT COUNT(i) FROM Invoice i WHERE i.sponsorship.id = :id AND i.draftMode = false")
-	int countFinishedInvoicesBySponsorshipId(@Param("id") int id);
-
 	@Query("select i from Invoice i where i.sponsorship.id = :id")
 	Collection<Invoice> findAllInvoicesBySponsorshipId(int id);
+
+	@Query("SELECT COUNT(i) FROM Invoice i WHERE i.sponsorship.id = :id AND i.draftMode = false")
+	int countFinishedInvoicesBySponsorshipId(@Param("id") int id);
 
 }

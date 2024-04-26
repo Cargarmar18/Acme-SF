@@ -65,17 +65,17 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	public void bind(final Sponsorship object) {
 		assert object != null;
 
-		super.bind(object, "code", "moment", "startDate", "endDate", "amount", "email", "link", "published");
+		super.bind(object, "code", "moment", "startDate", "endDate", "amount", "email", "link", "draftMode");
 	}
 
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
 		if (!super.getBuffer().getErrors().hasErrors("published"))
-			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.published");
+			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 
 		if (!super.getBuffer().getErrors().hasErrors("published"))
-			super.state(this.repository.countFinishedInvoicesBySponsorshipId(object.getId()) == 0, "published", "sponsor.sponsorship.form.error.deleteWithPublishedInvoices");
+			super.state(this.repository.countFinishedInvoicesBySponsorshipId(object.getId()) == 0, "draftMode", "sponsor.sponsorship.form.error.deleteWithPublishedInvoices");
 	}
 
 	@Override

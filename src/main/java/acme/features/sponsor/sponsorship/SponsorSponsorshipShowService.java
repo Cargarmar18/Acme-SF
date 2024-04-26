@@ -63,19 +63,20 @@ public class SponsorSponsorshipShowService extends AbstractService<Sponsor, Spon
 	@Override
 	public void unbind(final Sponsorship object) {
 		assert object != null;
-
 		Dataset dataset;
-		SelectChoices choices;
+		SelectChoices sponsorshipTypes;
 		SelectChoices projects;
 
-		choices = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
+		sponsorshipTypes = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
+
 		Collection<Project> unpublishedProjects = this.repository.findAllDraftModeProjects();
 		projects = SelectChoices.from(unpublishedProjects, "code", object.getProject());
 
 		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo", "draftMode");
+
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);
-		dataset.put("sponsorshipType", choices);
+		dataset.put("sponsorshipTypes", sponsorshipTypes);
 
 		super.getResponse().addData(dataset);
 	}

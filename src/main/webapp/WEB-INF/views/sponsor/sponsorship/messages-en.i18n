@@ -12,8 +12,8 @@ sponsor.sponsorship.list.title = Listing of my sponsorships
 sponsor.sponsorship.form.title = sponsorship details
 
 sponsor.sponsorship.form.label.code = Code
-sponsor.sponsorship.form.label.title = Title
-sponsor.sponsorship.form.label.$abstract = Abstract
+sponsor.sponsorship.form.label.moment = Instatiation moment
+sponsor.sponsorship.form.label.amount = Amount of the sponsorship
 sponsor.sponsorship.form.label.indication = Doesn't have fatal errors
 sponsor.sponsorship.form.label.cost = Cost
 sponsor.sponsorship.form.label.link = Link
@@ -28,9 +28,7 @@ sponsor.sponsorship.form.error.fatalError = Cannot publish a sponsorship with fa
 sponsor.sponsorship.form.error.userStoryNotPublished = You cannot publish a sponsorship with unpublished user stories
 sponsor.sponsorship.form.error.noUserStory =  You cannot publish a sponsorship without user stories
 
-sponsor.sponsorship.list-mine.label.code = Code
-sponsor.sponsorship.list-mine.label.title = Title
-sponsor.sponsorship.list-mine.label.$abstract = Abstract
-sponsor.sponsorship.list-mine.label.cost = Cost
-sponsor.sponsorship.list-mine.label.draft-mode = Draft mode
-sponsor.sponsorship.list-mine.button.create = Create
+sponsor.sponsorship.list.label.code = Code
+sponsor.sponsorship.list.label.moment = Instatiation moment
+sponsor.sponsorship.list.label.amount = Amount of the sponsorship
+sponsor.sponsorship.list.label.draft-mode = Draft mode
