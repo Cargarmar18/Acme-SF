@@ -16,7 +16,13 @@
 <%@taglib prefix="acme" uri="http://acme-framework.org/"%>
 
 <acme:list>
-	<acme:list-column code="developer.trainingModule.list.label.code" path="code" width="10%"/>
-	<acme:list-column code="developer.trainingModule.list.label.difficultyLevel" path="difficultyLevel" width="10%"/>
-	<acme:list-column code="developer.trainingModule.list.label.details" path="details" width="80%"/>		
+	<acme:list-column code="developer.training-module.list-mine.label.code" path="code" width="10%"/>
+	<acme:list-column code="developer.training-module.list-mine.label.difficultyLevel" path="difficultyLevel" width="10%"/>
+	<acme:list-column code="developer.training-module.list-mine.label.totalTime" path="totalTime" width="10%"/>
+	<acme:list-column code="developer.training-module.list-mine.label.draftMode" path="draftMode" width="10%"/>
+	<acme:list-column code="developer.training-module.list-mine.label.details" path="details" width="60%"/>		
 </acme:list>
+
+<jstl:if test="${_command == 'list-mine'}">
+	<acme:button code="developer.training-module.list-mine.button.create" action="/developer/training-module/create"/>		
+</jstl:if>

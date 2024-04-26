@@ -15,17 +15,23 @@ public class DeveloperTrainingModuleController extends AbstractController<Develo
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private DeveloperTrainingModuleListService	listService;
+	private DeveloperTrainingModuleListMineService	listMineService;
 
 	@Autowired
-	private DeveloperTrainingModuleShowService	showService;
+	private DeveloperTrainingModuleShowService		showService;
+
+	@Autowired
+	private DeveloperTrainingModuleCreateService	createService;
 
 	// Constructors -----------------------------------------------------------
 
 
 	@PostConstruct
 	protected void initialise() {
-		super.addBasicCommand("list", this.listService);
 		super.addBasicCommand("show", this.showService);
+		super.addBasicCommand("create", this.createService);
+
+		super.addCustomCommand("list-mine", "list", this.listMineService);
+
 	}
 }

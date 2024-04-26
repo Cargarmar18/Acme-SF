@@ -58,7 +58,7 @@ master.menu.manager.list-mine2 = Lista de mis historias de usuario
 # master.menu.developer ##########################################################
 
 master.menu.developer = Desarrollador
-master.menu.developer.list = Lista de mis módulos de entrenamiento
+master.menu.developer.list-mine = Lista de mis módulos de entrenamiento
 
 # master.menu.user-account ####################################################
 

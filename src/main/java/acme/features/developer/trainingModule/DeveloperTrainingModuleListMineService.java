@@ -12,7 +12,7 @@ import acme.entities.trainingModules.TrainingModule;
 import acme.roles.Developer;
 
 @Service
-public class DeveloperTrainingModuleListService extends AbstractService<Developer, TrainingModule> {
+public class DeveloperTrainingModuleListMineService extends AbstractService<Developer, TrainingModule> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -43,7 +43,7 @@ public class DeveloperTrainingModuleListService extends AbstractService<Develope
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "code", "details", "difficultyLevel");
+		dataset = super.unbind(object, "code", "details", "difficultyLevel", "totalTime", "draftMode");
 
 		super.getResponse().addData(dataset);
 	}

@@ -58,7 +58,7 @@ master.menu.manager.list-mine2 = List my users stories
 # master.menu.developer ##########################################################
 
 master.menu.developer = Developer
-master.menu.developer.list = List my training modules
+master.menu.developer.list-mine = List my training modules
 
 
 # master.menu.user-account ####################################################

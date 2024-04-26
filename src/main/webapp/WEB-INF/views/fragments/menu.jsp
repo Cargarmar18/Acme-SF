@@ -59,7 +59,7 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
-			<acme:menu-suboption code="master.menu.developer.list" action="/developer/training-module/list"/>
+			<acme:menu-suboption code="master.menu.developer.list-mine" action="/developer/training-module/list-mine"/>
 		</acme:menu-option>
 	</acme:menu-left>
 
