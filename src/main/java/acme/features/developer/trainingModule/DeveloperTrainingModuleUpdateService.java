@@ -2,21 +2,22 @@
 package acme.features.developer.trainingModule;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
 import acme.entities.trainingModules.DifficultyLevel;
 import acme.entities.trainingModules.TrainingModule;
-import acme.entities.trainingModules.TrainingSession;
 import acme.roles.Developer;
 
 @Service
-public class DeveloperTrainingModuleDeleteService extends AbstractService<Developer, TrainingModule> {
+public class DeveloperTrainingModuleUpdateService extends AbstractService<Developer, TrainingModule> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -29,12 +30,14 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	@Override
 	public void authorise() {
 		boolean status;
-		int id;
+		int trainingModuleId;
 		TrainingModule trainingModule;
+		Developer developer;
 
-		id = super.getRequest().getData("id", int.class);
-		trainingModule = this.repository.findOneTrainingModuleById(id);
-		status = trainingModule != null && trainingModule.isDraftMode() && super.getRequest().getPrincipal().hasRole(trainingModule.getDeveloper());
+		trainingModuleId = super.getRequest().getData("id", int.class);
+		trainingModule = this.repository.findOneTrainingModuleById(trainingModuleId);
+		developer = trainingModule == null ? null : trainingModule.getDeveloper();
+		status = trainingModule != null && trainingModule.isDraftMode() && super.getRequest().getPrincipal().hasRole(developer);
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -54,23 +57,26 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	public void bind(final TrainingModule object) {
 		assert object != null;
 
-		super.unbind(object, "code", "creationMoment", "details", "difficultyLevel", "updateMoment", "link", "totalTime", "project");
+		super.bind(object, "code", "details", "difficultyLevel", "link", "totalTime", "project");
 	}
 
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftMode");
 	}
 
 	@Override
 	public void perform(final TrainingModule object) {
 		assert object != null;
+		Date update;
 
-		Collection<TrainingSession> trainingSessions;
+		update = MomentHelper.getCurrentMoment();
 
-		trainingSessions = this.repository.findTrainingSessionsByTrainingModuleId(object.getId());
-		this.repository.deleteAll(trainingSessions);
-		this.repository.delete(object);
+		object.setUpdateMoment(update);
+		this.repository.save(object);
 	}
 
 	@Override
