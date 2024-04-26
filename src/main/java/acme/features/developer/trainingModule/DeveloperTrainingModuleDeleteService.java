@@ -31,10 +31,12 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 		boolean status;
 		int id;
 		TrainingModule trainingModule;
+		Developer developer;
 
 		id = super.getRequest().getData("id", int.class);
 		trainingModule = this.repository.findOneTrainingModuleById(id);
-		status = trainingModule != null && trainingModule.isDraftMode() && super.getRequest().getPrincipal().hasRole(trainingModule.getDeveloper());
+		developer = trainingModule == null ? null : trainingModule.getDeveloper();
+		status = trainingModule != null && trainingModule.isDraftMode() && super.getRequest().getPrincipal().hasRole(developer) && developer.getId() == super.getRequest().getPrincipal().getActiveRoleId();
 
 		super.getResponse().setAuthorised(status);
 	}
