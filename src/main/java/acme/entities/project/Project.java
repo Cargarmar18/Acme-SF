@@ -44,7 +44,7 @@ public class Project extends AbstractEntity {
 
 	private boolean				indication;
 
-	@Range(min = 0, max = 2000)
+	@Range(min = 1, max = 2000)
 	private int					cost;
 
 	@URL

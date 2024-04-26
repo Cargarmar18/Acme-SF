@@ -1,5 +1,5 @@
 /*
- * EmployerDutyListService.java
+ * WorkerDutyListService.java
  *
  * Copyright (C) 2012-2024 Rafael Corchuelo.
  *
@@ -10,26 +10,25 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.manager.userStory;
+package acme.features.any.project;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.client.data.accounts.Any;
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.Project;
-import acme.entities.project.UserStory;
-import acme.roles.Manager;
 
 @Service
-public class ManagerUserStoryListService extends AbstractService<Manager, UserStory> {
+public class AnyProjectListService extends AbstractService<Any, Project> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private ManagerUserStoryRepository repository;
+	private AnyProjectRepository repository;
 
 	// AbstractService interface ----------------------------------------------
 
@@ -41,40 +40,21 @@ public class ManagerUserStoryListService extends AbstractService<Manager, UserSt
 
 	@Override
 	public void load() {
-		Collection<UserStory> objects;
-		int masterId;
+		Collection<Project> object;
+		object = this.repository.findManyProjectsNotDraft();
 
-		masterId = super.getRequest().getData("masterId", int.class);
-		objects = this.repository.findManyUserStoriesByMasterId(masterId);
-
-		super.getBuffer().addData(objects);
+		super.getBuffer().addData(object);
 	}
 
 	@Override
-	public void unbind(final UserStory object) {
+	public void unbind(final Project object) {
 		assert object != null;
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "title", "description", "cost", "draftMode");
+		dataset = super.unbind(object, "code", "title", "abstractDescription", "cost", "draftMode");
 
 		super.getResponse().addData(dataset);
-	}
-
-	@Override
-	public void unbind(final Collection<UserStory> objects) {
-		assert objects != null;
-
-		int masterId;
-		Project project;
-		final boolean showCreate;
-
-		masterId = super.getRequest().getData("masterId", int.class);
-		project = this.repository.findOneProjectById(masterId);
-		showCreate = super.getRequest().getPrincipal().hasRole(project.getManager());
-
-		super.getResponse().addGlobal("masterId", masterId);
-		super.getResponse().addGlobal("showCreate", showCreate);
 	}
 
 }

@@ -22,12 +22,14 @@ master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.45143276A = 45143276A: García Martínez, Carlos
 master.menu.anonymous.favourite-link-rodriguez = 53962032F: Rodríguez Millán, María C.
 master.menu.anonymous.favourite-link-castillejo = 77874609J: Castillejo Vela, Manuel
-
+master.menu.anonymous.all-claims = Todas las reclamaciones
+master.menu.anonymous.published-projects = Proyectos publicados
 
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autentificado
 master.menu.authenticated.all-claims = Todas las reclamaciones
+master.menu.authenticated.published-projects = Proyectos publicados
 
 # master.menu.administrator ###################################################
 
@@ -54,6 +56,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.manager = Gestor
 master.menu.manager.list-mine = Lista de mis proyectos
 master.menu.manager.list-mine2 = Lista de mis historias de usuario
+master.menu.manager.show = Panel de gestor
 
 # master.menu.developer ##########################################################
 

@@ -35,7 +35,7 @@ public class UserStory extends AbstractEntity {
 	@Length(max = 100)
 	private String				description;
 
-	@Range(min = 0, max = 200)
+	@Range(min = 1, max = 200)
 	private int					cost;
 
 	@NotBlank

@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
+import acme.entities.project.PriorityStatus;
 import acme.entities.project.UserStory;
 import acme.roles.Manager;
 
@@ -33,7 +35,17 @@ public class ManagerUserStoryShowService extends AbstractService<Manager, UserSt
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		boolean status;
+		int userStoryId;
+		UserStory userStory;
+		Manager manager;
+
+		userStoryId = super.getRequest().getData("id", int.class);
+		userStory = this.repository.findUserStoryById(userStoryId);
+		manager = userStory == null ? null : userStory.getManager();
+		status = userStory != null && super.getRequest().getPrincipal().hasRole(manager) && manager.getId() == super.getRequest().getPrincipal().getActiveRoleId();
+
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -50,10 +62,13 @@ public class ManagerUserStoryShowService extends AbstractService<Manager, UserSt
 	@Override
 	public void unbind(final UserStory object) {
 		assert object != null;
-
+		SelectChoices choices;
 		Dataset dataset;
 
+		choices = SelectChoices.from(PriorityStatus.class, object.getPriority());
+
 		dataset = super.unbind(object, "title", "description", "cost", "acceptanceCriteria", "priority", "link", "draftMode");
+		dataset.put("priorities", choices);
 
 		super.getResponse().addData(dataset);
 	}
