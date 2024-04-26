@@ -17,3 +17,5 @@ developer.training-module.list-mine.label.draftMode = Borrador
 
 developer.training-module.form.button.create = Crear
 developer.training-module.form.button.create = Crear
+developer.training-module.form.button.update = Actualizar
+developer.training-module.form.button.delete = Eliminar

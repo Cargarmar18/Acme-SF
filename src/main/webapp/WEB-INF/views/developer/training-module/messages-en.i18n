@@ -18,3 +18,5 @@ developer.training-module.list-mine.label.draftMode = Draft
 
 developer.training-module.form.button.create = Create
 developer.training-module.list-mine.button.create = Create
+developer.training-module.form.button.update = Update
+developer.training-module.form.button.delete = Delete
