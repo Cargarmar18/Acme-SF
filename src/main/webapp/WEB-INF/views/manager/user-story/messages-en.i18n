@@ -21,6 +21,7 @@ manager.user-story.form.label.draft-mode = Draft mode
 manager.user-story.form.button.publish = Publish
 manager.user-story.form.button.create = Create
 manager.user-story.form.button.delete = Delete
+manager.user-story.form.button.update = Update
 
 manager.user-story.form.error.draftMode = The user story cannot be deleted as it is not in draft mode
 

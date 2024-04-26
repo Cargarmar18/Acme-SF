@@ -27,5 +27,8 @@ public interface AnyProjectRepository extends AbstractRepository {
 	Collection<Project> findManyProjectsNotDraft();
 
 	@Query("select p from Project p where p.id = :id")
+	Project findOneProjectById(int id);
+
+	@Query("select p from Project p where p.id = :id")
 	Project findProjectById(int id);
 }

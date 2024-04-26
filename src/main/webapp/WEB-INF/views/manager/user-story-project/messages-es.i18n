@@ -14,5 +14,4 @@ manager.user-story-project.form.label.project = Proyecto
 manager.user-story-project.form.label.user-story = Historia de usuario
 manager.user-story-project.form.button.create = Crear
 manager.user-story-project.form.button.delete = Eliminar
-
 manager.user-story-project.form.error.draftMode = El proyecto no esta en modo boceto

@@ -21,6 +21,7 @@ manager.user-story.form.label.draft-mode = Modo boceto
 manager.user-story.form.button.publish = Publicar
 manager.user-story.form.button.create = Crear
 manager.user-story.form.button.delete = Borrar
+manager.user-story.form.button.update = Actualizar
 
 manager.user-story.form.error.draftMode = La historia de usuario no se puede eliminar puesto que no esta en modo boceto
 
