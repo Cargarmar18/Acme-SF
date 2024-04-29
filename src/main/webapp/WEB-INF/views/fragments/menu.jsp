@@ -73,6 +73,13 @@
 			<acme:menu-suboption code="master.menu.manager.list-mine2" action="/manager/user-story/list-mine"/>
 			<acme:menu-suboption code="master.menu.manager.show" action="/manager/manager-dashboard/show"/>
 		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.developer" access="hasRole('Developer')">
+			<acme:menu-suboption code="master.menu.developer.list-mine" action="/developer/training-module/list-mine"/>
+			<acme:menu-suboption code="master.menu.developer.list-mine2" action="/developer/training-session/list-mine"/>
+			<acme:menu-suboption code="master.menu.developer.show" action="/developer/developer-dashboard/show"/>
+			
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
