@@ -60,6 +60,18 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+
+		Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			TrainingModule codeValid;
+
+			codeValid = this.repository.findOneTrainingModuleByCode(object.getCode());
+			super.state(codeValid == null, "code", "developer.training-module.form.error.duplicated");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("creationMoment"))
+			super.state(MomentHelper.isAfter(object.getCreationMoment(), lowerLimit), "creationMoment", "developer.training-module.form.error.creationMomentBeforeLowerLimit");
 	}
 
 	@Override
