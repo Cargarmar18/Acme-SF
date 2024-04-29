@@ -1,0 +1,36 @@
+developer.training-session.list.title = Listing of my training sessions
+developer.training-session.form.title = Training session details
+
+developer.training-session.list-mine.label.code = Code
+developer.training-session.list-mine.label.location = Location
+developer.training-session.list-mine.label.instructor = Instructor
+developer.training-session.list-mine.label.draftMode = Draft mode
+
+
+developer.training-session.form.label.code = Code
+developer.training-session.form.label.beginningMoment = Beginning moment
+developer.training-session.form.label.endMoment = End moment
+developer.training-session.form.label.location = Location
+developer.training-session.form.label.instructor = Instructor
+developer.training-session.form.label.contactEmail = Contact email
+developer.training-session.form.label.link = Link (optional)
+developer.training-session.form.label.trainingModule = Training module's code
+
+
+developer.training-session.list-mine.button.create = Create
+
+developer.training-session.form.button.create = Create
+developer.training-session.form.button.update = Update
+developer.training-session.form.button.delete = Delete
+developer.training-session.form.button.publish = Publish
+
+developer.training-session.form.error.duplicated = This code already exists
+developer.training-session.form.error.beginningMomentAfterCreationMoment = The beginning moment must be at least one week after the training module's creation
+developer.training-session.form.error.beginningMomentAfterLowerLimit = The beginning moment must be after 2000/01/01 00:00
+developer.training-session.form.error.draftModePublish = You cannot publish an already published training session
+developer.training-session.form.error.endMomentAfterBeginningMoment = The end moment must be at least one week after the beginning moment
+developer.training-session.form.error.endMomentBeforeUpperLimit = The end moment must be before 2200/12/31 23:59
+developer.training-session.form.error.beginningMomentBeforeLimit = The beginning moment must be before 2200/12/24 23:59
+developer.training-session.form.error.draftMode = This training session cannot be deleted nor updated once published
+developer.training-session.form.error.cannotPublishSessionsInPublishedModules = Training sessions cannot be published into already published training modules
+developer.training-session.form.error.cannotLinkSessionsToAlreadyPublishedModules = Training sessions cannot be assigned to already published training modules

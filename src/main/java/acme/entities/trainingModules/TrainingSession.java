@@ -32,7 +32,7 @@ public class TrainingSession extends AbstractEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Pattern(regexp = "^TS-[A-Z]{1,3}-[0-9]{3}$", message = "{validation.traininSession.reference}")
+	@Pattern(regexp = "^TS-[A-Z]{1,3}-[0-9]{3}$", message = "{validation.trainingSession.reference}")
 	private String				code;
 
 	@NotNull

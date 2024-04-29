@@ -20,13 +20,14 @@ developer.training-module.form.button.create = Crear
 developer.training-module.form.button.update = Actualizar
 developer.training-module.form.button.delete = Eliminar
 developer.training-module.form.button.publish = Publicar
+developer.training-module.form.button.training-sessions = Sesiones de entrenamiento
 
 
 developer.training-module.form.error.draftMode = Este módulo de entrenamiento no puede ser eliminado ni editado una vez publicado
 developer.training-module.form.error.duplicated = Este código ya existe
-developer.training-module.form.error.creationMomentBeforeLowerLimit = La fecha de creación no puede ser antes de: 2000/01/01 00:00
+developer.training-module.form.error.creationMomentBeforeLowerLimit = La fecha de creación no puede ser antes de: 01/01/2000 00:00
 developer.training-module.form.error.updateMomentAfterCreationMoment = La fecha de actualización debe ser después de la fecha de creación
-developer.training-module.form.error.updateMomentBeforeLowerLimit = La fecha de actualización no puede ser antes de: 2000/01/01 00:00
+developer.training-module.form.error.updateMomentBeforeLowerLimit = La fecha de actualización no puede ser antes de: 01/01/2000 00:00
 developer.training-module.form.error.draftModePublish = Un módulo de entrenamiento ya publicado no puede ser publicado
 developer.training-module.form.error.minimumOneTrainingSession = Un módulo de entrenamiento no puede ser publicado sin tener, al menos, una sesión de entrenamiento
 developer.training-module.form.error.cannotPublishWithDraftTrainingSession = Un módulo de entrenamiento no puede ser publicado teniendo alguna sesión de entrenamiento en modo borrador

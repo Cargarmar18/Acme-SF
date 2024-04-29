@@ -3,7 +3,6 @@ package acme.features.developer.trainingModule;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Objects;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,15 +69,13 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule codeValid;
-			TrainingModule current;
 
-			current = this.repository.findOneTrainingModuleById(object.getId());
 			codeValid = this.repository.findOneTrainingModuleByCode(object.getCode());
-			super.state(codeValid == null || Objects.equals(object.getId(), current.getId()), "code", "developer.training-module.form.error.duplicated");
+			super.state(codeValid == null || codeValid.equals(object), "code", "developer.training-module.form.error.duplicated");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode() == false, "draftMode", "developer.training-module.form.error.draftModePublish");
+			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftModePublish");
 
 		if (object.getUpdateMoment() != null) {
 			if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
