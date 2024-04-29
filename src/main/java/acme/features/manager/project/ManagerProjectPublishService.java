@@ -81,6 +81,15 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		userStory = this.repository.findOneUserStoryInProject(object.getId());
 		super.state(userStory != null, "*", "manager.project.form.error.noUserStory");
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Project codeValid;
+			Project originalCode;
+
+			codeValid = this.repository.findOneProjectByCode(object.getCode());
+			originalCode = this.repository.findOneProjectById(object.getId());
+			super.state(codeValid == null || codeValid.getCode() == originalCode.getCode(), "code", "manager.project.form.error.duplicated");
+		}
+
 	}
 
 	@Override
