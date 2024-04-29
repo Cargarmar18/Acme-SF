@@ -28,7 +28,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Invoices extends AbstractEntity {
+public class Invoice extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
@@ -59,6 +59,8 @@ public class Invoices extends AbstractEntity {
 	@URL
 	private String				link;
 
+	private boolean				draftMode;
+
 	// Derived attributes -----------------------------------------------------
 
 
@@ -81,4 +83,5 @@ public class Invoices extends AbstractEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Sponsorship sponsorship;
+
 }
