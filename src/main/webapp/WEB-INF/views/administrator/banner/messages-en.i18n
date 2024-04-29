@@ -5,6 +5,7 @@ administrator.banner.form.title = Banner form
 administrator.banner.list.title = Listing of Banners
 
 
+administrator.banner.form.label.instantiationUpdateMoment = Instatiation or Update moment
 administrator.banner.form.label.startDisplay = Start display:
 administrator.banner.form.label.endDisplay = End display:
 administrator.banner.form.label.pictureLink = Picture link:
@@ -12,10 +13,12 @@ administrator.banner.form.label.slogan = Slogan:
 administrator.banner.form.label.targetLink = Target link:
 administrator.banner.form.label.confirmation = Confirm that the banner is correct
 
+
 administrator.banner.form.button.create = Create
 administrator.banner.list.button.create = Create
 administrator.banner.form.button.update = Update
 administrator.banner.form.button.delete = Delete
+
 
 administrator.banner.list.label.instatiationUpdateMoment = Instatiation or Update moment
 administrator.banner.list.label.startDisplay = Start display
