@@ -24,3 +24,11 @@ developer.training-module.form.button.publish = Publish
 
 
 developer.training-module.form.error.draftMode = This training module cannot be deleted nor updated once published
+developer.training-module.form.error.duplicated = This code already exists
+developer.training-module.form.error.creationMomentBeforeLowerLimit = The creation moment cannot be before 2000/01/01 00:00
+developer.training-module.form.error.updateMomentAfterCreationMoment = The update moment must be after the creation moment
+developer.training-module.form.error.updateMomentBeforeLowerLimit = The update moment cannot be before 2000/01/01 00:00
+developer.training-module.form.error.draftModePublish = An already published training module cannot be published
+developer.training-module.form.error.minimumOneTrainingSession = A training module cannot be published without having at least one training session
+developer.training-module.form.error.cannotPublishWithDraftTrainingSession = A training module cannot be published with any training sessions in draft mode
+
