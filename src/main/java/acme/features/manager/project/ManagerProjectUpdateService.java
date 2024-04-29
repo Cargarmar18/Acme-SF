@@ -70,6 +70,15 @@ public class ManagerProjectUpdateService extends AbstractService<Manager, Projec
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode() == true, "draftMode", "manager.user-story.form.error.draftMode");
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Project codeValid;
+			Project originalCode;
+
+			codeValid = this.repository.findOneProjectByCode(object.getCode());
+			originalCode = this.repository.findOneProjectById(object.getId());
+			super.state(codeValid == null || codeValid.getCode() == originalCode.getCode(), "code", "manager.project.form.error.duplicated");
+		}
 	}
 
 	@Override
