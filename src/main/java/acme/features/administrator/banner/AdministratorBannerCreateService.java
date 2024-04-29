@@ -45,11 +45,11 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	@Override
 	public void load() {
 		Banner object;
-		Date moment;
-
-		moment = MomentHelper.getCurrentMoment();
 
 		object = new Banner();
+
+		Date moment;
+		moment = MomentHelper.getCurrentMoment();
 		object.setInstatiationUpdateMoment(moment);
 
 		super.getBuffer().addData(object);
@@ -59,7 +59,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void bind(final Banner object) {
 		assert object != null;
 
-		super.bind(object, "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
+		super.bind(object, "instantiationUpdateMoment", "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
 	}
 
 	@Override

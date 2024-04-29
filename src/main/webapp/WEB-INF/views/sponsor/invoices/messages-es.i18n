@@ -1,0 +1,34 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+sponsor.invoices.list.title = Listado de mis facturas
+sponsor.invoices.form.title = Detalles de las facturas:
+
+sponsor.invoices.form.label.code = Código:
+sponsor.invoices.form.label.registrationTime = Fech de registro:
+sponsor.invoices.form.label.dueDate = Fecha de vencimiento:
+sponsor.invoices.form.label.invoiceQuantity = Cantidad de la factura:
+sponsor.invoices.form.label.tax = Tasa:
+sponsor.invoices.form.label.link = Enlace:
+sponsor.invoices.form.button.create = Crear
+sponsor.invoices.form.button.publish = Publicar
+sponsor.invoices.form.button.delete = Borrar
+sponsor.invoices.form.button.update = Actualizar
+
+sponsor.invoices.form.error.duplicated = El código ya está en uso
+sponsor.invoices.form.error.fatalError = No puedes publicar facturas con error fatal.
+
+sponsor.invoices.list-mine.label.code = Código
+sponsor.invoices.list-mine.label.registrationTime = Registration timeFech de registro
+sponsor.invoices.list-mine.label.dueDate = Fecha de vencimiento
+sponsor.invoices.list-mine.label.invoiceQuantity = Cantidad de la factura
+sponsor.invoices.list-mine.label.tax = Tasa
+sponsor.invoices.list-mine.label.link = Enlace
+sponsor.invoices.list-mine.label.draft-mode = Modo boceto
+sponsor.invoices.list-mine.button.create = Crear

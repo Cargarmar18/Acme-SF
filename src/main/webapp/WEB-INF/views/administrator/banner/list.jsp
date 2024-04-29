@@ -7,7 +7,6 @@
 
 
 <acme:list>
-	<acme:list-column code="administrator.banner.list.label.instatiationUpdateMoment" path="instatiationUpdateMoment" width="10%"/>
 	<acme:list-column code="administrator.banner.list.label.startDisplay" path="startDisplay" width="10%"/>
 	<acme:list-column code="administrator.banner.list.label.endDisplay" path="endDisplay" width="10%"/>	
 	<acme:list-column code="administrator.banner.list.label.pictureLink" path="pictureLink" width="20%"/>

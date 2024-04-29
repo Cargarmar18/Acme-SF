@@ -1,3 +1,4 @@
+src/main/webapp/WEB-INF/resources/sample-data/invoices.csv
 key,code,registrationTime,dueDate,invoiceQuantity,tax,link,key:sponsorship
 invoice-01,IN-0001-0001,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,https://example.com/invoices,sponsorship-01
 invoice-02,IN-9999-9999,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,https://example.com/invoices,sponsorship-01

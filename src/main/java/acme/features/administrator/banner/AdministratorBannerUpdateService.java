@@ -38,6 +38,7 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 
 	@Override
 	public void authorise() {
+
 		boolean status;
 		int BannerId;
 		Banner Banner;
@@ -47,6 +48,7 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		status = Banner != null;
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
