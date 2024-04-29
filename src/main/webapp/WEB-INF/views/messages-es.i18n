@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-validation.traininSession.reference    = El código debe seguir el patrón TS-XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9)
+validation.trainingSession.reference    = El código debe seguir el patrón TS-XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9)
 validation.trainingModule.reference    = El código debe seguir el patrón XXX-YYY, donde XXX son 1, 2 o 3 letras (A-Z) e YYY son tres números (0-9)
 
 validation.Sponsorship.reference    = El código debe seguir el patrón XXX-YYY , donde XXX son 1,2 o 3 letras (A-Z) e YYY son tres números (0-9)

@@ -67,12 +67,10 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule codeValid;
-			TrainingModule current;
 
 			codeValid = this.repository.findOneTrainingModuleByCode(object.getCode());
-			current = this.repository.findOneTrainingModuleByCode(object.getCode());
 
-			super.state(codeValid == null || current.equals(object), "code", "developer.training-module.form.error.duplicated");
+			super.state(codeValid == null || codeValid.equals(object), "code", "developer.training-module.form.error.duplicated");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftMode");

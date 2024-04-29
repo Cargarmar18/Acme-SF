@@ -20,7 +20,11 @@
 		<jstl:when test="${acme:anyOf(_command, 'show|update|delete|publish') && draftMode == true}">
 			<acme:submit code="developer.training-module.form.button.update" action="/developer/training-module/update"/>
 			<acme:submit code="developer.training-module.form.button.delete" action="/developer/training-module/delete"/>
-			<acme:submit code="developer.training-module.form.button.publish" action="/developer/training-module/publish"/>	
+			<acme:submit code="developer.training-module.form.button.publish" action="/developer/training-module/publish"/>
+			<acme:button code="developer.training-module.form.button.training-sessions" action="/developer/training-session/list?masterId=${id}"/>		
+		</jstl:when>
+		<jstl:when test="${_command == 'show'}">
+			<acme:button code="developer.training-module.form.button.training-sessions" action="/developer/training-session/list?masterId=${id}"/>		
 		</jstl:when>
 	</jstl:choose>	
 	

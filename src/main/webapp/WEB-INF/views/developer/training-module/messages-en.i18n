@@ -6,7 +6,7 @@ developer.training-module.form.label.creationMoment = Creation moment
 developer.training-module.form.label.details = Details
 developer.training-module.form.label.difficultyLevel = Difficulty level
 developer.training-module.form.label.updateMoment = Update moment
-developer.training-module.form.label.link = Link
+developer.training-module.form.label.link = Link (optional)
 developer.training-module.form.label.totalTime = Estimated total time
 developer.training-module.form.label.project = Project's code
 
@@ -21,6 +21,7 @@ developer.training-module.list-mine.button.create = Create
 developer.training-module.form.button.update = Update
 developer.training-module.form.button.delete = Delete
 developer.training-module.form.button.publish = Publish
+developer.training-module.form.button.training-sessions = Training sessions
 
 
 developer.training-module.form.error.draftMode = This training module cannot be deleted nor updated once published

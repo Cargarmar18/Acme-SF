@@ -63,6 +63,7 @@ master.menu.manager.show = Manager dashboard
 
 master.menu.developer = Developer
 master.menu.developer.list-mine = List my training modules
+master.menu.developer.list-mine2 = List my training sessions
 
 
 # master.menu.user-account ####################################################
