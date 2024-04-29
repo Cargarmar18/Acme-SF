@@ -1,69 +1,69 @@
 key,code,creation-moment,details,difficulty-level,update-moment,link,draft-mode,total-time,key:project,key:developer
-training-module-01,A-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-02,AB-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-03,ABC-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-04,ABC-235,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-05,ABC-999,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-06,RYX-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-07,ABC-124,2000/01/01 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-08,ABC-125,2000/01/01 00:01,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-09,ABC-126,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-10,ABC-127,2022/07/30 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-11,ABC-128,2022/07/29 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-12,ABC-129,2010/12/31 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-13,ABC-130,2011/01/01 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-14,ABC-131,2016/02/27 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-15,ABC-132,2016/02/28 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-16,ABC-133,2016/02/29 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-17,ABC-134,2020/03/31 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-18,ABC-135,2020/04/01 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-19,ABC-136,2020/03/14 15:32,1,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-20,ABC-137,2020/03/14 15:32,2.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-21,ABC-138,2020/03/14 15:32,Aquí están los detalles.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-22,ABC-139,2020/03/14 15:32,This is a sample string thought to be the in details and reach the length of exactly 100 characters.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-23,ABC-140,2020/03/14 15:32,This is a sample string thought to be the in details and reach the length of exactly 99 characters.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-24,ABC-141,2020/03/14 15:32,Αυτά είναι μερικά δείγματα λεπτομερειών,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-25,ABC-142,2020/03/14 15:32,هذه بعض تفاصيل العينة,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-26,ABC-143,2020/03/14 15:32,Это некоторые примеры деталей,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-27,ABC-144,2020/03/14 15:32,這些是一些示例詳細信息,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-28,ABC-145,2020/03/14 15:32,*/``´`ç!?'¿|º¨¨¡(´´,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-29,ABC-146,2020/03/14 15:32,<script>alert('hi')</script>,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-30,ABC-147,2020/03/14 15:32,ये विवरण हैं,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-31,AB-148,2020/03/14 15:32,';X;--,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-32,ABC-148,2020/03/14 15:32,These are the details.,Basic,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-33,ABC-149,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-34,ABC-150,2020/03/14 15:32,These are the details.,Advanced,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-35,ABC-151,2020/03/14 15:32,These are the details.,Intermediate,2020/03/14 15:32,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-36,ABC-152,2020/03/14 15:32,These are the details.,Intermediate,2020/03/14 15:33,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-37,ABC-153,2020/03/14 15:32,These are the details.,Intermediate,2021/03/01 15:32,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-38,ABC-154,2020/03/14 15:32,These are the details.,Intermediate,2022/07/30 00:00,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-39,ABC-155,2020/03/14 15:32,These are the details.,Intermediate,2022/07/29 23:59,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-40,ABC-156,2020/03/14 15:32,These are the details.,Intermediate,2021/12/31 23:59,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-41,ABC-157,2020/03/14 15:32,These are the details.,Intermediate,2022/01/01 00:00,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-42,ABC-158,2015/03/14 15:32,These are the details.,Intermediate,2016/02/27 23:59,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-43,ABC-159,2015/03/14 15:32,These are the details.,Intermediate,2016/02/28 00:00,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-44,ABC-160,2015/03/14 15:32,These are the details.,Intermediate,2016/02/29 15:32,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-45,ABC-161,2020/03/14 15:32,These are the details.,Intermediate,2021/01/31 23:59,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-46,ABC-162,2020/03/14 15:32,These are the details.,Intermediate,2021/02/01 00:00,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-47,ABC-163,2020/03/14 15:32,These are the details.,Intermediate,,,true,50,project-01,developer-01
-training-module-48,ABC-164,2020/03/14 15:32,These are the details.,Intermediate,,,true,50,project-01,developer-01
-training-module-49,ABC-165,2020/03/14 15:32,These are the details.,Intermediate,,ftp://user:password@ftp.example.org:8080/files/file.txt,true,50,project-01,developer-01
-training-module-50,ABC-166,2020/03/14 15:32,These are the details.,Intermediate,,https://www.youtube.com/watch?v=LA-MZl_w0Zc&list=LL&index=1,true,50,project-01,developer-01
-training-module-51,ABC-167,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sample.org,true,50,project-01,developer-01
-training-module-52,ABC-168,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sample.io,true,50,project-01,developer-01
-training-module-53,ABC-169,2020/03/14 15:32,These are the details.,Intermediate,,https://www.samplewebtoreachthemaximumof255charactersfjekjndfiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffeggh553tt.com,true,50,project-01,developer-01
-training-module-54,ABC-170,2020/03/14 15:32,These are the details.,Intermediate,,https://www.samplewebtoreachthemaximumof255charactersminus1fiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffegghf553tt.es,true,50,project-01,developer-01
-training-module-55,ABC-171,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-56,ABC-172,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
-training-module-57,ABC-173,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-58,ABC-174,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,0,project-01,developer-01
-training-module-59,ABC-175,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,1,project-01,developer-01
-training-module-60,ABC-176,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,2000,project-01,developer-01
-training-module-61,ABC-177,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,1999,project-01,developer-01
-training-module-62,ABC-178,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,789,project-01,developer-01
-training-module-63,ABC-179,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-02,developer-01
-training-module-64,ABC-180,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-03,developer-01
-training-module-65,ABC-181,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-04,developer-01
-training-module-66,ABC-182,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-18,developer-01
-training-module-67,ABC-183,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
-training-module-68,ABC-184,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-02
+training-module-01,A-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-02,AB-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-03,ABC-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-04,ABC-235,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-05,ABC-999,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-06,RYX-123,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-07,ABC-124,2000/01/01 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-08,ABC-125,2000/01/01 00:01,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-09,ABC-126,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-10,ABC-127,2022/07/30 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-11,ABC-128,2022/07/29 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-12,ABC-129,2010/12/31 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-13,ABC-130,2011/01/01 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-14,ABC-131,2016/02/27 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-15,ABC-132,2016/02/28 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-16,ABC-133,2016/02/29 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-17,ABC-134,2020/03/31 23:59,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-18,ABC-135,2020/04/01 00:00,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-19,ABC-136,2020/03/14 15:32,1,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-20,ABC-137,2020/03/14 15:32,2.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-21,ABC-138,2020/03/14 15:32,Aquí están los detalles.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-22,ABC-139,2020/03/14 15:32,This is a sample string thought to be the in details and reach the length of exactly 100 characters.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-23,ABC-140,2020/03/14 15:32,This is a sample string thought to be the in details and reach the length of exactly 99 characters.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-24,ABC-141,2020/03/14 15:32,Αυτά είναι μερικά δείγματα λεπτομερειών,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-25,ABC-142,2020/03/14 15:32,هذه بعض تفاصيل العينة,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-26,ABC-143,2020/03/14 15:32,Это некоторые примеры деталей,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-27,ABC-144,2020/03/14 15:32,這些是一些示例詳細信息,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-28,ABC-145,2020/03/14 15:32,*/``´`ç!?'¿|º¨¨¡(´´,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-29,ABC-146,2020/03/14 15:32,<script>alert('hi')</script>,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-30,ABC-147,2020/03/14 15:32,ये विवरण हैं,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-31,AB-148,2020/03/14 15:32,';X;--,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-32,ABC-148,2020/03/14 15:32,These are the details.,Basic,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-33,ABC-149,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-34,ABC-150,2020/03/14 15:32,These are the details.,Advanced,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-35,ABC-151,2020/03/14 15:32,These are the details.,Intermediate,2020/03/14 15:32,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-36,ABC-152,2020/03/14 15:32,These are the details.,Intermediate,2020/03/14 15:33,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-37,ABC-153,2020/03/14 15:32,These are the details.,Intermediate,2021/03/01 15:32,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-38,ABC-154,2020/03/14 15:32,These are the details.,Intermediate,2022/07/30 00:00,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-39,ABC-155,2020/03/14 15:32,These are the details.,Intermediate,2022/07/29 23:59,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-40,ABC-156,2020/03/14 15:32,These are the details.,Intermediate,2021/12/31 23:59,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-41,ABC-157,2020/03/14 15:32,These are the details.,Intermediate,2022/01/01 00:00,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-42,ABC-158,2015/03/14 15:32,These are the details.,Intermediate,2016/02/27 23:59,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-43,ABC-159,2015/03/14 15:32,These are the details.,Intermediate,2016/02/28 00:00,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-44,ABC-160,2015/03/14 15:32,These are the details.,Intermediate,2016/02/29 15:32,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-45,ABC-161,2020/03/14 15:32,These are the details.,Intermediate,2021/01/31 23:59,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-46,ABC-162,2020/03/14 15:32,These are the details.,Intermediate,2021/02/01 00:00,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-47,ABC-163,2020/03/14 15:32,These are the details.,Intermediate,,,false,50,project-01,developer-01
+training-module-48,ABC-164,2020/03/14 15:32,These are the details.,Intermediate,,,false,50,project-01,developer-01
+training-module-49,ABC-165,2020/03/14 15:32,These are the details.,Intermediate,,ftp://user:password@ftp.example.org:8080/files/file.txt,false,50,project-01,developer-01
+training-module-50,ABC-166,2020/03/14 15:32,These are the details.,Intermediate,,https://www.youtube.com/watch?v=LA-MZl_w0Zc&list=LL&index=1,false,50,project-01,developer-01
+training-module-51,ABC-167,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sample.org,false,50,project-01,developer-01
+training-module-52,ABC-168,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sample.io,false,50,project-01,developer-01
+training-module-53,ABC-169,2020/03/14 15:32,These are the details.,Intermediate,,https://www.samplewebtoreachthemaximumof255charactersfjekjndfiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffeggh553tt.com,false,50,project-01,developer-01
+training-module-54,ABC-170,2020/03/14 15:32,These are the details.,Intermediate,,https://www.samplewebtoreachthemaximumof255charactersminus1fiwoiejfijoijoijowijoiejfowijefiwoefjwoifoicosioicjisdjoicjsdoijcoiscjjjjcsidjcoisjosjcosjooinvjnkejknknekjfnwkefnkwenfkwjenfkwenfkjwnfkwnekfnwekfnwkefnkwefnkwenfkwejejejjejejwfeeeffegghf553tt.es,false,50,project-01,developer-01
+training-module-55,ABC-171,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-56,ABC-172,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,true,50,project-01,developer-01
+training-module-57,ABC-173,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-58,ABC-174,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,0,project-01,developer-01
+training-module-59,ABC-175,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,1,project-01,developer-01
+training-module-60,ABC-176,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,2000,project-01,developer-01
+training-module-61,ABC-177,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,1999,project-01,developer-01
+training-module-62,ABC-178,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,789,project-01,developer-01
+training-module-63,ABC-179,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-02,developer-01
+training-module-64,ABC-180,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-03,developer-01
+training-module-65,ABC-181,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-04,developer-01
+training-module-66,ABC-182,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-18,developer-01
+training-module-67,ABC-183,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-01
+training-module-68,ABC-184,2020/03/14 15:32,These are the details.,Intermediate,,https://www.sampleweb.com,false,50,project-01,developer-02
