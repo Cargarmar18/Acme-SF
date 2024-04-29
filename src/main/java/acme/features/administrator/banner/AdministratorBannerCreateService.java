@@ -1,6 +1,8 @@
 
 package acme.features.administrator.banner;
 
+import java.time.temporal.ChronoUnit;
+
 /*
  * AdministratorBannerCreateService.java
  *
@@ -43,18 +45,8 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	@Override
 	public void load() {
 		Banner object;
-		Date moment;
-
-		moment = MomentHelper.getCurrentMoment();
 
 		object = new Banner();
-		object.setInstatiationUpdateMoment(moment);
-		object.setEndDisplay(moment);
-		object.setPictureLink(null);
-		object.setSlogan(null);
-		object.setStartDisplay(moment);
-		object.setTargetLink(null);
-		object.setVersion(0);
 
 		super.getBuffer().addData(object);
 	}
@@ -63,17 +55,28 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void bind(final Banner object) {
 		assert object != null;
 
-		super.bind(object, "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
+		super.bind(object, "instantiationUpdateMoment", "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
 	}
 
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
 
-		boolean confirmation;
+		Date moment;
 
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+		moment = MomentHelper.getCurrentMoment();
+		object.setInstatiationUpdateMoment(moment);
+
+		Date minimumPeriod;
+		minimumPeriod = MomentHelper.deltaFromMoment(object.getStartDisplay(), 7, ChronoUnit.DAYS);
+
+		if (!super.getBuffer().getErrors().hasErrors("instantiationUpdateMoment") && !super.getBuffer().getErrors().hasErrors("startDisplay") && !super.getBuffer().getErrors().hasErrors("endDisplay"))
+			if (!MomentHelper.isBefore(object.getInstatiationUpdateMoment(), object.getStartDisplay()))
+				super.state(false, "instantiationUpdateMoment", "administrator.banner.form.error.instantiationAfterDisplay");
+			else if (!MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()))
+				super.state(false, "startDisplay", "administrator.banner.form.error.initialAfterEnd");
+			else if (!MomentHelper.isBeforeOrEqual(minimumPeriod, object.getEndDisplay()))
+				super.state(false, "endDisplay", "administrator.banner.form.error.lessThanMin");
 	}
 
 	@Override
@@ -89,7 +92,6 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 		Dataset dataset;
 
 		dataset = super.unbind(object, "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
-
 		super.getResponse().addData(dataset);
 	}
 

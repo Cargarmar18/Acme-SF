@@ -13,11 +13,15 @@
 
 package acme.features.administrator.banner;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Administrator;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.banner.Banner;
 
@@ -34,16 +38,13 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 
 	@Override
 	public void authorise() {
-		boolean status;
-		int BannerId;
-		Banner Banner;
-		Administrator admin = null;
+		Banner object;
+		int id;
 
-		BannerId = super.getRequest().getData("id", int.class);
-		Banner = this.repository.findBannerById(BannerId);
-		status = Banner != null && super.getRequest().getPrincipal().hasRole(admin);
+		id = super.getRequest().getData("id", int.class);
+		object = this.repository.findBannerById(id);
 
-		super.getResponse();
+		super.getBuffer().addData(object);
 	}
 
 	@Override
@@ -68,11 +69,26 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
+		Date minimumPeriod;
+		minimumPeriod = MomentHelper.deltaFromMoment(object.getStartDisplay(), 7, ChronoUnit.DAYS);
+
+		if (!super.getBuffer().getErrors().hasErrors("instantiationUpdateMoment") && !super.getBuffer().getErrors().hasErrors("startDisplay") && !super.getBuffer().getErrors().hasErrors("endDisplay"))
+			if (!MomentHelper.isBefore(object.getInstatiationUpdateMoment(), object.getStartDisplay()))
+				super.state(false, "instantiationUpdateMoment", "administrator.banner.form.error.instantiationAfterDisplay");
+			else if (!MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()))
+				super.state(false, "startDisplay", "administrator.banner.form.error.initialAfterEnd");
+			else if (!MomentHelper.isBeforeOrEqual(minimumPeriod, object.getEndDisplay()))
+				super.state(false, "endDisplay", "administrator.banner.form.error.lessThanMin");
 	}
 
 	@Override
 	public void perform(final Banner object) {
 		assert object != null;
+
+		Date currentMoment = MomentHelper.getCurrentMoment();
+		Date updateMoment = new Date(currentMoment.getTime());
+
+		object.setInstatiationUpdateMoment(updateMoment);
 
 		this.repository.save(object);
 	}
