@@ -24,7 +24,15 @@ public class DeveloperTrainingModuleListMineService extends AbstractService<Deve
 
 	@Override
 	public void authorise() {
-		super.getResponse().setAuthorised(true);
+		int developerId;
+		developerId = super.getRequest().getPrincipal().getActiveRoleId();
+
+		Developer developer;
+		developer = this.repository.findDeveloperById(developerId);
+
+		boolean status;
+		status = developer != null && super.getRequest().getPrincipal().hasRole(Developer.class);
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
