@@ -62,6 +62,10 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftMode");
+
 	}
 
 	@Override
@@ -87,7 +91,7 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 		projects = this.repository.findAllProjects();
 		choices2 = SelectChoices.from(projects, "code", object.getProject());
 
-		dataset = super.unbind(object, "code", "creationMoment", "details", "updateMoment", "link", "totalTime", "project");
+		dataset = super.unbind(object, "code", "creationMoment", "details", "updateMoment", "link", "draftMode", "totalTime", "project");
 		dataset.put("difficultyLevels", choices);
 		dataset.put("project", choices2.getSelected().getKey());
 		dataset.put("projects", choices2);

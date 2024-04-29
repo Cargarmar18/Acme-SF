@@ -63,9 +63,28 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
+		Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
 
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			TrainingModule codeValid;
+			TrainingModule current;
+
+			codeValid = this.repository.findOneTrainingModuleByCode(object.getCode());
+			current = this.repository.findOneTrainingModuleByCode(object.getCode());
+
+			super.state(codeValid == null || current.equals(object), "code", "developer.training-module.form.error.duplicated");
+		}
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftMode");
+
+		if (object.getUpdateMoment() != null) {
+			if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
+				super.state(MomentHelper.isAfter(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.updateMomentAfterCreationMoment");
+
+			if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
+				super.state(MomentHelper.isAfter(object.getUpdateMoment(), lowerLimit), "updateMoment", "developer.training-module.form.error.updateMomentBeforeLowerLimit");
+		}
+
 	}
 
 	@Override
@@ -91,7 +110,7 @@ public class DeveloperTrainingModuleUpdateService extends AbstractService<Develo
 		projects = this.repository.findAllProjects();
 		choices2 = SelectChoices.from(projects, "code", object.getProject());
 
-		dataset = super.unbind(object, "code", "creationMoment", "details", "updateMoment", "link", "totalTime", "project");
+		dataset = super.unbind(object, "code", "creationMoment", "details", "updateMoment", "link", "draftMode", "totalTime", "project");
 		dataset.put("difficultyLevels", choices);
 		dataset.put("project", choices2.getSelected().getKey());
 		dataset.put("projects", choices2);
