@@ -1,17 +1,20 @@
 
 
-administrator.announcement.form.title = Banner form
-administrator.announcement.list.title = Listing of Banners
+administrator.banner.form.title = Detalles de baner
+administrator.banner.list.title = Lista de baners
 
 
-administrator.banner.form.label.startDisplay = Start display:
-administrator.banner.form.label.endDisplay = End display:
-administrator.banner.form.label.pictureLink = Picture link:
-administrator.banner.form.label.slogan = Slogan:
-administrator.banner.form.label.targetLink = Target link: 
-administrator.banner.form.label.confirmation = Confirm that the banner is correct
+administrator.banner.form.label.startDisplay = Comienzo del muestreo
+administrator.banner.form.label.endDisplay = Fin del muestreo
+administrator.banner.form.label.pictureLink = Enlace a la foto
+administrator.banner.form.label.slogan = Eslogan
+administrator.banner.form.label.targetLink = Enlace señalado
 
-administrator.announcement.form.button.create = Create
+administrator.banner.form.button.create = Crear
+administrator.banner.list.button.create = Crear
+administrator.banner.form.button.delete = Eliminar
+administrator.banner.form.button.update = Actualizar
+
 
 administrator.banner.list.label.instatiationUpdateMoment = Momento de instanciación o actualización
 administrator.banner.list.label.startDisplay = Comienzo del muestreo
@@ -19,3 +22,8 @@ administrator.banner.list.label.endDisplay = Fin del muestreo
 administrator.banner.list.label.pictureLink = Enlace a la foto
 administrator.banner.list.label.slogan = Eslogan
 administrator.banner.list.label.targetLink = Enlace señalado
+
+administrator.banner.form.error.endBeforeStart = La fecha de inicio ha de ser anterior a la de finalización
+administrator.banner.form.error.afterInstantiation = La fecha establecida ha de ser posterior al momento de instanciación
+administrator.banner.form.error.dateOutOfBounds = La fecha establecida supera el limite superior
+administrator.banner.form.error.bannerPeriod = El periodo del baner ha de ser de al menos 1 semana

@@ -1,6 +1,8 @@
 
 package acme.features.administrator.banner;
 
+import java.time.temporal.ChronoUnit;
+
 /*
  * AdministratorBannerCreateService.java
  *
@@ -49,12 +51,6 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 
 		object = new Banner();
 		object.setInstatiationUpdateMoment(moment);
-		object.setEndDisplay(moment);
-		object.setPictureLink(null);
-		object.setSlogan(null);
-		object.setStartDisplay(moment);
-		object.setTargetLink(null);
-		object.setVersion(0);
 
 		super.getBuffer().addData(object);
 	}
@@ -70,15 +66,37 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 	public void validate(final Banner object) {
 		assert object != null;
 
-		boolean confirmation;
+		if (object.getStartDisplay() != null) {
 
-		confirmation = super.getRequest().getData("confirmation", boolean.class);
-		super.state(confirmation, "confirmation", "javax.validation.constraints.AssertTrue.message");
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()), "startDisplay", "administrator.banner.form.error.endBeforeStart");
+
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isAfter(object.getStartDisplay(), object.getInstatiationUpdateMoment()), "startDisplay", "administrator.banner.form.error.afterInstantiation");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+				super.state(MomentHelper.isAfter(object.getEndDisplay(), object.getInstatiationUpdateMoment()), "endDisplay", "administrator.banner.form.error.afterInstantiation");
+
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isBeforeOrEqual(object.getStartDisplay(), MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm")), "startDisplay", "administrator.banner.form.error.dateOutOfBounds");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+				super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplay(), MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm")), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+				super.state(MomentHelper.isLongEnough(object.getStartDisplay(), object.getEndDisplay(), 1, ChronoUnit.WEEKS), "endDisplay", "administrator.banner.form.error.bannerPeriod");
+
+		}
+
 	}
 
 	@Override
 	public void perform(final Banner object) {
 		assert object != null;
+
+		Date moment;
+		moment = MomentHelper.getCurrentMoment();
+		object.setInstatiationUpdateMoment(moment);
 
 		this.repository.save(object);
 	}
@@ -88,7 +106,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 
 		Dataset dataset;
 
-		dataset = super.unbind(object, "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
+		dataset = super.unbind(object, "instatiationUpdateMoment", "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
 
 		super.getResponse().addData(dataset);
 	}

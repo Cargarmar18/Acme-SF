@@ -13,11 +13,15 @@
 
 package acme.features.administrator.banner;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.accounts.Administrator;
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.entities.banner.Banner;
 
@@ -37,13 +41,12 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		boolean status;
 		int BannerId;
 		Banner Banner;
-		Administrator admin = null;
 
 		BannerId = super.getRequest().getData("id", int.class);
 		Banner = this.repository.findBannerById(BannerId);
-		status = Banner != null && super.getRequest().getPrincipal().hasRole(admin);
+		status = Banner != null;
 
-		super.getResponse();
+		super.getResponse().setAuthorised(status);
 	}
 
 	@Override
@@ -61,18 +64,44 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	public void bind(final Banner object) {
 		assert object != null;
 
-		super.bind(object, "instatiationUpdateMoment", "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
+		super.bind(object, "startDisplay", "endDisplay", "pictureLink", "slogan", "targetLink");
 	}
 
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
 
+		if (object.getStartDisplay() != null) {
+
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()), "startDisplay", "administrator.banner.form.error.endBeforeStart");
+
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isAfter(object.getStartDisplay(), object.getInstatiationUpdateMoment()), "startDisplay", "administrator.banner.form.error.afterInstantiation");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+				super.state(MomentHelper.isAfter(object.getEndDisplay(), object.getInstatiationUpdateMoment()), "endDisplay", "administrator.banner.form.error.afterInstantiation");
+
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isBeforeOrEqual(object.getStartDisplay(), MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm")), "startDisplay", "administrator.banner.form.error.dateOutOfBounds");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+				super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplay(), MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm")), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
+
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+				super.state(MomentHelper.isLongEnough(object.getStartDisplay(), object.getEndDisplay(), 1, ChronoUnit.WEEKS), "endDisplay", "administrator.banner.form.error.bannerPeriod");
+
+		}
+
 	}
 
 	@Override
 	public void perform(final Banner object) {
 		assert object != null;
+
+		Date moment;
+		moment = MomentHelper.getCurrentMoment();
+		object.setInstatiationUpdateMoment(moment);
 
 		this.repository.save(object);
 	}
