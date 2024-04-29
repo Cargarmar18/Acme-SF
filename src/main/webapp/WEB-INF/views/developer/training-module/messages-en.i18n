@@ -6,7 +6,7 @@ developer.training-module.form.label.creationMoment = Creation moment
 developer.training-module.form.label.details = Details
 developer.training-module.form.label.difficultyLevel = Difficulty level
 developer.training-module.form.label.updateMoment = Update moment
-developer.training-module.form.label.link = Link
+developer.training-module.form.label.link = Link (optional)
 developer.training-module.form.label.totalTime = Estimated total time
 developer.training-module.form.label.project = Project's code
 

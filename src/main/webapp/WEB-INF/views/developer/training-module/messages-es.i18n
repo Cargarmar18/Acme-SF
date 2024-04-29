@@ -6,7 +6,7 @@ developer.training-module.form.label.creationMoment = Momento de creación
 developer.training-module.form.label.details = Detalles
 developer.training-module.form.label.difficultyLevel = Nivel de dificultad
 developer.training-module.form.label.updateMoment = Momento de actualización
-developer.training-module.form.label.link = Link
+developer.training-module.form.label.link = Link (opcional)
 developer.training-module.form.label.totalTime = Tiempo total estimado
 developer.training-module.form.label.project = Código del proyecto
 

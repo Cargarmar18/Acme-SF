@@ -9,7 +9,7 @@
 	<acme:input-moment code="developer.training-session.form.label.endMoment" path="endMoment" readonly="false"/>
 	<acme:input-textbox code="developer.training-session.form.label.location" path="location" readonly="false"/>
 	<acme:input-textbox code="developer.training-session.form.label.instructor" path="instructor" readonly="false"/>
-	<acme:input-url code="developer.training-session.form.label.contactEmail" path="contactEmail" readonly="false"/>
+	<acme:input-url code="developer.training-session.form.label.contactEmail" path="contactEmail" readonly="false" placeholder="example@acme.com"/>
 	<acme:input-url code="developer.training-session.form.label.link" path="link" readonly="false"/>
 	<acme:input-select path="trainingModule" code="developer.training-session.form.label.trainingModule" choices="${trainingModules}" readonly="false"/>
 	
