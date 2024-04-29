@@ -11,6 +11,9 @@ administrator.banner.form.label.slogan = Slogan:
 administrator.banner.form.label.targetLink = Target link: 
 administrator.banner.form.label.confirmation = Confirm that the banner is correct
 
+administrator.banner.form.button.create = Confirmar
+administrator.banner.form.button.update = Actualizar banner
+administrator.banner.form.button.delete = Borrar banner
 administrator.announcement.form.button.create = Create
 
 administrator.banner.list.label.instatiationUpdateMoment = Momento de instanciación o actualización

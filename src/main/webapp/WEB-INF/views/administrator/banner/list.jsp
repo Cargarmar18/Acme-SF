@@ -7,7 +7,6 @@
 
 
 <acme:list>
-	<acme:list-column code="administrator.banner.list.label.instatiationUpdateMoment" path="instatiationUpdateMoment" width="10%"/>
 	<acme:list-column code="administrator.banner.list.label.startDisplay" path="startDisplay" width="10%"/>
 	<acme:list-column code="administrator.banner.list.label.endDisplay" path="endDisplay" width="10%"/>	
 	<acme:list-column code="administrator.banner.list.label.pictureLink" path="pictureLink" width="20%"/>
@@ -15,4 +14,4 @@
 	<acme:list-column code="administrator.banner.list.label.targetLink" path="targetLink" width="30%"/>
 	
 </acme:list>
-	<acme:button code="administrator.banner.list-mine.button.create" action="/administrator/banner/create"/>
+	<acme:button code="administrator.banner.list.button.create" action="/administrator/banner/create"/>

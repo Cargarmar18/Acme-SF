@@ -95,10 +95,10 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
 			super.state(MomentHelper.isLongEnough(object.getRegistrationTime(), object.getDueDate(), 1, ChronoUnit.MONTHS), "dueDate", "sponsor.invoice.form.error.period");
 
-		if (!super.getBuffer().getErrors().hasErrors("quanitity"))
+		if (!super.getBuffer().getErrors().hasErrors("InvoiceQuantity"))
 			super.state(object.getInvoiceQuantity() != null && object.getInvoiceQuantity().getAmount() <= 1000000.00 && object.getInvoiceQuantity().getAmount() >= -1000000.00, "quantity", "sponsor.invoice.form.error.amountOutOfBounds");
 
-		if (!super.getBuffer().getErrors().hasErrors("quantity"))
+		if (!super.getBuffer().getErrors().hasErrors("InvoiceQuantity"))
 			super.state(object.getSponsorship() != null && object.getInvoiceQuantity() != null && object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "quantity", "sponsor.invoice.form.error.currency");
 
 	}

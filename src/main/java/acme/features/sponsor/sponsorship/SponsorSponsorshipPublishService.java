@@ -112,7 +112,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 		dataset = super.unbind(object, "code", "moment", "startDate", "endDate", "type", "amount", "email", "link", "published");
 
-		dataset.put("types", sponsorshipTypes);
+		dataset.put("sponsorshipTypes", sponsorshipTypes);
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);
 

@@ -21,14 +21,14 @@
 	<acme:input-moment code="sponsor.sponsorship.form.label.startSponsor" path="startSponnsor"/>
 	<acme:input-moment code="sponsor.sponsorship.form.label.endSponsor" path="endSponsor"/>
 	<acme:input-money code="sponsor.sponsorship.form.label.amount" path="amount"/>
-	<acme:input-select path="sponsorshipType" code="sponsor.sponsorship.form.label.sponsorshipType" choices="${sponsorshipTypes}"/>
+	<acme:input-select  code="sponsor.sponsorship.form.label.sponsorshipType" path="sponsorshipType" choices="${sponsorshipTypes}"/>
 	<acme:input-select code="sponsor.sponsorship.form.label.project" path="project"  choices="${projects}"/>
 	<acme:input-email code="sponsor.sponsorship.form.label.email" path="email" placeholder="example@acme.com"/>					
 	<acme:input-url code="sponsor.sponsorship.form.label.moreInfo" path="moreInfo" />
 	
 	
 	<jstl:choose>	 	
-		<jstl:when test="${acme:anyOf(_command, 'show|delete|update') && draftMode == true}">
+		<jstl:when test="${acme:anyOf(_command, 'publish|show|delete|update') && draftMode == true}">
 			<acme:submit code="sponsor.sponsorship.form.button.publish" action="/sponsor/sponsorship/publish"/>
 			<acme:submit code="sponsor.sponsorship.form.button.update" action="/sponsor/sponsorship/update"/>
 			<acme:submit code="sponsor.sponsorship.form.button.delete" action="/sponsor/sponsorship/delete"/>

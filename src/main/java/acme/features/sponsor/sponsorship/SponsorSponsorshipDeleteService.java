@@ -71,7 +71,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("published"))
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 
 		if (!super.getBuffer().getErrors().hasErrors("published"))
@@ -81,10 +81,13 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void perform(final Sponsorship object) {
 		assert object != null;
-		Collection<Invoice> invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
-		for (Invoice i : invoices)
-			this.invoiceRepository.delete(i);
+		int sponsorshipId;
+		Collection<Invoice> invoices;
 
+		sponsorshipId = object.getId();
+		invoices = this.repository.findAllInvoicesBySponsorshipId(sponsorshipId);
+
+		this.repository.deleteAll(invoices);
 		this.repository.delete(object);
 	}
 
