@@ -1,5 +1,5 @@
 key,code,moment,startSponsor,endSponsor,amount,sponsorshipType,email,moreInfo,draftMode,key:project,key:sponsor
-sponsorship-01,SP-000,2020/03/14 15:32,2024/03/14 15:32,2025/03/14 15:32,"EUR 12,345.00",Financial,example@example.com,https://example.com/sponsor1,0,project-01,sponsor-001
+sponsorship-01,SP-000,2020/03/14 15:32,2024/03/14 15:32,2025/03/14 15:32,"EUR 12,345.00",Financial,example@example.com,https://example.com/sponsor1,1,project-01,sponsor-001
 sponsorship-02,SP-999,2020/03/14 15:32,2024/03/14 15:32,2025/03/14 15:32,"EUR 12,345.00",Financial,example@example.com,https://example.com/sponsor1,0,project-01,sponsor-001
 sponsorship-03,SP-998,2020/03/14 15:32,2024/03/14 15:32,2025/03/14 15:32,"EUR 12,345.00",Financial,example@example.com,https://example.com/sponsor1,0,project-01,sponsor-001
 sponsorship-04,SP-346,2020/03/14 15:32,2024/03/14 15:32,2025/03/14 15:32,"EUR 12,345.00",Financial,example@example.com,https://example.com/sponsor1,0,project-01,sponsor-001

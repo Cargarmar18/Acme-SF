@@ -85,7 +85,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		String dateString = "2201/01/01 00:00";
 		Date futureMostDate = MomentHelper.parse(dateString, "yyyy/MM/dd HH:mm");
 		String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
-		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*,\\s*"));
+		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*;\\s*"));
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Sponsorship sponsorshipSameCode;
