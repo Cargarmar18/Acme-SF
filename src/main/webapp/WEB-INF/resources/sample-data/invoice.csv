@@ -47,4 +47,4 @@ invoice-45,IN-0001-0042,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00
 invoice-46,IN-0001-0043,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,ftp://user:password@ftp.example.org:8080/files/file.txt,false,sponsorship-01
 invoice-47,IN-0002-0001,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,https://example.com/invoices,false,sponsorship-01
 invoice-48,IN-0002-0002,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,https://example.com/invoices,true,sponsorship-01
-invoice-49,IN-0002-0044,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,https://example.com/invoices,false,sponsorship-02
+invoice-49,IN-0002-0044,2020/03/14 15:32,2023/03/14 15:32,"USD 500,345.00",50.00,https://example.com/invoices,true,sponsorship-02

@@ -32,7 +32,7 @@
 			<acme:submit code="sponsor.sponsorship.form.button.publish" action="/sponsor/sponsorship/publish"/>
 			<acme:submit code="sponsor.sponsorship.form.button.update" action="/sponsor/sponsorship/update"/>
 			<acme:submit code="sponsor.sponsorship.form.button.delete" action="/sponsor/sponsorship/delete"/>
-			<acme:button code="sponsor.sponsorship.form.button.invoice" action="/sponsor/invoice/list?masterId=${id}"/>		
+			<acme:button code="sponsor.sponsorship.form.button.invoice" action="/sponsor/invoice/list-mine?sponsorshipId=${id}"/>		
 		</jstl:when>	
 		<jstl:when test="${acme:anyOf(_command, 'publish') && draftMode == true}">
 			<acme:submit code="sponsor.sponsorship.form.button.publish" action="/sponsor/sponsorship/publish"/>	
