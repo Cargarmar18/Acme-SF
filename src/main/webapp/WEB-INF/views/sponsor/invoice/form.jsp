@@ -24,14 +24,12 @@
 	<acme:input-url code="sponsor.invoice.form.label.link" path="link"/>
 	
 	<jstl:choose>	 	
-		<jstl:when test="${acme:anyOf(_command, 'show|delete|update') && draftMode == true}">
-			<acme:submit code="sponsor.invoice.form.button.publish" action="/sponsor/invoice/publish"/>
+		<jstl:when test="${acme:anyOf(_command, 'show|delete|update|publish') && draftMode == true}">
+			<acme:submit code="sponsor.invoice.form.button.show" action="/sponsor/invoice/show"/>
 			<acme:submit code="sponsor.invoice.form.button.update" action="/sponsor/invoice/update"/>
-			<acme:submit code="sponsor.invoice.form.button.delete" action="/sponsor/invoice/delete"/>	
+			<acme:submit code="sponsor.invoice.form.button.delete" action="/sponsor/invoice/delete"/>
+			<acme:submit code="sponsor.invoice.form.button.publish" action="/sponsor/invoice/publish"/>		
 		</jstl:when>	
-		<jstl:when test="${acme:anyOf(_command, 'publish') && draftMode == true}">
-			<acme:submit code="sponsor.invoice.form.button.publish" action="/sponsor/invoice/publish"/>	
-		</jstl:when>
 		<jstl:when test="${_command == 'create'}">
 			<acme:submit code="sponsor.invoice.form.button.create" action="/sponsor/invoice/create"/>
 		</jstl:when>
