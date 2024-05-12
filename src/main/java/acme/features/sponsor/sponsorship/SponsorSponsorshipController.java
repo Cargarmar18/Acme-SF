@@ -30,6 +30,9 @@ public class SponsorSponsorshipController extends AbstractController<Sponsor, Sp
 	private SponsorSponsorshipListService		listService;
 
 	@Autowired
+	private SponsorSponsorshipListMineService	listMineService;
+
+	@Autowired
 	private SponsorSponsorshipShowService		showService;
 
 	@Autowired
@@ -50,6 +53,7 @@ public class SponsorSponsorshipController extends AbstractController<Sponsor, Sp
 	@PostConstruct
 	protected void initialise() {
 		super.addBasicCommand("list", this.listService);
+		super.addCustomCommand("list-mine", "list", this.listMineService);
 		super.addBasicCommand("delete", this.deleteService);
 		super.addBasicCommand("update", this.updateService);
 		super.addBasicCommand("show", this.showService);
