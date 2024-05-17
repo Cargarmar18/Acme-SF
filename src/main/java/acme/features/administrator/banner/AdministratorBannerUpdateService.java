@@ -74,27 +74,27 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 		assert object != null;
 
 		if (object.getStartDisplay() != null) {
+			if (object.getEndDisplay() != null) {
+				if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+					super.state(MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()), "startDisplay", "administrator.banner.form.error.endBeforeStart");
 
-			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
-				super.state(MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()), "startDisplay", "administrator.banner.form.error.endBeforeStart");
+				if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
+					super.state(MomentHelper.isLongEnough(object.getStartDisplay(), object.getEndDisplay(), 1, ChronoUnit.WEEKS), "endDisplay", "administrator.banner.form.error.bannerPeriod");
+			}
 
 			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
 				super.state(MomentHelper.isAfter(object.getStartDisplay(), object.getInstatiationUpdateMoment()), "startDisplay", "administrator.banner.form.error.afterInstantiation");
 
-			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
-				super.state(MomentHelper.isAfter(object.getEndDisplay(), object.getInstatiationUpdateMoment()), "endDisplay", "administrator.banner.form.error.afterInstantiation");
-
 			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
 				super.state(MomentHelper.isBeforeOrEqual(object.getStartDisplay(), MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm")), "startDisplay", "administrator.banner.form.error.dateOutOfBounds");
-
+		}
+		if (object.getEndDisplay() != null) {
 			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
 				super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplay(), MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm")), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
 
 			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
-				super.state(MomentHelper.isLongEnough(object.getStartDisplay(), object.getEndDisplay(), 1, ChronoUnit.WEEKS), "endDisplay", "administrator.banner.form.error.bannerPeriod");
-
+				super.state(MomentHelper.isAfter(object.getEndDisplay(), object.getInstatiationUpdateMoment()), "endDisplay", "administrator.banner.form.error.afterInstantiation");
 		}
-
 	}
 
 	@Override
