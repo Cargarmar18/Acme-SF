@@ -1,8 +1,14 @@
-developer.developer-dashboard.form.title = Panel de desarrollador
+manager.manager-dashboard.form.title = Estadísticas de gestor
 
-developer.developer-dashboard.form.label.number-with-update-moment = Número de módulos de entrenamiento con momento de actualización
-developer.developer-dashboard.form.label.number-with-link = Número de sesiones de entrenamiento con link
-developer.developer-dashboard.form.label.average-total-time = Media del tiempo total estimado
-developer.developer-dashboard.form.label.deviation-total-time = Desviación del tiempo total estimado
-developer.developer-dashboard.form.label.min-total-time = Mínimo tiempo total estimado
-developer.developer-dashboard.form.label.max-total-time = Máximo tiempo total estimado
+manager.manager-dashboard.form.label.number-priority-must = Número de historias de usuario con prioridad "must"
+manager.manager-dashboard.form.label.number-priority-should = Número de historias de usuario con prioridad "should"
+manager.manager-dashboard.form.label.number-priority-could = Número de historias de usuario con prioridad "could"
+manager.manager-dashboard.form.label.number-priority-willnot = Número de historias de usuario con prioridad "willnot"
+manager.manager-dashboard.form.label.average-cost-user-stories = Promedio de coste de historia de usuario
+manager.manager-dashboard.form.label.deviation-cost-user-stories = Desviación estándar de coste de historia de usuario
+manager.manager-dashboard.form.label.maximum-cost-user-stories = Máximo coste de historia de usuario
+manager.manager-dashboard.form.label.minimum-cost-user-stories = Mínimo coste de historia de usuario
+manager.manager-dashboard.form.label.average-cost-projects = Promedio de coste de proyecto
+manager.manager-dashboard.form.label.deviation-cost-projects = Desviación estándar de coste de proyecto
+manager.manager-dashboard.form.label.maximum-cost-projects = Máximo coste de proyecto
+manager.manager-dashboard.form.label.minimum-cost-projects = Mínimo coste de proyecto

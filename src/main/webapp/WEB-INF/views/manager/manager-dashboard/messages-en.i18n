@@ -1,8 +1,14 @@
-developer.developer-dashboard.form.title = Developer dashboard
+manager.manager-dashboard.form.title = Manager dashboard
 
-developer.developer-dashboard.form.label.number-with-update-moment = Number of training modules with update moment
-developer.developer-dashboard.form.label.number-with-link = Number of training sessions with link
-developer.developer-dashboard.form.label.average-total-time = Average estimated total time
-developer.developer-dashboard.form.label.deviation-total-time = Deviation of estimated total time
-developer.developer-dashboard.form.label.min-total-time = Minimum estimated total time
-developer.developer-dashboard.form.label.max-total-time = Maximum estimated total time
+manager.manager-dashboard.form.label.number-priority-must = Number of user stories with "must" priority
+manager.manager-dashboard.form.label.number-priority-should = Number of user stories with "should" priority
+manager.manager-dashboard.form.label.number-priority-could = Number of user stories with "could" priority
+manager.manager-dashboard.form.label.number-priority-willnot = Number of user stories with "willnot" priority
+manager.manager-dashboard.form.label.average-cost-user-stories = Average cost of user story
+manager.manager-dashboard.form.label.deviation-cost-user-stories = Standard deviation cost of user story
+manager.manager-dashboard.form.label.maximum-cost-user-stories = Maximum cost of user story
+manager.manager-dashboard.form.label.minimum-cost-user-stories = Minimum cost of user story
+manager.manager-dashboard.form.label.average-cost-projects = Average cost of project
+manager.manager-dashboard.form.label.deviation-cost-projects = Standard deviation cost of project
+manager.manager-dashboard.form.label.maximum-cost-projects = Maximum cost of project
+manager.manager-dashboard.form.label.minimum-cost-projects = Minimum cost of project

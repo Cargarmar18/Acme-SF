@@ -22,7 +22,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.client.helpers.MomentHelper;
-import acme.client.helpers.RandomHelper;
 import acme.client.repositories.AbstractRepository;
 import acme.entities.banner.Banner;
 
@@ -37,7 +36,7 @@ public interface BannerRepository extends AbstractRepository {
 
 	default Banner findRandomBanner() {
 		Banner result;
-		int count, index;
+		int count;
 		PageRequest page;
 		List<Banner> list;
 		Date moment = MomentHelper.getCurrentMoment();
@@ -46,9 +45,8 @@ public interface BannerRepository extends AbstractRepository {
 		if (count == 0)
 			result = null;
 		else {
-			index = RandomHelper.nextInt(0, count);
 
-			page = PageRequest.of(index, 1, Sort.by(Direction.ASC, "id"));
+			page = PageRequest.of(1, 1, Sort.by(Direction.ASC, "id"));
 			list = this.findManyBanners(page, moment);
 			result = list.isEmpty() ? null : list.get(0);
 		}
