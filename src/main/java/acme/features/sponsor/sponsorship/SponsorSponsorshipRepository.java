@@ -15,7 +15,6 @@ package acme.features.sponsor.sponsorship;
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import acme.client.repositories.AbstractRepository;
@@ -52,8 +51,8 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select i from Invoice i where i.sponsorship.id = :id")
 	Collection<Invoice> findAllInvoicesBySponsorshipId(int id);
 
-	@Query("SELECT COUNT(i) FROM Invoice i WHERE i.sponsorship.id = :id AND i.draftMode = false")
-	int countFinishedInvoicesBySponsorshipId(@Param("id") int id);
+	@Query("SELECT COUNT(i) FROM Invoice i WHERE i.sponsorship.id = id AND i.draftMode = 1")
+	int countUnfinishedInvoicesBySponsorshipId(int id);
 
 	@Query("SELECT config FROM Configuration config")
 	Configuration findConfiguration();

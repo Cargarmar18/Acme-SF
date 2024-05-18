@@ -47,7 +47,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 
 		invoiceId = super.getRequest().getData("id", int.class);
 		invoice = this.repository.findOneInvoiceById(invoiceId);
-		status = !invoice.isDraftMode() && invoice != null && super.getRequest().getPrincipal().hasRole(invoice.getSponsorship().getSponsor());
+		status = invoice.isDraftMode() && invoice != null && super.getRequest().getPrincipal().hasRole(invoice.getSponsorship().getSponsor());
 
 		super.getResponse().setAuthorised(status);
 	}
@@ -71,7 +71,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	public void bind(final Invoice object) {
 		assert object != null;
 
-		super.bind(object, "code", "link", "dueDate", "quantity", "tax", "sponsorship");
+		super.bind(object, "code", "dueDate", "invoiceQuantity", "tax", "link", "invoice.sponsorship");
 	}
 
 	@Override
@@ -98,8 +98,8 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 			super.state(object.isDraftMode(), "draftMode", "sponsor.invoice.form.error.draftMode");
 
 		if (!errors.hasErrors("invoiceQuantity")) {
-			Double amount = object.getInvoiceQuantity().getAmount();
-			super.state(amount.compareTo(Double.valueOf(1000000.00)) <= 0 && amount.compareTo(Double.valueOf(-1000000.00)) >= 0, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
+			Double invoiceAmount = object.getInvoiceQuantity().getAmount();
+			super.state(invoiceAmount.compareTo(Double.valueOf(1000000.00)) <= 0 && invoiceAmount.compareTo(Double.valueOf(-1000000.00)) >= 0, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
 			super.state(object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "invoiceQuantity", "sponsor.invoice.form.error.wrongCurrency");
 		}
 
@@ -122,7 +122,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		Collection<Sponsorship> sponsorSponsorships = this.repository.findSponsorshipBySponsorId(sponsorId);
 		sponsorships = SelectChoices.from(sponsorSponsorships, "code", object.getSponsorship());
 
-		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "quantity", "tax", "published");
+		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "invoiceQuantity", "tax", "link", "draftMode");
 		Sponsorship selectedSponsorship = this.repository.findOneSponsorshipById(Integer.valueOf(sponsorships.getSelected().getKey()));
 		dataset.put("sponsorship", sponsorships.getSelected().getKey());
 

@@ -23,7 +23,7 @@ public class Configuration extends AbstractEntity {
 	@NotBlank
 	private String				defaultCurrency;
 
-	@Pattern(regexp = "^[A-Z]{3}(,[A-Z]{3}){2}$")
+	@Pattern(regexp = "^[A-Z]{3}(;[A-Z]{3})+$")
 	@NotBlank
 	private String				acceptedCurrencies;
 

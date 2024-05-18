@@ -85,7 +85,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		String dateString = "2201/01/01 00:00";
 		Date futureMostDate = MomentHelper.parse(dateString, "yyyy/MM/dd HH:mm");
 		String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
-		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*,\\s*"));
+		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*;\\s*"));
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Sponsorship sponsorshipSameCode;
@@ -121,7 +121,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 				super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= 0.00, "amount", "sponsor.sponsorship.form.error.amountOutOfBounds");
 
 			if (!super.getBuffer().getErrors().hasErrors("amount"))
-				super.state(this.repository.countFinishedInvoicesBySponsorshipId(object.getId()) == 0 || object.getAmount().getCurrency().equals(this.repository.findOneSponsorshipById(object.getId()).getAmount().getCurrency()), "amount",
+				super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0 || object.getAmount().getCurrency().equals(this.repository.findOneSponsorshipById(object.getId()).getAmount().getCurrency()), "amount",
 					"sponsor.sponsorship.form.error.currencyChange");
 
 			if (!super.getBuffer().getErrors().hasErrors("amount"))
