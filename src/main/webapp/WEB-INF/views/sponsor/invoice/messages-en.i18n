@@ -12,25 +12,27 @@ sponsor.invoices.list.title = Listing of my invoices
 sponsor.invoices.form.title = Invoices details:
 
 
-sponsor.invoices.form.label.code = Code
-sponsor.invoices.form.label.registrationTime = Registration time
-sponsor.invoices.form.label.dueDate = Due date
-sponsor.invoices.form.label.invoiceQuantity = Invoice quantity
-sponsor.invoices.form.label.tax = Tax
-sponsor.invoices.form.label.link = Link
-sponsor.invoices.form.button.create = Create
-sponsor.invoices.form.button.publish = Publish
-sponsor.invoices.form.button.delete = Delete
-sponsor.invoices.form.button.update = Update
+sponsor.invoice.form.label.code = Code
+sponsor.invoice.form.label.registrationTime = Registration time
+sponsor.invoice.form.label.dueDate = Due date
+sponsor.invoice.form.label.invoiceQuantity = Invoice quantity
+sponsor.invoice.form.label.tax = Tax
+sponsor.invoice.form.label.link = Link
+sponsor.invoice.form.label.sponsorship = Sponsorship
+
+sponsor.invoice.form.button.create = Create
+sponsor.invoice.form.button.publish = Publish
+sponsor.invoice.form.button.delete = Delete
+sponsor.invoice.form.button.update = Update
 
 sponsor.invoices.form.error.duplicated = The code is taken
 sponsor.invoices.form.error.fatalError = Cannot publish a invoices with fatal errors
 
 sponsor.invoice.list-mine.label.code = Code
-sponsor.invoice.list-mine.label.registrationTime = Registration time
 sponsor.invoice.list-mine.label.dueDate = Due date
-sponsor.invoice.list-mine.label.invoiceQuantity = Invoice quantity
-sponsor.invoice.list-mine.label.tax = Tax
-sponsor.invoice.list-mine.label.link = Link
-sponsor.invoice.list-mine.label.draft-mode = Draft mode
+sponsor.invoice.list-mine.label.registrationTime = Registration time
+sponsor.invoice.list-mine.label.totalAmount = Invoice quantity
+sponsor.invoice.list-mine.label.draftMode = Draft mode
+sponsor.invoice.list-mine.label.sponsorship = Sponsorship
+
 sponsor.invoice.list-mine.button.create = Create

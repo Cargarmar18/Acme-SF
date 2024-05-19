@@ -11,17 +11,23 @@
 sponsor.sponsorship.list.title = Listing of my sponsorships
 sponsor.sponsorship.form.title = sponsorship details
 
-sponsor.sponsorship.form.label.code = Code
-sponsor.sponsorship.form.label.moment = Instatiation moment
-sponsor.sponsorship.form.label.amount = Amount of the sponsorship
+
 sponsor.sponsorship.form.label.indication = Doesn't have fatal errors
-sponsor.sponsorship.form.label.cost = Cost
-sponsor.sponsorship.form.label.link = Link
-sponsor.sponsorship.form.button.user-stories = User stories
-sponsor.sponsorship.form.button.create = Create
+sponsor.sponsorship.list-mine.button.create  = Create sponsorship
 sponsor.sponsorship.form.button.publish = Publish
 sponsor.sponsorship.form.button.delete = Delete
 sponsor.sponsorship.form.button.update = Update
+sponsor.sponsorship.form.button.invoice = Show invoices
+
+sponsor.sponsorship.form.label.code = Code:
+sponsor.sponsorship.form.label.moment = Instatiation moment:
+sponsor.sponsorship.form.label.amount = Amount of the sponsorship:
+sponsor.sponsorship.form.label.startSponsor = Start of the sponsorship:
+sponsor.sponsorship.form.label.endSponsor = End of the sponsorship:
+sponsor.sponsorship.form.label.sponsorshipType = Type of the sponsorship:
+sponsor.sponsorship.form.label.project: Project:
+sponsor.sponsorship.form.label.email = Email:
+sponsor.sponsorship.form.label.moreInfo = Link to more information(Optional):
 
 sponsor.sponsorship.form.error.duplicated = The code is taken
 sponsor.sponsorship.form.error.fatalError = Cannot publish a sponsorship with fatal errors

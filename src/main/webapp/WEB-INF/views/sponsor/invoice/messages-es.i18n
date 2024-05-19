@@ -7,28 +7,32 @@
 # this software. It has been tested carefully, but it is not guaranteed for any particular
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
-sponsor.invoices.list.title = Listado de mis facturas
-sponsor.invoices.form.title = Detalles de las facturas:
 
-sponsor.invoices.form.label.code = Código:
-sponsor.invoices.form.label.registrationTime = Fech de registro:
-sponsor.invoices.form.label.dueDate = Fecha de vencimiento:
-sponsor.invoices.form.label.invoiceQuantity = Cantidad de la factura:
-sponsor.invoices.form.label.tax = Tasa:
-sponsor.invoices.form.label.link = Enlace:
-sponsor.invoices.form.button.create = Crear
-sponsor.invoices.form.button.publish = Publicar
-sponsor.invoices.form.button.delete = Borrar
-sponsor.invoices.form.button.update = Actualizar
+sponsor.invoices.list.title = Listing of my invoices
+sponsor.invoices.form.title = Invoices details:
 
-sponsor.invoices.form.error.duplicated = El código ya está en uso
-sponsor.invoices.form.error.fatalError = No puedes publicar facturas con error fatal.
 
-sponsor.invoice.list-mine.label.code = Código
-sponsor.invoice.list-mine.label.registrationTime = Registration timeFech de registro
-sponsor.invoice.list-mine.label.dueDate = Fecha de vencimiento
-sponsor.invoice.list-mine.label.invoiceQuantity = Cantidad de la factura
-sponsor.invoice.list-mine.label.tax = Tasa
-sponsor.invoice.list-mine.label.link = Enlace
-sponsor.invoice.list-mine.label.draft-mode = Modo boceto
-sponsor.invoice.list-mine.button.create = Crear
+sponsor.invoice.form.label.code = Code
+sponsor.invoice.form.label.registrationTime = Registration time
+sponsor.invoice.form.label.dueDate = Due date
+sponsor.invoice.form.label.invoiceQuantity = Invoice quantity
+sponsor.invoice.form.label.tax = Tax
+sponsor.invoice.form.label.link = Link
+sponsor.invoice.form.label.sponsorship = Sponsorship
+
+sponsor.invoice.form.button.create = Create
+sponsor.invoice.form.button.publish = Publish
+sponsor.invoice.form.button.delete = Delete
+sponsor.invoice.form.button.update = Update
+
+sponsor.invoices.form.error.duplicated = The code is taken
+sponsor.invoices.form.error.fatalError = Cannot publish a invoices with fatal errors
+
+sponsor.invoice.list-mine.label.code = Code
+sponsor.invoice.list-mine.label.dueDate = Due date
+sponsor.invoice.list-mine.label.registrationTime = Registration time
+sponsor.invoice.list-mine.label.totalAmount = Invoice quantity
+sponsor.invoice.list-mine.label.draftMode = Draft mode
+sponsor.invoice.list-mine.label.sponsorship = Sponsorship
+
+sponsor.invoice.list-mine.button.create = Create
