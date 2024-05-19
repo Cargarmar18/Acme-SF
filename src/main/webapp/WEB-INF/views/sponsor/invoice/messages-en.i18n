@@ -20,7 +20,7 @@ sponsor.invoice.form.label.tax = Tax
 sponsor.invoice.form.label.link = Link
 sponsor.invoice.form.label.sponsorship = Sponsorship
 
-sponsor.invoice.form.button.create = Create
+sponsor.invoice.list-mine.button.create = Create invoice
 sponsor.invoice.form.button.publish = Publish
 sponsor.invoice.form.button.delete = Delete
 sponsor.invoice.form.button.update = Update

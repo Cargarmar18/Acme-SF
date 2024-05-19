@@ -22,6 +22,6 @@
 	<acme:list-column code="sponsor.invoice.list-mine.label.draftMode" path="draftMode"/>
 	<acme:list-column code="sponsor.invoice.list-mine.label.sponsorship" path="sponsorship.code"/>
 </acme:list>
-	<acme:button code="sponsor.sponsorhip.list-mine.button.create" action="/sponsor/invoice/create"/>	
+	<acme:button code="sponsor.invoice.list-mine.button.create" action="/sponsor/invoice/create"/>	
 
 
