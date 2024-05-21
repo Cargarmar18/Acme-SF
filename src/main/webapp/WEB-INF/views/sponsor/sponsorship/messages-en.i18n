@@ -14,6 +14,7 @@ sponsor.sponsorship.form.title = sponsorship details
 
 sponsor.sponsorship.form.label.indication = Doesn't have fatal errors
 sponsor.sponsorship.list-mine.button.create  = Create sponsorship
+sponsor.sponsorship.form.button.create = Create
 sponsor.sponsorship.form.button.publish = Publish
 sponsor.sponsorship.form.button.delete = Delete
 sponsor.sponsorship.form.button.update = Update
@@ -29,7 +30,7 @@ sponsor.sponsorship.form.label.project: Project:
 sponsor.sponsorship.form.label.email = Email:
 sponsor.sponsorship.form.label.moreInfo = Link to more information(Optional):
 
-sponsor.sponsorship.form.error.duplicated = The code is taken
+sponsor.sponsorship.form.error.duplicate = The code is taken
 sponsor.sponsorship.form.error.fatalError = Cannot publish a sponsorship with fatal errors
 sponsor.sponsorship.form.error.userStoryNotPublished = You cannot publish a sponsorship with unpublished user stories
 sponsor.sponsorship.form.error.noUserStory =  You cannot publish a sponsorship without user stories
@@ -38,3 +39,11 @@ sponsor.sponsorship.list.label.code = Code
 sponsor.sponsorship.list.label.moment = Instatiation moment
 sponsor.sponsorship.list.label.amount = Amount of the sponsorship
 sponsor.sponsorship.list.label.draft-mode = Draft mode
+sponsor.sponsorship.form.error.startSponsorshipBelowLimit = The start moment must be after or equal 2000/01/01 00:00
+sponsor.sponsorship.form.error.endSponsorshipAboveLimit = The end moment must be before or equal 2200/12/31 23:59
+sponsor.sponsorship.form.error.startSponsorshipAboveLimit = The start moment must be before or equal 2200/12/31 23:59
+sponsor.sponsorship.form.error.startSponsorAfterMoment = Start moment must be after moment
+sponsor.sponsorship.form.error.period = The time between start and end moment must be at least 1 month long
+sponsor.sponsorship.form.error.draftMode = Project is not in draft Mode
+sponsor.sponsorship.form.error.amountInvoices = Invoices amount must be lower than sponsorship amount
+sponsor.sponsorship.form.error.publishedInvoices = All invoices of the sponsorship must be published

@@ -14,6 +14,7 @@ package acme.features.sponsor.sponsorship;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -52,7 +53,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 		object = new Sponsorship();
 		object.setDraftMode(true);
 		object.setSponsor(Sponsor);
-
+		object.setMoment(MomentHelper.getCurrentMoment());
 		super.getBuffer().addData(object);
 	}
 
@@ -67,22 +68,34 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 		project = this.repository.findOneProjectById(projectId);
 		object.setProject(project);
 
-		super.bind(object, "code", "moment", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo");
+		super.bind(object, "code", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo");
 
 	}
 
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
-
+		Date belowMoment = MomentHelper.parse("1999/12/31 23:59", "yyyy/MM/dd HH:mm");
+		Date aboveMoment = MomentHelper.parse("2201/01/01 00:00", "yyyy/MM/dd HH:mm");
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Sponsorship sponsorshipSameCode;
 			sponsorshipSameCode = this.repository.findOneSponsorshipByCode(object.getCode());
 			super.state(sponsorshipSameCode == null, "code", "sponsor.sponsorship.form.error.duplicate");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("moment"))
+			super.state(MomentHelper.isAfter(object.getStartSponsor(), belowMoment), "moment", "sponsor.sponsorship.form.error.startSponsorshipBelowLimit");
 
 		if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
-			super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.startSponsor");
+			super.state(MomentHelper.isBefore(object.getStartSponsor(), aboveMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipAboveLimit");
+
+		if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+			super.state(MomentHelper.isAfter(object.getStartSponsor(), belowMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipBelowLimit");
+
+		if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+			super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.startSponsorAfterMoment");
+
+		if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
+			super.state(MomentHelper.isBefore(object.getEndSponsor(), aboveMoment), "endSponsor", "sponsor.sponsorship.form.error.endSponsorshipAboveLimit");
 
 		if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
 			super.state(MomentHelper.isAfter(object.getEndSponsor(), object.getMoment()), "endSponsor", "sponsor.sponsorship.form.error.endSponsor");
@@ -91,7 +104,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 			super.state(MomentHelper.isLongEnough(object.getStartSponsor(), object.getEndSponsor(), 1, ChronoUnit.MONTHS), "endSponsor", "sponsor.sponsorship.form.error.period");
 
 		if (!super.getBuffer().getErrors().hasErrors("amount"))
-			super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= -1000000.00, "amount", "sponsor.sponsorship.form.error.amountOutOfBounds");
+			super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= 0.00, "amount", "sponsor.sponsorship.form.error.amountOutOfBounds");
 
 	}
 
@@ -114,7 +127,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 
 		choices = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 
-		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "draftMode");
+		dataset = super.unbind(object, "code", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "draftMode");
 		dataset.put("types", choices);
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);

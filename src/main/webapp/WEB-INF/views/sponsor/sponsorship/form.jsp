@@ -17,7 +17,6 @@
 
 <acme:form>
 	<acme:input-textbox code="sponsor.sponsorship.form.label.code" path="code" placeholder="XXX-YYY"/>
-	<acme:input-moment code="sponsor.sponsorship.form.label.moment" path="moment"/>
 	<acme:input-moment code="sponsor.sponsorship.form.label.startSponsor" path="startSponsor"/>
 	<acme:input-moment code="sponsor.sponsorship.form.label.endSponsor" path="endSponsor"/>
 	<acme:input-money code="sponsor.sponsorship.form.label.amount" path="amount"/>

@@ -64,9 +64,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findSponsorshipById(id);
 
-		Date moment;
-		moment = MomentHelper.getCurrentMoment();
-		object.setMoment(moment);
+		object.setMoment(MomentHelper.getCurrentMoment());
 
 		super.getBuffer().addData(object);
 	}
@@ -75,15 +73,16 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	public void bind(final Sponsorship object) {
 		assert object != null;
 
-		super.bind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo");
+		super.bind(object, "code", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo");
 	}
 
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
 
-		String dateString = "2201/01/01 00:00";
-		Date futureMostDate = MomentHelper.parse(dateString, "yyyy/MM/dd HH:mm");
+		Date belowMoment = MomentHelper.parse("1999/12/31 23:59", "yyyy/MM/dd HH:mm");
+		Date aboveMoment = MomentHelper.parse("2201/01/01 00:00", "yyyy/MM/dd HH:mm");
+
 		String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
 		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*;\\s*"));
 
@@ -99,16 +98,22 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
 				super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.startSponsor");
 
+			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+				super.state(MomentHelper.isBefore(object.getStartSponsor(), aboveMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipAboveLimit");
+
+			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+				super.state(MomentHelper.isAfter(object.getStartSponsor(), belowMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipBelowLimit");
+
 			if (object.getEndSponsor() != null) {
+
+				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
+					super.state(MomentHelper.isBefore(object.getEndSponsor(), aboveMoment), "endSponsor", "sponsor.sponsorship.form.error.endSponsorshipAboveLimit");
 
 				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
 					super.state(MomentHelper.isAfter(object.getEndSponsor(), object.getMoment()), "endSponsor", "sponsor.sponsorship.form.error.endSponsor");
 
 				if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
 					super.state(MomentHelper.isBefore(object.getStartSponsor(), object.getEndSponsor()), "startSponsor", "sponsor.sponsorship.form.error.startSponsorBeforeendSponsor");
-
-				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
-					super.state(MomentHelper.isBefore(object.getEndSponsor(), futureMostDate), "endSponsor", "sponsor.sponsorship.form.error.dateOutOfBounds");
 
 				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
 					super.state(MomentHelper.isLongEnough(object.getStartSponsor(), object.getEndSponsor(), 1, ChronoUnit.MONTHS), "endSponsor", "sponsor.sponsorship.form.error.period");
@@ -128,8 +133,8 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 				super.state(acceptedCurrencyList.contains(object.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.currencyNotSupported");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("published"))
-			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.published");
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 	}
 
 	@Override
@@ -151,7 +156,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 
 		choices = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 
-		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "draftMode");
+		dataset = super.unbind(object, "code", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "draftMode");
 		dataset.put("types", choices);
 
 		dataset.put("project", projects.getSelected().getKey());

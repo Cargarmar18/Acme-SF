@@ -13,13 +13,11 @@
 package acme.features.sponsor.sponsorship;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
@@ -58,12 +56,9 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	public void load() {
 		Sponsorship object;
 		int id;
-		Date instantiationMoment;
-		instantiationMoment = MomentHelper.getCurrentMoment();
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneSponsorshipById(id);
-		object.setMoment(instantiationMoment);
 
 		super.getBuffer().addData(object);
 	}
@@ -71,23 +66,20 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 	@Override
 	public void bind(final Sponsorship object) {
 		assert object != null;
-		super.bind(object, "draftMode");
+		super.bind(object, "code", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "project");
 	}
 
 	@Override
 	public void validate(final Sponsorship object) {
-		assert object != null;
+		Collection<Invoice> invoices;
+		invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 
-		if (!super.getBuffer().getErrors().hasErrors("draftMode")) {
-			Double amount = object.getAmount().getAmount();
-			Double total = 0.0;
-			Collection<Invoice> invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
-			for (Invoice invoice : invoices)
-				if (!invoice.isDraftMode())
-					total += invoice.getInvoiceQuantity().getAmount();
-
-			super.state(amount.equals(total), "draftMode", "sponsor.sponsorship.form.error.amount");
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
+			Double totalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
+			super.state(object.getAmount().getAmount() >= totalAmount, "amount", "sponsor.sponsorship.form.error.amountInvoices");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(invoices.stream().allMatch(i -> !i.isDraftMode()), "draftMode", "sponsor.sponsorship.form.error.publishedInvoices");
 
 	}
 
@@ -110,12 +102,12 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 		sponsorshipTypes = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 
-		dataset = super.unbind(object, "code", "moment", "startDate", "endDate", "type", "amount", "email", "link", "draftMode");
+		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "email", "moreInfo");
 
-		dataset.put("sponsorshipTypes", sponsorshipTypes);
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);
 
+		dataset.put("sponsorshipType", sponsorshipTypes);
 		super.getResponse().addData(dataset);
 	}
 
