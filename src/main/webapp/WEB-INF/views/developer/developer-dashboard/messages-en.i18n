@@ -1,0 +1,7 @@
+developer.developer-dashboard.form.label.number-with-update-moment = Number of training modules with update moment 
+developer.developer-dashboard.form.label.number-with-link = Number of training sessions with a link
+developer.developer-dashboard.form.label.average-total-time = Average total time of the training modules
+developer.developer-dashboard.form.label.deviation-total-time = Deviation of the total time of the training modules
+developer.developer-dashboard.form.label.min-total-time = Minimum total time of the training modules
+developer.developer-dashboard.form.label.max-total-time = Maximum total time of the training modules
+developer.developer-dashboard.form.title = Developer dashboard

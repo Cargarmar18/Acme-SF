@@ -65,40 +65,43 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 	public void validate(final TrainingSession object) {
 		assert object != null;
 
-		TrainingModule trainingModule = object.getTrainingModule();
+		TrainingModule trainingModule;
 		Date creationMoment;
 
-		if (trainingModule != null) {
-			trainingModule = object.getTrainingModule();
-			creationMoment = trainingModule.getCreationMoment();
+		trainingModule = object.getTrainingModule();
 
-			Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
-			Date upperLimit = MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm");
-			Date beginningUpper = MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm");
+		Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
+		Date upperLimit = MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm");
+		Date beginningUpper = MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm");
+
+		if (trainingModule != null) {
+			creationMoment = trainingModule.getCreationMoment();
 
 			if (!super.getBuffer().getErrors().hasErrors("beginningMoment")) {
 				Date minimumBeginning;
 
 				minimumBeginning = MomentHelper.deltaFromMoment(creationMoment, 7, ChronoUnit.DAYS);
-				super.state(MomentHelper.isAfter(object.getBeginningMoment(), minimumBeginning), "beginningMoment", "developer.training-session.form.error.beginningMomentAfterCreationMoment");
+				super.state(MomentHelper.isAfterOrEqual(object.getBeginningMoment(), minimumBeginning), "beginningMoment", "developer.training-session.form.error.beginningMomentAfterCreationMoment");
 			}
-
-			if (!super.getBuffer().getErrors().hasErrors("beginningMoment"))
-				super.state(MomentHelper.isAfter(object.getBeginningMoment(), lowerLimit), "beginningMoment", "developer.training-session.form.error.beginningMomentAfterLowerLimit");
-
-			if (!super.getBuffer().getErrors().hasErrors("beginningMoment"))
-				super.state(MomentHelper.isBefore(object.getBeginningMoment(), beginningUpper), "beginningMoment", "developer.training-session.form.error.beginningMomentBeforeLimit");
-
-			if (!super.getBuffer().getErrors().hasErrors("endMoment")) {
-				Date minimumEnd;
-
-				minimumEnd = MomentHelper.deltaFromMoment(object.getBeginningMoment(), 7, ChronoUnit.DAYS);
-				super.state(MomentHelper.isAfter(object.getEndMoment(), minimumEnd), "endMoment", "developer.training-session.form.error.endMomentAfterBeginningMoment");
-			}
-
-			if (!super.getBuffer().getErrors().hasErrors("endMoment"))
-				super.state(MomentHelper.isBefore(object.getEndMoment(), upperLimit), "endMoment", "developer.training-session.form.error.endMomentBeforeUpperLimit");
 		}
+		if (!super.getBuffer().getErrors().hasErrors("beginningMoment"))
+			super.state(MomentHelper.isAfterOrEqual(object.getBeginningMoment(), lowerLimit), "beginningMoment", "developer.training-session.form.error.beginningMomentAfterLowerLimit");
+
+		if (!super.getBuffer().getErrors().hasErrors("beginningMoment"))
+			super.state(MomentHelper.isBeforeOrEqual(object.getBeginningMoment(), beginningUpper), "beginningMoment", "developer.training-session.form.error.beginningMomentBeforeLimit");
+
+		if (!super.getBuffer().getErrors().hasErrors("endMoment")) {
+			Date minimumEnd;
+
+			minimumEnd = MomentHelper.deltaFromMoment(object.getBeginningMoment(), 7, ChronoUnit.DAYS);
+			super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), minimumEnd), "endMoment", "developer.training-session.form.error.endMomentAfterBeginningMoment");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("endMoment"))
+			super.state(MomentHelper.isBeforeOrEqual(object.getEndMoment(), upperLimit), "endMoment", "developer.training-session.form.error.endMomentBeforeUpperLimit");
+
+		if (!super.getBuffer().getErrors().hasErrors("endMoment"))
+			super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), lowerLimit), "endMoment", "developer.training-session.form.error.endMomentBeforeUpperLimit");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingSession codeValid;

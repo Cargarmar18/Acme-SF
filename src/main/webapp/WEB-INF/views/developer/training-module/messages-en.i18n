@@ -33,3 +33,6 @@ developer.training-module.form.error.draftModePublish = An already published tra
 developer.training-module.form.error.minimumOneTrainingSession = A training module cannot be published without having at least one training session
 developer.training-module.form.error.cannotPublishWithDraftTrainingSession = A training module cannot be published with any training sessions in draft mode
 
+developer.training-module.form.error.creationMomentAfterPresent = The creation moment cannot be in the future
+developer.training-module.form.error.updateMomentAfterPresent = The update moment cannot be in the future
+

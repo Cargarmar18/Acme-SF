@@ -28,7 +28,12 @@ developer.training-module.form.error.duplicated = Este código ya existe
 developer.training-module.form.error.creationMomentBeforeLowerLimit = La fecha de creación no puede ser antes de: 01/01/2000 00:00
 developer.training-module.form.error.updateMomentAfterCreationMoment = La fecha de actualización debe ser después de la fecha de creación
 developer.training-module.form.error.updateMomentBeforeLowerLimit = La fecha de actualización no puede ser antes de: 01/01/2000 00:00
+
+developer.training-module.form.error.creationMomentAfterPresent = El momento de creación debe ser en el pasado
 developer.training-module.form.error.draftModePublish = Un módulo de entrenamiento ya publicado no puede ser publicado
 developer.training-module.form.error.minimumOneTrainingSession = Un módulo de entrenamiento no puede ser publicado sin tener, al menos, una sesión de entrenamiento
 developer.training-module.form.error.cannotPublishWithDraftTrainingSession = Un módulo de entrenamiento no puede ser publicado teniendo alguna sesión de entrenamiento en modo borrador
+
+developer.training-module.form.error.creationMomentAfterPresent = El momento de creación no puede estar en el futuro
+developer.training-module.form.error.updateMomentAfterPresent = El momento de actualización no puede estar en el futuro
 

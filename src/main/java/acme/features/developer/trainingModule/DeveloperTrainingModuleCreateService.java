@@ -62,6 +62,7 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		assert object != null;
 
 		Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
+		Date present = MomentHelper.parse("2022/07/30 00:00", "yyyy/MM/dd HH:mm");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule codeValid;
@@ -71,7 +72,10 @@ public class DeveloperTrainingModuleCreateService extends AbstractService<Develo
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("creationMoment"))
-			super.state(MomentHelper.isAfter(object.getCreationMoment(), lowerLimit), "creationMoment", "developer.training-module.form.error.creationMomentBeforeLowerLimit");
+			super.state(MomentHelper.isAfterOrEqual(object.getCreationMoment(), lowerLimit), "creationMoment", "developer.training-module.form.error.creationMomentBeforeLowerLimit");
+
+		if (!super.getBuffer().getErrors().hasErrors("creationMoment"))
+			super.state(MomentHelper.isBeforeOrEqual(object.getCreationMoment(), present), "creationMoment", "developer.training-module.form.error.creationMomentAfterPresent");
 	}
 
 	@Override
