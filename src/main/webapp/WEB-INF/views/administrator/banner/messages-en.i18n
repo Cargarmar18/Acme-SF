@@ -27,8 +27,8 @@ administrator.banner.list.label.pictureLink = Picture link
 administrator.banner.list.label.slogan = Slogan
 administrator.banner.list.label.targetLink = Target link
 
-administrator.banner.form.error.endBeforeStart = The start date must be before the ending date
 administrator.banner.form.error.afterInstantiation = The date must be later than the instantiation moment 
-administrator.banner.form.error.dateOutOfBounds = The date surpasses the date upper limit
+administrator.banner.form.error.dateOutOfBounds = The date surpasses the date upper limit or is lower than the date lower limit
 administrator.banner.form.error.bannerPeriod = The banner period must be of at least 1 week
+administrator.banner.form.error.dateInThePast = This date must be in the past not the future
 
