@@ -12,6 +12,8 @@
 
 package acme.features.manager.project;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,13 +75,13 @@ public class ManagerProjectPublishService extends AbstractService<Manager, Proje
 		if (!super.getBuffer().getErrors().hasErrors("indication"))
 			super.state(object.isIndication() == true, "indication", "manager.project.form.error.fatalError");
 
-		UserStory userStory;
+		Collection<UserStory> userStory;
 
-		userStory = this.repository.findUserStoryNotPublishedInProject(object.getId());
-		super.state(userStory == null, "*", "manager.project.form.error.userStoryNotPublished");
+		userStory = this.repository.findManyUserStoryNotPublishedInProject(object.getId());
+		super.state(!userStory.stream().anyMatch(UserStory::isDraftMode), "*", "manager.project.form.error.userStoryNotPublished");
 
-		userStory = this.repository.findOneUserStoryInProject(object.getId());
-		super.state(userStory != null, "*", "manager.project.form.error.noUserStory");
+		userStory = this.repository.findManyUserStoryInProject(object.getId());
+		super.state(!userStory.isEmpty(), "*", "manager.project.form.error.noUserStory");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			Project codeValid;
