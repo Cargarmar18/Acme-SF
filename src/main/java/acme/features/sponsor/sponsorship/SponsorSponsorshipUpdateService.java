@@ -73,7 +73,7 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	public void bind(final Sponsorship object) {
 		assert object != null;
 
-		super.bind(object, "code", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo");
+		super.bind(object, "code", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo", "project");
 	}
 
 	@Override
