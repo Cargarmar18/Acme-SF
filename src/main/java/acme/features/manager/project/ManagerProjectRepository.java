@@ -42,10 +42,10 @@ public interface ManagerProjectRepository extends AbstractRepository {
 	Project findOneProjectByCode(String code);
 
 	@Query("select up.userStory from UserStoryProject up where up.project.id = :projectId and up.userStory.draftMode = true")
-	UserStory findUserStoryNotPublishedInProject(int projectId);
+	Collection<UserStory> findManyUserStoryNotPublishedInProject(int projectId);
 
 	@Query("select up.userStory from UserStoryProject up where up.project.id = :projectId")
-	UserStory findOneUserStoryInProject(int projectId);
+	Collection<UserStory> findManyUserStoryInProject(int projectId);
 
 	@Query("select u from UserStoryProject u where u.project.id = :projectId")
 	Collection<UserStoryProject> findManyUserStoryProjectsByProjectId(int projectId);
