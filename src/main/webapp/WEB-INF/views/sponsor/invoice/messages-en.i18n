@@ -37,3 +37,4 @@ sponsor.invoice.list-mine.label.draftMode = Draft mode
 sponsor.invoice.list-mine.label.sponsorship = Sponsorship
 
 sponsor.invoice.list-mine.button.create = Create
+sponsor.invoide.form.error.dueDateAboveLimit = Due Date above the limit

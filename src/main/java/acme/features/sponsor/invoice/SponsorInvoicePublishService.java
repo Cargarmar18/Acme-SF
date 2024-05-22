@@ -89,11 +89,11 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 			for (Invoice invoice : invoices)
 				if (invoice.isDraftMode())
 					summatory += invoice.getInvoiceQuantity().getAmount();
-			super.state(summatory + object.getInvoiceQuantity().getAmount() <= object.getSponsorship().getAmount().getAmount(), "sponsorship", "invoice.sponsorship.form.error.invoiceSummatoryAmount");
+			super.state(summatory + object.getInvoiceQuantity().getAmount() <= object.getSponsorship().getAmount().getAmount(), "*", "invoice.sponsorship.form.error.invoiceSummatoryAmount");
 		}
 
 		if (!super.getBuffer().getErrors().hasErrors("quantity"))
-			super.state(object.getSponsorship() != null && object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "quantity", "sponsor.invoice.form.error.invoiceSummatoryCurrency");
+			super.state(object.getSponsorship() != null && object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "*", "sponsor.invoice.form.error.invoiceSummatoryCurrency");
 
 	}
 

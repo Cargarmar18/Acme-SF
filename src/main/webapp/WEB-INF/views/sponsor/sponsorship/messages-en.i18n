@@ -47,3 +47,6 @@ sponsor.sponsorship.form.error.period = The time between start and end moment mu
 sponsor.sponsorship.form.error.draftMode = Project is not in draft Mode
 sponsor.sponsorship.form.error.amountInvoices = Invoices amount must be lower than sponsorship amount
 sponsor.sponsorship.form.error.publishedInvoices = All invoices of the sponsorship must be published
+
+sponsor.sponsorship.form.error.startSponsor = The start sponsor moment could not be before the instantiation moment
+sponsor.sponsorship.form.error.amountOutOfLImits = Quantity must be more than 0 and less than 1 million

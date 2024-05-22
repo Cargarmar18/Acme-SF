@@ -76,10 +76,10 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 			Double totalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
-			super.state(object.getAmount().getAmount() >= totalAmount, "amount", "sponsor.sponsorship.form.error.amountInvoices");
+			super.state(object.getAmount().getAmount() >= totalAmount, "*", "sponsor.sponsorship.form.error.amountInvoices");
 		}
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(invoices.stream().allMatch(i -> !i.isDraftMode()), "draftMode", "sponsor.sponsorship.form.error.publishedInvoices");
+			super.state(invoices.stream().allMatch(i -> !i.isDraftMode()), "*", "sponsor.sponsorship.form.error.publishedInvoices");
 
 	}
 
@@ -102,7 +102,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 		sponsorshipTypes = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 
-		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "email", "moreInfo");
+		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "email", "moreInfo", "draftMode");
 
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);

@@ -87,10 +87,9 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*;\\s*"));
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Sponsorship sponsorshipSameCode;
-			sponsorshipSameCode = this.repository.findOneSponsorshipByCode(object.getCode());
-			int id = sponsorshipSameCode.getId();
-			super.state(id == object.getId() || sponsorshipSameCode == null, "code", "sponsor.sponsorhsip.form.error.duplicate");
+			Sponsorship sponsorshipValid;
+			sponsorshipValid = this.repository.findOneSponsorshipByCode(object.getCode());
+			super.state(sponsorshipValid == null || sponsorshipValid.equals(object), "code", "sponsor.sponsorship.form.error.duplicate");
 		}
 
 		if (object.getStartSponsor() != null) {

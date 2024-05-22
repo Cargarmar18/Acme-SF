@@ -24,6 +24,7 @@ public class SponsorSponsorshipListService extends AbstractService<Sponsor, Spon
 
 	@Override
 	public void authorise() {
+
 		super.getResponse().setAuthorised(true);
 	}
 
