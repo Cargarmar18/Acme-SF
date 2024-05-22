@@ -59,6 +59,7 @@ master.menu.sponsor.sponsorship-list = List all sponsorships
 master.menu.sponsor.sponsorship-list-mine = List my sponsorship
 master.menu.sponsor.sponsorship-create = Create an sponsorship
 master.menu.sponsor.sponsorship-list-mine2 = List my invoices
+master.menu.sponsor.show = Sponsor dashboard
 
 # master.menu.manager ##########################################################
 

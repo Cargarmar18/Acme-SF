@@ -42,6 +42,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	public void authorise() {
 		boolean status;
 		int sponsorshipId;
+
 		Sponsorship sponsorship;
 
 		sponsorshipId = super.getRequest().getData("id", int.class);
@@ -53,8 +54,9 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 
 	@Override
 	public void load() {
-		Sponsorship object;
 		int id;
+
+		Sponsorship object;
 
 		id = super.getRequest().getData("id", int.class);
 		object = this.repository.findOneSponsorshipById(id);
@@ -65,23 +67,24 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	public void bind(final Sponsorship object) {
 		assert object != null;
 
-		super.bind(object, "code", "moment", "startDate", "endDate", "amount", "email", "link", "draftMode");
+		super.bind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "email", "moreInfo");
 	}
 
 	@Override
 	public void validate(final Sponsorship object) {
 		assert object != null;
-		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+		if (!super.getBuffer().getErrors().hasErrors("code"))
 			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 
-		if (!super.getBuffer().getErrors().hasErrors("published"))
-			super.state(this.repository.countFinishedInvoicesBySponsorshipId(object.getId()) == 0, "draftMode", "sponsor.sponsorship.form.error.deleteWithPublishedInvoices");
+		if (!super.getBuffer().getErrors().hasErrors("code"))
+			super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0, "draftMode", "sponsor.sponsorship.form.error.deleteWithPublishedInvoices");
 	}
 
 	@Override
 	public void perform(final Sponsorship object) {
 		assert object != null;
 		int sponsorshipId;
+
 		Collection<Invoice> invoices;
 
 		sponsorshipId = object.getId();
@@ -94,8 +97,11 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void unbind(final Sponsorship object) {
 		assert object != null;
+
 		Dataset dataset;
+
 		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo", "draftMode", "project");
+
 		super.getResponse().addData(dataset);
 	}
 

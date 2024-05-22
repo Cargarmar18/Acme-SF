@@ -20,6 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.data.models.Errors;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
@@ -71,37 +72,46 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 		sponsorship = this.repository.findOneSponsorshipById(sponsorshipId);
 		object.setSponsorship(sponsorship);
 
-		super.bind(object, "code", "link", "dueDate", "quantity", "tax");
+		super.bind(object, "code", "dueDate", "invoiceQuantity", "link", "tax");
 
 	}
 
 	@Override
 	public void validate(final Invoice object) {
-
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("code")) {
-			Invoice invoiceSameCode;
-			invoiceSameCode = this.repository.findOneInvoiceByCode(object.getCode());
-			super.state(invoiceSameCode == null, "code", "sponsor.invoice.form.error.duplicate");
+		Date aboveMoment = MomentHelper.parse("2201/01/01 00:00", "yyyy/MM/dd HH:mm");
+
+		Errors errors = super.getBuffer().getErrors();
+
+		if (!errors.hasErrors("code")) {
+			Invoice invoiceSameCode = this.repository.findOneInvoiceByCode(object.getCode());
+			int id = invoiceSameCode != null ? invoiceSameCode.getId() : -1;
+			super.state(id == object.getId() || invoiceSameCode == null, "code", "sponsor.invoice.form.error.duplicate");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("sponsorship"))
-			super.state(object.getSponsorship().isDraftMode() == true, "sponsorship", "sponsor.invoice.form.error.sponsorship");
-
-		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
-			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.dueDate");
-
-		if (!super.getBuffer().getErrors().hasErrors("dueDate"))
+		if (!errors.hasErrors("dueDate")) {
+			super.state(MomentHelper.isAfter(object.getDueDate(), MomentHelper.getCurrentMoment()), "dueDate", "sponsor.invoice.form.error.dueDate");
 			super.state(MomentHelper.isLongEnough(object.getRegistrationTime(), object.getDueDate(), 1, ChronoUnit.MONTHS), "dueDate", "sponsor.invoice.form.error.period");
+			if (!super.getBuffer().getErrors().hasErrors("dueDate"))
+				super.state(MomentHelper.isBefore(object.getDueDate(), aboveMoment), "dueDate", "sponsor.invoide.form.error.dueDateAboveLimit");
 
-		if (!super.getBuffer().getErrors().hasErrors("InvoiceQuantity"))
-			super.state(object.getInvoiceQuantity() != null && object.getInvoiceQuantity().getAmount() <= 1000000.00 && object.getInvoiceQuantity().getAmount() >= -1000000.00, "quantity", "sponsor.invoice.form.error.amountOutOfBounds");
+		}
 
-		if (!super.getBuffer().getErrors().hasErrors("InvoiceQuantity"))
-			super.state(object.getSponsorship() != null && object.getInvoiceQuantity() != null && object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "quantity", "sponsor.invoice.form.error.currency");
+		if (!errors.hasErrors("sponsorship"))
+			super.state(object.getSponsorship().isDraftMode(), "sponsorship", "sponsor.invoice.form.error.sponsorship");
+
+		if (!errors.hasErrors("draftMode"))
+			super.state(object.isDraftMode(), "draftMode", "sponsor.invoice.form.error.draftMode");
+
+		if (!errors.hasErrors("invoiceQuantity")) {
+			Double invoiceAmount = object.getInvoiceQuantity().getAmount();
+			super.state(invoiceAmount.compareTo(Double.valueOf(1000000.00)) <= 0 && invoiceAmount.compareTo(Double.valueOf(-1000000.00)) >= 0, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
+			super.state(object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "invoiceQuantity", "sponsor.invoice.form.error.wrongCurrency");
+		}
 
 	}
+
 
 	@Override
 	public void perform(final Invoice object) {
@@ -121,7 +131,7 @@ public class SponsorInvoiceCreateService extends AbstractService<Sponsor, Invoic
 		Collection<Sponsorship> unpublishedSponsorships = this.repository.findSponsorDraftModeSponsorship(sponsorId);
 		sponsorships = SelectChoices.from(unpublishedSponsorships, "code", object.getSponsorship());
 
-		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "quantity", "tax", "published");
+		dataset = super.unbind(object, "code", "dueDate", "invoiceQuantity", "link", "tax", "draftMode");
 
 		dataset.put("sponsorship", sponsorships.getSelected().getKey());
 		dataset.put("sponsorships", sponsorships);

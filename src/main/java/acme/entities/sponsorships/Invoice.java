@@ -42,12 +42,10 @@ public class Invoice extends AbstractEntity {
 	@PastOrPresent
 	private Date				registrationTime;
 
-	// TO DO applying constraint of 1 month
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date				dueDate;
 
-	// 	TO DO add constraint positive not 0 on money datatype
 	@NotNull
 	private Money				invoiceQuantity;
 

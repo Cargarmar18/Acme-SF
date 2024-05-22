@@ -1,0 +1,40 @@
+# messages-en.i18n
+#
+# Copyright (C) 2012-2024 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+sponsor.invoice.list.title = Listing of my invoices
+sponsor.invoice.form.title = Invoices details:
+
+
+sponsor.invoice.form.label.code = Code
+sponsor.invoice.form.label.registrationTime = Registration time
+sponsor.invoice.form.label.dueDate = Due date
+sponsor.invoice.form.label.invoiceQuantity = Invoice quantity
+sponsor.invoice.form.label.tax = Tax
+sponsor.invoice.form.label.link = Link
+sponsor.invoice.form.label.sponsorship = Sponsorship
+
+sponsor.invoice.list-mine.button.create = Create invoice
+sponsor.invoice.form.button.create = Create
+sponsor.invoice.form.button.publish = Publish
+sponsor.invoice.form.button.delete = Delete
+sponsor.invoice.form.button.update = Update
+
+sponsor.invoice.form.error.duplicated = The code is taken
+sponsor.invoice.form.error.fatalError = Cannot publish a invoices with fatal errors
+
+sponsor.invoice.list-mine.label.code = Code
+sponsor.invoice.list-mine.label.dueDate = Due date
+sponsor.invoice.list-mine.label.registrationTime = Registration time
+sponsor.invoice.list-mine.label.totalAmount = Invoice quantity
+sponsor.invoice.list-mine.label.draftMode = Draft mode
+sponsor.invoice.list-mine.label.sponsorship = Sponsorship
+
+sponsor.invoice.list-mine.button.create = Create
+sponsor.invoide.form.error.dueDateAboveLimit = Due Date above the limit
