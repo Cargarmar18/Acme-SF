@@ -17,7 +17,6 @@
 
 <acme:form>
 	<acme:input-textbox code="sponsor.invoice.form.label.code" path="code" placeholder="IN-XXXX-YYYY"/>
-	<acme:input-moment code="sponsor.invoice.form.label.registrationTime" path="registrationTime"/>
 	<acme:input-moment code="sponsor.invoice.form.label.dueDate" path="dueDate"/>
 	<acme:input-money code="sponsor.invoice.form.label.invoiceQuantity" path="invoiceQuantity"/>
 	<acme:input-double code="sponsor.invoice.form.label.tax" path="tax"/>			
