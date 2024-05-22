@@ -72,28 +72,34 @@ public class AdministratorBannerUpdateService extends AbstractService<Administra
 	@Override
 	public void validate(final Banner object) {
 		assert object != null;
+		Date creationMoment = object.getInstatiationUpdateMoment();
+		Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
+		Date upperLimit = MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm");
+		Date startUpper = MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm");
 
 		if (object.getStartDisplay() != null) {
-			if (object.getEndDisplay() != null) {
-				if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
-					super.state(MomentHelper.isBefore(object.getStartDisplay(), object.getEndDisplay()), "startDisplay", "administrator.banner.form.error.endBeforeStart");
-
-				if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
-					super.state(MomentHelper.isLongEnough(object.getStartDisplay(), object.getEndDisplay(), 1, ChronoUnit.WEEKS), "endDisplay", "administrator.banner.form.error.bannerPeriod");
-			}
+			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
+				super.state(MomentHelper.isAfterOrEqual(object.getStartDisplay(), creationMoment), "startDisplay", "administrator.banner.form.error.afterInstantiation");
 
 			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
-				super.state(MomentHelper.isAfter(object.getStartDisplay(), object.getInstatiationUpdateMoment()), "startDisplay", "administrator.banner.form.error.afterInstantiation");
+				super.state(MomentHelper.isAfterOrEqual(object.getStartDisplay(), lowerLimit), "startDisplay", "administrator.banner.form.error.dateOutOfBounds");
 
 			if (!super.getBuffer().getErrors().hasErrors("startDisplay"))
-				super.state(MomentHelper.isBeforeOrEqual(object.getStartDisplay(), MomentHelper.parse("2200/12/24 23:59", "yyyy/MM/dd HH:mm")), "startDisplay", "administrator.banner.form.error.dateOutOfBounds");
+				super.state(MomentHelper.isBeforeOrEqual(object.getStartDisplay(), startUpper), "startDisplay", "administrator.banner.form.error.dateOutOfBounds");
+			if (object.getEndDisplay() != null)
+				if (!super.getBuffer().getErrors().hasErrors("endDisplay")) {
+					Date minimumEnd;
+
+					minimumEnd = MomentHelper.deltaFromMoment(object.getStartDisplay(), 7, ChronoUnit.DAYS);
+					super.state(MomentHelper.isAfterOrEqual(object.getEndDisplay(), minimumEnd), "endDisplay", "administrator.banner.form.error.bannerPeriod");
+				}
 		}
 		if (object.getEndDisplay() != null) {
 			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
-				super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplay(), MomentHelper.parse("2200/12/31 23:59", "yyyy/MM/dd HH:mm")), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
+				super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplay(), upperLimit), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
 
-			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
-				super.state(MomentHelper.isAfter(object.getEndDisplay(), object.getInstatiationUpdateMoment()), "endDisplay", "administrator.banner.form.error.afterInstantiation");
+			if (!super.getBuffer().getErrors().hasErrors("endMoment"))
+				super.state(MomentHelper.isAfterOrEqual(object.getEndDisplay(), lowerLimit), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
 		}
 	}
 
