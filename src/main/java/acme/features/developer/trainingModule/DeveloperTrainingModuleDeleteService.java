@@ -6,11 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
-import acme.client.views.SelectChoices;
-import acme.entities.project.Project;
-import acme.entities.trainingModules.DifficultyLevel;
 import acme.entities.trainingModules.TrainingModule;
 import acme.entities.trainingModules.TrainingSession;
 import acme.roles.Developer;
@@ -77,26 +73,6 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 		trainingSessions = this.repository.findTrainingSessionsByTrainingModuleId(object.getId());
 		this.repository.deleteAll(trainingSessions);
 		this.repository.delete(object);
-	}
-
-	@Override
-	public void unbind(final TrainingModule object) {
-		assert object != null;
-		SelectChoices choices;
-		SelectChoices choices2;
-		Collection<Project> projects;
-		Dataset dataset;
-
-		choices = SelectChoices.from(DifficultyLevel.class, object.getDifficultyLevel());
-		projects = this.repository.findAllProjects();
-		choices2 = SelectChoices.from(projects, "code", object.getProject());
-
-		dataset = super.unbind(object, "code", "creationMoment", "details", "updateMoment", "link", "draftMode", "totalTime", "project");
-		dataset.put("difficultyLevels", choices);
-		dataset.put("project", choices2.getSelected().getKey());
-		dataset.put("projects", choices2);
-
-		super.getResponse().addData(dataset);
 	}
 
 }
