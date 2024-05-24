@@ -13,10 +13,11 @@ developer.training-module.form.label.project = Código del proyecto
 developer.training-module.list-mine.label.code = Código
 developer.training-module.list-mine.label.difficultyLevel = Nivel de dificultad
 developer.training-module.list-mine.label.details = Detalles
+developer.training-module.list-mine.label.totalTime = Tiempo total estimado
 developer.training-module.list-mine.label.draftMode = Borrador
 
 developer.training-module.form.button.create = Crear
-developer.training-module.form.button.create = Crear
+developer.training-module.list-mine.button.create = Crear
 developer.training-module.form.button.update = Actualizar
 developer.training-module.form.button.delete = Eliminar
 developer.training-module.form.button.publish = Publicar
