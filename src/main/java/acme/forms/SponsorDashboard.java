@@ -23,13 +23,13 @@ public class SponsorDashboard extends AbstractForm {
 
 	Map<Currency, Double>		averageAmountSponsorships;
 	Map<Currency, Double>		deviationAmountSponsorships;
-	Map<Currency, Integer>		maximumAmountSponsorships;
-	Map<Currency, Integer>		minimumAmountSponsorships;
+	Map<Currency, Double>		maximumAmountSponsorships;
+	Map<Currency, Double>		minimumAmountSponsorships;
 
 	Map<Currency, Double>		averageQuantityOfInvoices;
 	Map<Currency, Double>		deviationQuantityOfInvoices;
-	Map<Currency, Integer>		maximumQuantityOfInvoices;
-	Map<Currency, Integer>		minimumQuantityOfInvoices;
+	Map<Currency, Double>		maximumQuantityOfInvoices;
+	Map<Currency, Double>		minimumQuantityOfInvoices;
 
 	// Derived attributes -----------------------------------------------------
 

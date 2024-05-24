@@ -24,7 +24,7 @@ import acme.entities.sponsorships.Sponsorship;
 import acme.roles.Sponsor;
 
 @Service
-public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invoice> {
+public class SponsorInvoiceListSponsorshipService extends AbstractService<Sponsor, Invoice> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -38,6 +38,7 @@ public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invo
 	public void authorise() {
 		boolean status;
 		int sponsorshipId;
+
 		Sponsorship sponsorship;
 		Sponsor sponsor;
 
@@ -63,9 +64,12 @@ public class SponsorInvoiceListMineService extends AbstractService<Sponsor, Invo
 	@Override
 	public void unbind(final Invoice object) {
 		assert object != null;
+
 		Dataset dataset;
-		dataset = super.unbind(object, "code", "dueDate", "sponsorship.code");
-		dataset.put("value", object.getInvoiceQuantity());
+
+		dataset = super.unbind(object, "code", "dueDate", "draftMode", "sponsorship.code");
+		dataset.put("totalAmount", object.getInvoiceQuantity());
+
 		super.getResponse().addData(dataset);
 	}
 

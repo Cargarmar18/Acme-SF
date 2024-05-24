@@ -1,0 +1,56 @@
+sponsor.sponsor-dashboard.form.title = Panel de patrocinador
+
+sponsor.sponsor-dashboard.form.label.numberOfInvoicesTaxLessOrEqual21 = Número de facturas con tasa igual o menor a 21
+sponsor.sponsor-dashboard.form.label.numberOfSponsorshipsWithLink = Número de patrocinios con link
+
+sponsor.sponsor-dashboard.form.label.averageAmountUSD = Media de cantidad de patrocinios en USD
+sponsor.sponsor-dashboard.form.label.averageAmountEUR = Media de cantidad de patrocinios en EUR
+sponsor.sponsor-dashboard.form.label.averageAmountGBP = Media de cantidad de patrocinios en GBP
+sponsor.sponsor-dashboard.form.label.averageAmountTHB = Media de cantidad de patrocinios en THB
+sponsor.sponsor-dashboard.form.label.averageAmountCAD = Media de cantidad de patrocinios en CAD
+
+sponsor.sponsor-dashboard.form.label.deviationAmountUSD = Desviación de cantidad de patrocinios en USD
+sponsor.sponsor-dashboard.form.label.deviationAmountEUR = Desviación de cantidad de patrocinios en EUR
+sponsor.sponsor-dashboard.form.label.deviationAmountGBP = Desviación de cantidad de patrocinios en GBP
+sponsor.sponsor-dashboard.form.label.deviationAmountTHB = Desviación de cantidad de patrocinios en THB
+sponsor.sponsor-dashboard.form.label.deviationAmountCAD = Desviación de cantidad de patrocinios en CAD
+
+sponsor.sponsor-dashboard.form.label.maximumAmountUSD = Máxima cantidad de patrocinios en USD
+sponsor.sponsor-dashboard.form.label.maximumAmountEUR = Máxima cantidad de patrocinios en EUR
+sponsor.sponsor-dashboard.form.label.maximumAmountGBP = Máxima cantidad de patrocinios en GBP
+sponsor.sponsor-dashboard.form.label.maximumAmountTHB = Máxima cantidad de patrocinios en THB
+sponsor.sponsor-dashboard.form.label.maximumAmountCAD = Máxima cantidad de patrocinios en CAD
+
+sponsor.sponsor-dashboard.form.label.minimumAmountUSD = Mínima cantidad de patrocinios en USD
+sponsor.sponsor-dashboard.form.label.minimumAmountEUR = Mínima cantidad de patrocinios en EUR
+sponsor.sponsor-dashboard.form.label.minimumAmountGBP = Mínima cantidad de patrocinios en GBP
+sponsor.sponsor-dashboard.form.label.minimumAmountTHB = Mínima cantidad de patrocinios en THB
+sponsor.sponsor-dashboard.form.label.minimumAmountCAD = Mínima cantidad de patrocinios en CAD
+
+sponsor.sponsor-dashboard.form.label.averageQuantityUSD = Media de cantidad de facturas en USD
+sponsor.sponsor-dashboard.form.label.averageQuantityEUR = Media de cantidad de facturas en EUR
+sponsor.sponsor-dashboard.form.label.averageQuantityGBP = Media de cantidad de facturas en GBP
+sponsor.sponsor-dashboard.form.label.averageQuantityTHB = Media de cantidad de facturas en THB
+sponsor.sponsor-dashboard.form.label.averageQuantityCAD = Media de cantidad de facturas en CAD
+
+sponsor.sponsor-dashboard.form.label.deviationQuantityUSD = Desviación de cantidad de facturas en USD
+sponsor.sponsor-dashboard.form.label.deviationQuantityEUR = Desviación de cantidad de facturas en EUR
+sponsor.sponsor-dashboard.form.label.deviationQuantityGBP = Desviación de cantidad de facturas en GBP
+sponsor.sponsor-dashboard.form.label.deviationQuantityTHB = Desviación de cantidad de facturas en THB
+sponsor.sponsor-dashboard.form.label.deviationQuantityCAD = Desviación de cantidad de facturas en CAD
+
+sponsor.sponsor-dashboard.form.label.maximumQuantityUSD = Máxima cantidad de facturas en USD
+sponsor.sponsor-dashboard.form.label.maximumQuantityEUR = Máxima cantidad de facturas en EUR
+sponsor.sponsor-dashboard.form.label.maximumQuantityGBP = Máxima cantidad de facturas en GBP
+sponsor.sponsor-dashboard.form.label.maximumQuantityTHB = Máxima cantidad de facturas en THB
+sponsor.sponsor-dashboard.form.label.maximumQuantityCAD = Máxima cantidad de facturas en CAD
+
+sponsor.sponsor-dashboard.form.label.minimumQuantityUSD = Mínima cantidad de facturas en USD
+sponsor.sponsor-dashboard.form.label.minimumQuantityEUR = Mínima cantidad de facturas en EUR
+sponsor.sponsor-dashboard.form.label.minimumQuantityGBP = Mínima cantidad de facturas en GBP
+sponsor.sponsor-dashboard.form.label.minimumQuantityTHB = Mínima cantidad de facturas en THB
+sponsor.sponsor-dashboard.form.label.minimumQuantityCAD = Mínima cantidad de facturas en CAD
+
+
+
+

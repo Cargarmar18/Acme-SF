@@ -1,0 +1,52 @@
+sponsor.sponsor-dashboard.form.title = Sponsor dashboard
+
+sponsor.sponsor-dashboard.form.label.numberOfInvoicesTaxLessOrEqual21 = Number of invoices with tax less or equal than 21
+sponsor.sponsor-dashboard.form.label.numberOfSponsorshipsWithLink = Number of sponsorships with link
+
+sponsor.sponsor-dashboard.form.label.averageAmountUSD = Average amount of sponsorships in USD
+sponsor.sponsor-dashboard.form.label.averageAmountEUR = Average amount of sponsorships in EUR
+sponsor.sponsor-dashboard.form.label.averageAmountGBP = Average amount of sponsorships in GBP
+sponsor.sponsor-dashboard.form.label.averageAmountTHB = Average amount of sponsorships in THB
+sponsor.sponsor-dashboard.form.label.averageAmountCAD = Average amount of sponsorships in CAD
+
+sponsor.sponsor-dashboard.form.label.deviationAmountUSD = Deviation of the amount of sponsorships in USD
+sponsor.sponsor-dashboard.form.label.deviationAmountEUR = Deviation of the amount of sponsorships in EUR
+sponsor.sponsor-dashboard.form.label.deviationAmountGBP = Deviation of the amount of sponsorships in GBP
+sponsor.sponsor-dashboard.form.label.deviationAmountTHB = Deviation of the amount of sponsorships in THB
+sponsor.sponsor-dashboard.form.label.deviationAmountCAD = Deviation of the amount of sponsorships in CAD
+
+sponsor.sponsor-dashboard.form.label.maximumAmountUSD = Maximum amount of sponsorships in USD
+sponsor.sponsor-dashboard.form.label.maximumAmountEUR = Maximum amount of sponsorships in EUR
+sponsor.sponsor-dashboard.form.label.maximumAmountGBP = Maximum amount of sponsorships in GBP
+sponsor.sponsor-dashboard.form.label.maximumAmountTHB = Maximum amount of sponsorships in THB
+sponsor.sponsor-dashboard.form.label.maximumAmountCAD = Maximum amount of sponsorships in CAD
+
+sponsor.sponsor-dashboard.form.label.minimumAmountUSD = Minimum amount of sponsorships in USD
+sponsor.sponsor-dashboard.form.label.minimumAmountEUR = Minimum amount of sponsorships in EUR
+sponsor.sponsor-dashboard.form.label.minimumAmountGBP = Minimum amount of sponsorships in GBP
+sponsor.sponsor-dashboard.form.label.minimumAmountTHB = Minimum amount of sponsorships in THB
+sponsor.sponsor-dashboard.form.label.minimumAmountCAD = Minimum amount of sponsorships in CAD
+
+sponsor.sponsor-dashboard.form.label.averageQuantityUSD = Average quantity of invoices in USD
+sponsor.sponsor-dashboard.form.label.averageQuantityEUR = Average quantity of invoices in EUR
+sponsor.sponsor-dashboard.form.label.averageQuantityGBP = Average quantity of invoices in GBP
+sponsor.sponsor-dashboard.form.label.averageQuantityTHB = Average quantity of invoices in THB
+sponsor.sponsor-dashboard.form.label.averageQuantityCAD = Average quantity of invoices in CAD
+
+sponsor.sponsor-dashboard.form.label.deviationQuantityUSD = Deviation of the quantity of invoices in USD
+sponsor.sponsor-dashboard.form.label.deviationQuantityEUR = Deviation of the quantity of invoices in EUR
+sponsor.sponsor-dashboard.form.label.deviationQuantityGBP = Deviation of the quantity of invoices in GBP
+sponsor.sponsor-dashboard.form.label.deviationQuantityTHB = Deviation of the quantity of invoices in THB
+sponsor.sponsor-dashboard.form.label.deviationQuantityCAD = Deviation of the quantity of invoices in CAD
+
+sponsor.sponsor-dashboard.form.label.maximumQuantityUSD = Maximum quantity of invoices in USD
+sponsor.sponsor-dashboard.form.label.maximumQuantityEUR = Maximum quantity of invoices in EUR
+sponsor.sponsor-dashboard.form.label.maximumQuantityGBP = Maximum quantity of invoices in GBP
+sponsor.sponsor-dashboard.form.label.maximumQuantityTHB = Maximum quantity of invoices in THB
+sponsor.sponsor-dashboard.form.label.maximumQuantityCAD = Maximum quantity of invoices in CAD
+
+sponsor.sponsor-dashboard.form.label.minimumQuantityUSD = Minimum quantity of invoices in USD
+sponsor.sponsor-dashboard.form.label.minimumQuantityEUR = Minimum quantity of invoices in EUR
+sponsor.sponsor-dashboard.form.label.minimumQuantityGBP = Minimum quantity of invoices in GBP
+sponsor.sponsor-dashboard.form.label.minimumQuantityTHB = Minimum quantity of invoices in THB
+sponsor.sponsor-dashboard.form.label.minimumQuantityCAD = Minimum quantity of invoices in CAD

@@ -22,6 +22,7 @@ sponsor.sponsorship.form.button.create = Crear
 sponsor.sponsorship.form.button.publish = Publicar
 sponsor.sponsorship.form.button.delete = Eliminar
 sponsor.sponsorship.form.button.update = Editar
+sponsor.sponsorship.form.button.invoice = Facturas del patrocinio
 
 sponsor.sponsorship.form.error.duplicated = El código esta tomado
 sponsor.sponsorship.form.error.fatalError = No puede subir un proyecto con errores fatales
