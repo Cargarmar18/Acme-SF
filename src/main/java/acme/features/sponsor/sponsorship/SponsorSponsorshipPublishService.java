@@ -12,16 +12,20 @@
 
 package acme.features.sponsor.sponsorship;
 
+import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
-import acme.entities.sponsorships.Invoice;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.sponsorships.SponsorshipType;
 import acme.roles.Sponsor;
@@ -71,16 +75,62 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 	@Override
 	public void validate(final Sponsorship object) {
-		Collection<Invoice> invoices;
-		invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("amount")) {
-			Double totalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
-			super.state(object.getAmount().getAmount() >= totalAmount, "*", "sponsor.sponsorship.form.error.amountInvoices");
+		Date belowMoment = MomentHelper.parse("1999/12/31 23:59", "yyyy/MM/dd HH:mm");
+		Date aboveMoment = MomentHelper.parse("2201/01/01 00:00", "yyyy/MM/dd HH:mm");
+
+		String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
+		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*;\\s*"));
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Sponsorship sponsorshipValid;
+			sponsorshipValid = this.repository.findOneSponsorshipByCode(object.getCode());
+			super.state(sponsorshipValid == null || sponsorshipValid.equals(object), "code", "sponsor.sponsorship.form.error.duplicate");
 		}
-		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(invoices.stream().allMatch(i -> !i.isDraftMode()), "*", "sponsor.sponsorship.form.error.publishedInvoices");
 
+		if (object.getStartSponsor() != null) {
+
+			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+				super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.startSponsor");
+
+			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+				super.state(MomentHelper.isBefore(object.getStartSponsor(), aboveMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipAboveLimit");
+
+			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+				super.state(MomentHelper.isAfter(object.getStartSponsor(), belowMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipBelowLimit");
+
+			if (object.getEndSponsor() != null) {
+
+				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
+					super.state(MomentHelper.isBefore(object.getEndSponsor(), aboveMoment), "endSponsor", "sponsor.sponsorship.form.error.endSponsorshipAboveLimit");
+
+				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
+					super.state(MomentHelper.isAfter(object.getEndSponsor(), object.getMoment()), "endSponsor", "sponsor.sponsorship.form.error.endSponsor");
+
+				if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+					super.state(MomentHelper.isBefore(object.getStartSponsor(), object.getEndSponsor()), "startSponsor", "sponsor.sponsorship.form.error.startSponsorBeforeendSponsor");
+
+				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
+					super.state(MomentHelper.isLongEnough(object.getStartSponsor(), object.getEndSponsor(), 1, ChronoUnit.MONTHS), "endSponsor", "sponsor.sponsorship.form.error.period");
+
+			}
+		}
+
+		if (object.getAmount() != null) {
+			if (!super.getBuffer().getErrors().hasErrors("amount"))
+				super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= 0.00, "amount", "sponsor.sponsorship.form.error.amountOutOfBounds");
+
+			if (!super.getBuffer().getErrors().hasErrors("amount"))
+				super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0 || object.getAmount().getCurrency().equals(this.repository.findOneSponsorshipById(object.getId()).getAmount().getCurrency()), "amount",
+					"sponsor.sponsorship.form.error.currencyChange");
+
+			if (!super.getBuffer().getErrors().hasErrors("amount"))
+				super.state(acceptedCurrencyList.contains(object.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.currencyNotSupported");
+		}
+
+		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
+			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 	}
 
 	@Override
@@ -97,17 +147,18 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		SelectChoices sponsorshipTypes;
 		SelectChoices projects;
 
-		Collection<Project> unpublishedProjects = this.repository.findAllDraftModeProjects();
-		projects = SelectChoices.from(unpublishedProjects, "code", object.getProject());
+		Collection<Project> publishedProjects = this.repository.findAllDraftModeProjects();
+		projects = SelectChoices.from(publishedProjects, "code", object.getProject());
 
 		sponsorshipTypes = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 
-		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "email", "moreInfo", "draftMode");
+		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "draftMode");
+
+		dataset.put("types", sponsorshipTypes);
 
 		dataset.put("project", projects.getSelected().getKey());
 		dataset.put("projects", projects);
 
-		dataset.put("sponsorshipType", sponsorshipTypes);
 		super.getResponse().addData(dataset);
 	}
 
