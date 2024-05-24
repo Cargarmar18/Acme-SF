@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
+import acme.entities.project.PriorityStatus;
 import acme.entities.project.UserStory;
 import acme.roles.Manager;
 
@@ -82,9 +84,13 @@ public class ManagerUserStoryPublishService extends AbstractService<Manager, Use
 	@Override
 	public void unbind(final UserStory object) {
 		assert object != null;
+		SelectChoices choices;
+
+		choices = SelectChoices.from(PriorityStatus.class, object.getPriority());
 
 		Dataset dataset;
 		dataset = super.unbind(object, "title", "description", "cost", "acceptanceCriteria", "priority", "link", "draftMode");
+		dataset.put("priorities", choices);
 
 		super.getResponse().addData(dataset);
 	}
