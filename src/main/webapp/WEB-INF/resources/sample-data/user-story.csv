@@ -27,25 +27,37 @@ user-story-25,"acceptance criteria",20,"描述",,MUST,"title",manager-01,0
 user-story-26,"acceptance criteria",20,"説明",,MUST,"title",manager-01,0
 user-story-27,"acceptance criteria",20,"متطلبات القبول",,MUST,"title",manager-01,0
 user-story-28,"acceptance criteria",20,"';X;--",,MUST,"title",manager-01,0
-user-story-29,"acceptance criteria",20,"description","http://www.example.com",MUST,"title",manager-01,0
-user-story-30,"acceptance criteria",20,"description","http://www.example.jp",MUST,"title",manager-01,0
-user-story-31,"acceptance criteria",20,"description","https://github.com/search?q=python+language&type=Repositories",MUST,"title",manager-01,0
-user-story-32,"acceptance criteria",20,"description","https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz",MUST,"title",manager-01,0
-user-story-33,"acceptance criteria",20,"description","https://example.com/abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyza",MUST,"title",manager-01,0
-user-story-34,"acceptance criteria",20,"description","https://www.apple.com/shop/buy-iphone/iphone-13?icid=main-iphone-ip13",MUST,"title",manager-01,0
-user-story-35,"acceptance criteria",20,"description",,SHOULD,"title",manager-01,0
-user-story-36,"acceptance criteria",20,"description",,COULD,"title",manager-01,0
-user-story-37,"acceptance criteria",20,"description",,WILLNOT,"title",manager-01,0
-user-story-38,"acceptance criteria",20,"description",,MUST,"t",manager-01,0
-user-story-39,"acceptance criteria",20,"description",,MUST,"ti",manager-01,0
-user-story-40,"acceptance criteria",20,"description",,MUST,"Title title title title title title title title title title title title ti",manager-01,0
-user-story-41,"acceptance criteria",20,"description",,MUST,"Title title title title title title title title title title title title tit",manager-01,0
-user-story-42,"acceptance criteria",20,"description",,MUST,"<script>window.location='http://www.example.com'</script>",manager-01,0
-user-story-43,"acceptance criteria",20,"description",,MUST,"квалификация",manager-01,0
-user-story-44,"acceptance criteria",20,"description",,MUST,"προσόν",manager-01,0
-user-story-45,"acceptance criteria",20,"description",,MUST,"资质",manager-01,0
-user-story-46,"acceptance criteria",20,"description",,MUST,"資格",manager-01,0
-user-story-47,"acceptance criteria",20,"description",,MUST,"مؤهل",manager-01,0
-user-story-48,"acceptance criteria",20,"description",,MUST,"';X;--",manager-01,0
-user-story-49,"acceptance criteria",20,"description",,MUST,"title",manager-02,0
-user-story-50,"acceptance criteria",20,"description",,MUST,"title",manager-01,1
+user-story-29,"acceptance criteria",20,"description","http://www.lorem-ipsum.org",MUST,"title",manager-01,0
+user-story-30,"acceptance criteria",20,"description","ftp://a",MUST,"title",manager-01,0
+user-story-31,"acceptance criteria",20,"description","ftp://a.b",MUST,"title",manager-01,0
+user-story-32,"acceptance criteria",20,"description","http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",MUST,"title",manager-01,0
+user-story-33,"acceptance criteria",20,"description","http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",MUST,"title",manager-01,0
+user-story-34,"acceptance criteria",20,"description","https://www.lorem-ipsum.org",MUST,"title",manager-01,0
+user-story-35,"acceptance criteria",20,"description","ftp://www.lorem-ipsum.org",MUST,"title",manager-01,0
+user-story-36,"acceptance criteria",20,"description","http://www.lorem-ipsum.org/dolor/sit.html",MUST,"title",manager-01,0
+user-story-37,"acceptance criteria",20,"description","http://www.lorem-ipsum.org/dolor/sit.html#dolor",MUST,"title",manager-01,0
+user-story-38,"acceptance criteria",20,"description","http://example.org?a=1&b=2",MUST,"title",manager-01,0
+user-story-39,"acceptance criteria",20,"description","http://example.org?",MUST,"title",manager-01,0
+user-story-40,"acceptance criteria",20,"description","http://example.org?a",MUST,"title",manager-01,0
+user-story-41,"acceptance criteria",20,"description","http://example.org?a&b",MUST,"title",manager-01,0
+user-story-42,"acceptance criteria",20,"description","http://example.org/",MUST,"title",manager-01,0
+user-story-43,"acceptance criteria",20,"description","http://example.org/a",MUST,"title",manager-01,0
+user-story-44,"acceptance criteria",20,"description","http://example.org/a/b",MUST,"title",manager-01,0
+user-story-45,"acceptance criteria",20,"description","http://example.org/a/b?",MUST,"title",manager-01,0
+user-story-46,"acceptance criteria",20,"description","http://example.org/a/b?a&b",MUST,"title",manager-01,0
+user-story-47,"acceptance criteria",20,"description",,SHOULD,"title",manager-01,0
+user-story-48,"acceptance criteria",20,"description",,COULD,"title",manager-01,0
+user-story-49,"acceptance criteria",20,"description",,WILLNOT,"title",manager-01,0
+user-story-50,"acceptance criteria",20,"description",,MUST,"t",manager-01,0
+user-story-51,"acceptance criteria",20,"description",,MUST,"ti",manager-01,0
+user-story-52,"acceptance criteria",20,"description",,MUST,"Title title title title title title title title title title title title ti",manager-01,0
+user-story-53,"acceptance criteria",20,"description",,MUST,"Title title title title title title title title title title title title tit",manager-01,0
+user-story-54,"acceptance criteria",20,"description",,MUST,"<script>window.location='http://www.example.com'</script>",manager-01,0
+user-story-55,"acceptance criteria",20,"description",,MUST,"квалификация",manager-01,0
+user-story-56,"acceptance criteria",20,"description",,MUST,"προσόν",manager-01,0
+user-story-57,"acceptance criteria",20,"description",,MUST,"资质",manager-01,0
+user-story-58,"acceptance criteria",20,"description",,MUST,"資格",manager-01,0
+user-story-59,"acceptance criteria",20,"description",,MUST,"مؤهل",manager-01,0
+user-story-60,"acceptance criteria",20,"description",,MUST,"';X;--",manager-01,0
+user-story-61,"acceptance criteria",20,"description",,MUST,"title",manager-02,0
+user-story-62,"acceptance criteria",20,"description",,MUST,"title",manager-01,1
