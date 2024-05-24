@@ -71,7 +71,7 @@ master.menu.manager.show = Panel de gestor
 master.menu.developer = Desarrollador
 master.menu.developer.list-mine = Lista de mis módulos de entrenamiento
 master.menu.developer.list-mine2 = Lista de mis sesiones de entrenamiento
-master.menu.manager.show = Panel de desarrollador
+master.menu.developer.show = Panel de desarrollador
 
 # master.menu.user-account ####################################################
 
