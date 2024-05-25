@@ -80,7 +80,6 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 	public void validate(final Sponsorship object) {
 		assert object != null;
 
-		Date belowMoment = MomentHelper.parse("1999/12/31 23:59", "yyyy/MM/dd HH:mm");
 		Date aboveMoment = MomentHelper.parse("2201/01/01 00:00", "yyyy/MM/dd HH:mm");
 
 		String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
@@ -94,42 +93,32 @@ public class SponsorSponsorshipUpdateService extends AbstractService<Sponsor, Sp
 
 		if (object.getStartSponsor() != null) {
 
-			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+			if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
 				super.state(MomentHelper.isAfter(object.getStartSponsor(), object.getMoment()), "startSponsor", "sponsor.sponsorship.form.error.startSponsor");
 
-			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
 				super.state(MomentHelper.isBefore(object.getStartSponsor(), aboveMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipAboveLimit");
 
-			if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
-				super.state(MomentHelper.isAfter(object.getStartSponsor(), belowMoment), "startSponsor", "sponsor.sponsorship.form.error.startSponsorshipBelowLimit");
+			}
 
-			if (object.getEndSponsor() != null) {
+			if (!super.getBuffer().getErrors().hasErrors("endSponsor")) {
 
-				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
-					super.state(MomentHelper.isBefore(object.getEndSponsor(), aboveMoment), "endSponsor", "sponsor.sponsorship.form.error.endSponsorshipAboveLimit");
+				super.state(MomentHelper.isBefore(object.getEndSponsor(), aboveMoment), "endSponsor", "sponsor.sponsorship.form.error.endSponsorshipAboveLimit");
 
-				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
-					super.state(MomentHelper.isAfter(object.getEndSponsor(), object.getMoment()), "endSponsor", "sponsor.sponsorship.form.error.endSponsor");
+				super.state(MomentHelper.isAfter(object.getEndSponsor(), object.getMoment()), "endSponsor", "sponsor.sponsorship.form.error.endSponsor");
 
-				if (!super.getBuffer().getErrors().hasErrors("startSponsor"))
+				if (!super.getBuffer().getErrors().hasErrors("startSponsor")) {
 					super.state(MomentHelper.isBefore(object.getStartSponsor(), object.getEndSponsor()), "startSponsor", "sponsor.sponsorship.form.error.startSponsorBeforeendSponsor");
-
-				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
 					super.state(MomentHelper.isLongEnough(object.getStartSponsor(), object.getEndSponsor(), 30, ChronoUnit.DAYS), "endSponsor", "sponsor.sponsorship.form.error.period");
 
+				}
 			}
 		}
 
-		if (object.getAmount() != null) {
-			if (!super.getBuffer().getErrors().hasErrors("amount"))
-				super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= 0.00, "amount", "sponsor.sponsorship.form.error.amountOutOfBounds");
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
 
-			if (!super.getBuffer().getErrors().hasErrors("amount"))
-				super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0 || object.getAmount().getCurrency().equals(this.repository.findOneSponsorshipById(object.getId()).getAmount().getCurrency()), "amount",
-					"sponsor.sponsorship.form.error.currencyChange");
+			super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= 0.00, "amount", "sponsor.sponsorship.form.error.amountOutOfLImits");
 
-			if (!super.getBuffer().getErrors().hasErrors("amount"))
-				super.state(acceptedCurrencyList.contains(object.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.currencyNotSupported");
+			super.state(acceptedCurrencyList.contains(object.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.currencyNotSupported");
 		}
 
 	}

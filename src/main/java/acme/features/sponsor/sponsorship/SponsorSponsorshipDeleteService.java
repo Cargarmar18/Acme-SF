@@ -17,7 +17,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.sponsorships.Invoice;
 import acme.entities.sponsorships.Sponsorship;
@@ -92,17 +91,6 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 
 		this.repository.deleteAll(invoices);
 		this.repository.delete(object);
-	}
-
-	@Override
-	public void unbind(final Sponsorship object) {
-		assert object != null;
-
-		Dataset dataset;
-
-		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo", "draftMode", "project");
-
-		super.getResponse().addData(dataset);
 	}
 
 }
