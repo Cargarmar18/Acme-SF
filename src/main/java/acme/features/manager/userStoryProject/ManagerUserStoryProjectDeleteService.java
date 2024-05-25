@@ -81,6 +81,8 @@ public class ManagerUserStoryProjectDeleteService extends AbstractService<Manage
 	public void validate(final UserStoryProject object) {
 		assert object != null;
 
+		super.state(object.getUserStory() != null, "userStory", "manager.user-story-project.form.error.noUserStorySpecified");
+
 		super.state(object.getProject().isDraftMode() == true, "*", "manager.user-story-project.form.error.draftMode");
 
 	}
