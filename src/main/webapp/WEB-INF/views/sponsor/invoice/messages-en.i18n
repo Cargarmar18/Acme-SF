@@ -38,5 +38,10 @@ sponsor.invoice.list-mine.label.sponsorship = Sponsorship
 
 sponsor.invoice.list-mine.button.create = Create
 sponsor.invoide.form.error.dueDateAboveLimit = Due Date above the limit
-sponsor.invoice.form.error.sponsorshipCurrency = The invoice must have the same currency as sponsorship.
-sponsor.invoice.form.error.period = The difference between due date and the registration time must be at least 1 month.
+sponsor.invoice.form.error.sponsorshipCurrency = The invoice must have the same currency as sponsorship
+sponsor.invoice.form.error.period = The difference between due date and the registration time must be at least 1 month
+sponsor.invoice.form.error.dueDateAfterMoment = The instantiation moment must be before the dueDate
+
+sponsor.invoice.form.error.wrongCurrency = The currency of the sponsorship and the invoice must be the same
+sponsor.invoice.form.error.dueDate = Due date could not be before the instantiation moment
+sponsor.invoice.form.error.wrongAmount = The amount of the invoices and the sponsorship must be the same to be published

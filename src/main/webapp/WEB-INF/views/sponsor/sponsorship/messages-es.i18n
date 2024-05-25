@@ -8,30 +8,44 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.sponsorship.list.title = Lista de mis proyectos
-sponsor.sponsorship.form.title = Detalles de proyecto
+sponsor.sponsorship.list.title = Listado de mis patrocinadores
+sponsor.sponsorship.form.title = Detalles del patrocinio
 
-sponsor.sponsorship.form.label.code = Código
-sponsor.sponsorship.form.label.title = Título
-sponsor.sponsorship.form.label.$abstract = Abstracto
 sponsor.sponsorship.form.label.indication = No tiene errores fatales
-sponsor.sponsorship.form.label.cost = Coste
-sponsor.sponsorship.form.label.link = Enlace
-sponsor.sponsorship.form.button.user-stories = Historias de usuario
+sponsor.sponsorship.list-mine.button.create = Crear patrocinio
 sponsor.sponsorship.form.button.create = Crear
 sponsor.sponsorship.form.button.publish = Publicar
 sponsor.sponsorship.form.button.delete = Eliminar
-sponsor.sponsorship.form.button.update = Editar
-sponsor.sponsorship.form.button.invoice = Facturas del patrocinio
+sponsor.sponsorship.form.button.update = Actualizar
+sponsor.sponsorship.form.button.invoice = Mostrar facturas
 
-sponsor.sponsorship.form.error.duplicated = El código esta tomado
-sponsor.sponsorship.form.error.fatalError = No puede subir un proyecto con errores fatales
-sponsor.sponsorship.form.error.userStoryNotPublished = No puede publicar un proyecto con historias de usuario sin publicar
-sponsor.sponsorship.form.error.noUserStory = No puede publicar un proyecto sin historias de usuario
+sponsor.sponsorship.form.label.code = Código:
+sponsor.sponsorship.form.label.moment = Momento de instanciación:
+sponsor.sponsorship.form.label.amount = Cantidad del patrocinio:
+sponsor.sponsorship.form.label.startSponsor = Inicio del patrocinio:
+sponsor.sponsorship.form.label.endSponsor = Fin del patrocinio:
+sponsor.sponsorship.form.label.sponsorshipType = Tipo de patrocinio:
+sponsor.sponsorship.form.label.project = Proyecto:
+sponsor.sponsorship.form.label.email = Correo electrónico:
+sponsor.sponsorship.form.label.moreInfo = Enlace a más información (Opcional):
 
-sponsor.sponsorship.list-mine.label.code = Código
-sponsor.sponsorship.list-mine.label.title = Título
-sponsor.sponsorship.list-mine.label.$abstract = Abstracto
-sponsor.sponsorship.list-mine.label.cost = Coste
-sponsor.sponsorship.list-mine.label.draft-mode = Modo boceto
-sponsor.sponsorship.list-mine.button.create = Crear
+sponsor.sponsorship.form.error.duplicate = El código ya está en uso
+sponsor.sponsorship.form.error.fatalError = No se puede publicar un patrocinio con errores fatales
+sponsor.sponsorship.form.error.userStoryNotPublished = No puedes publicar un patrocinio con historias de usuario no publicadas
+sponsor.sponsorship.form.error.noUserStory = No puedes publicar un patrocinio sin historias de usuario
+
+sponsor.sponsorship.list.label.code = Código
+sponsor.sponsorship.list.label.moment = Momento de instanciación
+sponsor.sponsorship.list.label.amount = Cantidad del patrocinio
+sponsor.sponsorship.list.label.draft-mode = Modo borrador
+sponsor.sponsorship.form.error.startSponsorshipBelowLimit = El momento de inicio debe ser después o igual a 2000/01/01 00:00
+sponsor.sponsorship.form.error.endSponsorshipAboveLimit = El momento de fin debe ser antes o igual a 2200/12/31 23:59
+sponsor.sponsorship.form.error.startSponsorshipAboveLimit = El momento de inicio debe ser antes o igual a 2200/12/31 23:59
+sponsor.sponsorship.form.error.startSponsorAfterMoment = El momento de inicio debe ser después del momento de instanciación
+sponsor.sponsorship.form.error.period = El tiempo entre el inicio y el fin debe ser de al menos 1 mes
+sponsor.sponsorship.form.error.draftMode = El proyecto no está en modo borrador
+sponsor.sponsorship.form.error.amountInvoices = La cantidad de las facturas debe ser menor que la cantidad del patrocinio
+sponsor.sponsorship.form.error.publishedInvoices = Todas las facturas del patrocinio deben estar publicadas
+
+sponsor.sponsorship.form.error.startSponsor = El momento de inicio del patrocinio no puede ser antes del momento de instanciación
+sponsor.sponsorship.form.error.amountOutOfLImits = La cantidad debe ser mayor que 0 y menor que 1 millón

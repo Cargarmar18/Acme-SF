@@ -113,7 +113,7 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 					super.state(MomentHelper.isBefore(object.getStartSponsor(), object.getEndSponsor()), "startSponsor", "sponsor.sponsorship.form.error.startSponsorBeforeendSponsor");
 
 				if (!super.getBuffer().getErrors().hasErrors("endSponsor"))
-					super.state(MomentHelper.isLongEnough(object.getStartSponsor(), object.getEndSponsor(), 1, ChronoUnit.MONTHS), "endSponsor", "sponsor.sponsorship.form.error.period");
+					super.state(MomentHelper.isLongEnough(object.getStartSponsor(), object.getEndSponsor(), 30, ChronoUnit.DAYS), "endSponsor", "sponsor.sponsorship.form.error.period");
 
 			}
 		}
