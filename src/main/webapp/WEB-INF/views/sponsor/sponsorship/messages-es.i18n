@@ -49,3 +49,4 @@ sponsor.sponsorship.form.error.publishedInvoices = Todas las facturas del patroc
 
 sponsor.sponsorship.form.error.startSponsor = El momento de inicio del patrocinio no puede ser antes del momento de instanciación
 sponsor.sponsorship.form.error.amountOutOfLImits = La cantidad debe ser mayor que 0 y menor que 1 millón
+sponsor.sponsorship.form.error.unfinishedInvoices = Un patrocinio no se puede publicar con facturas sin publicar

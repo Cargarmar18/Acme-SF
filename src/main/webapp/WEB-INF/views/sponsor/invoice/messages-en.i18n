@@ -45,3 +45,4 @@ sponsor.invoice.form.error.dueDateAfterMoment = The instantiation moment must be
 sponsor.invoice.form.error.wrongCurrency = The currency of the sponsorship and the invoice must be the same
 sponsor.invoice.form.error.dueDate = Due date could not be before the instantiation moment
 sponsor.invoice.form.error.wrongAmount = The amount of the invoices and the sponsorship must be the same to be published
+sponsor.invoice.form.error.outOfRange = The invoice amount could not be bigger than the sponsorship amount or smaller than 0.

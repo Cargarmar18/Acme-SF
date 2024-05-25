@@ -110,9 +110,8 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 
 		if (!errors.hasErrors("invoiceQuantity")) {
 			Double invoiceAmount = object.getInvoiceQuantity().getAmount();
-			super.state(invoiceAmount <= 1000000 && invoiceAmount >= 0, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
+			super.state(invoiceAmount <= object.getSponsorship().getAmount().getAmount() && invoiceAmount >= 0, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
 			super.state(object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "invoiceQuantity", "sponsor.invoice.form.error.wrongCurrency");
-			super.state(object.getInvoiceQuantity().getAmount().equals(object.getSponsorship().getAmount().getAmount()), "invoiceQuantity", "sponsor.invoice.form.error.wrongAmount");
 		}
 
 	}

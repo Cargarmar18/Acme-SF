@@ -50,3 +50,5 @@ sponsor.sponsorship.form.error.publishedInvoices = All invoices of the sponsorsh
 
 sponsor.sponsorship.form.error.startSponsor = The start sponsor moment could not be before the instantiation moment
 sponsor.sponsorship.form.error.amountOutOfLImits = Quantity must be more than 0 and less than 1 million
+sponsor.sponsorship.form.error.valuesDifference = The sum of the invoices must be equal to the sponsorship value
+sponsor.sponsorship.form.error.unfinishedInvoices = A sponsorship could not be published with not published invoices

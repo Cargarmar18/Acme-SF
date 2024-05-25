@@ -51,6 +51,9 @@ public interface SponsorSponsorshipRepository extends AbstractRepository {
 	@Query("select i from Invoice i where i.sponsorship.id = :id")
 	Collection<Invoice> findAllInvoicesBySponsorshipId(int id);
 
+	@Query("select COUNT(i) from Invoice i where i.sponsorship.id = :id")
+	int countAllInvoicesBySponsorshipId(int id);
+
 	@Query("SELECT COUNT(i) FROM Invoice i WHERE i.sponsorship.id = id AND i.draftMode = 1")
 	int countUnfinishedInvoicesBySponsorshipId(int id);
 

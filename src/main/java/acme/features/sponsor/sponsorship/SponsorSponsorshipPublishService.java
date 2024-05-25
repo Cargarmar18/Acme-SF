@@ -22,10 +22,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
+import acme.client.data.models.Errors;
 import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
+import acme.entities.sponsorships.Invoice;
 import acme.entities.sponsorships.Sponsorship;
 import acme.entities.sponsorships.SponsorshipType;
 import acme.roles.Sponsor;
@@ -80,6 +82,8 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		Date belowMoment = MomentHelper.parse("1999/12/31 23:59", "yyyy/MM/dd HH:mm");
 		Date aboveMoment = MomentHelper.parse("2201/01/01 00:00", "yyyy/MM/dd HH:mm");
 
+		Errors errors = super.getBuffer().getErrors();
+
 		String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
 		List<String> acceptedCurrencyList = Arrays.asList(acceptedCurrencies.split("\\s*;\\s*"));
 
@@ -122,8 +126,7 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 				super.state(object.getAmount().getAmount() <= 1000000.00 && object.getAmount().getAmount() >= 0.00, "amount", "sponsor.sponsorship.form.error.amountOutOfBounds");
 
 			if (!super.getBuffer().getErrors().hasErrors("amount"))
-				super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0 || object.getAmount().getCurrency().equals(this.repository.findOneSponsorshipById(object.getId()).getAmount().getCurrency()), "amount",
-					"sponsor.sponsorship.form.error.currencyChange");
+				super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0, "*", "sponsor.sponsorship.form.error.unfinishedInvoices");
 
 			if (!super.getBuffer().getErrors().hasErrors("amount"))
 				super.state(acceptedCurrencyList.contains(object.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.currencyNotSupported");
@@ -131,6 +134,21 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
+
+		Collection<Invoice> invoices;
+		double sponsorshipAmount;
+		double invoicesTotalAmount;
+		int allInvoicesPublished;
+
+		invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+		allInvoicesPublished = this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId());
+		super.state(allInvoicesPublished == 0, "*", "sponsor.sponsorship.form.error.unfinishedInvoices");
+
+		sponsorshipAmount = object.getAmount().getAmount();
+		invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
+
+		super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.valuesDifference");
+
 	}
 
 	@Override
