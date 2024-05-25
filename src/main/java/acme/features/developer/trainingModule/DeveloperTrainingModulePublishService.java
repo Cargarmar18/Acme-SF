@@ -2,13 +2,11 @@
 package acme.features.developer.trainingModule;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
-import acme.client.helpers.MomentHelper;
 import acme.client.services.AbstractService;
 import acme.client.views.SelectChoices;
 import acme.entities.project.Project;
@@ -65,28 +63,12 @@ public class DeveloperTrainingModulePublishService extends AbstractService<Devel
 	@Override
 	public void validate(final TrainingModule object) {
 		assert object != null;
-		Date lowerLimit = MomentHelper.parse("2000/01/01 00:00", "yyyy/MM/dd HH:mm");
-		Date present = MomentHelper.parse("2022/07/30 00:00", "yyyy/MM/dd HH:mm");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingModule codeValid;
 
 			codeValid = this.repository.findOneTrainingModuleByCode(object.getCode());
 			super.state(codeValid == null || codeValid.equals(object), "code", "developer.training-module.form.error.duplicated");
-		}
-
-		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftModePublish");
-
-		if (object.getUpdateMoment() != null) {
-			if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
-				super.state(MomentHelper.isAfterOrEqual(object.getUpdateMoment(), object.getCreationMoment()), "updateMoment", "developer.training-module.form.error.updateMomentAfterCreationMoment");
-
-			if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
-				super.state(MomentHelper.isAfterOrEqual(object.getUpdateMoment(), lowerLimit), "updateMoment", "developer.training-module.form.error.updateMomentBeforeLowerLimit");
-
-			if (!super.getBuffer().getErrors().hasErrors("updateMoment"))
-				super.state(MomentHelper.isBeforeOrEqual(object.getUpdateMoment(), present), "updateMoment", "developer.training-module.form.error.updateMomentAfterPresent");
 		}
 
 		{

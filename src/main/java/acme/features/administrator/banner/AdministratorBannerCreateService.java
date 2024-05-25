@@ -91,7 +91,7 @@ public class AdministratorBannerCreateService extends AbstractService<Administra
 			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
 				super.state(MomentHelper.isBeforeOrEqual(object.getEndDisplay(), upperLimit), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
 
-			if (!super.getBuffer().getErrors().hasErrors("endMoment"))
+			if (!super.getBuffer().getErrors().hasErrors("endDisplay"))
 				super.state(MomentHelper.isAfterOrEqual(object.getEndDisplay(), lowerLimit), "endDisplay", "administrator.banner.form.error.dateOutOfBounds");
 		}
 	}
