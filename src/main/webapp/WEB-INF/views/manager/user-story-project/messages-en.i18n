@@ -15,3 +15,4 @@ manager.user-story-project.form.label.user-story = User story
 manager.user-story-project.form.button.create = Create
 manager.user-story-project.form.button.delete = Delete
 manager.user-story-project.form.error.draftMode = The project is not in draft mode
+manager.user-story-project.form.error.noUserStorySpecified = You must select a user story

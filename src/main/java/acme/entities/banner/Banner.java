@@ -4,6 +4,8 @@ package acme.entities.banner;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
@@ -20,6 +22,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "startDisplay, endDisplay")
+})
 public class Banner extends AbstractEntity {
 
 	private static final long	serialVersionUID	= 1L;

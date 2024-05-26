@@ -130,8 +130,6 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 				super.state(acceptedCurrencyList.contains(object.getAmount().getCurrency()), "amount", "sponsor.sponsorship.form.error.currencyNotSupported");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 	}
 
 	@Override
@@ -148,8 +146,8 @@ public class SponsorSponsorshipCreateService extends AbstractService<Sponsor, Sp
 		SelectChoices choices;
 		SelectChoices projects;
 
-		Collection<Project> unpublishedProjects = this.repository.findAllDraftModeProjects();
-		projects = SelectChoices.from(unpublishedProjects, "code", object.getProject());
+		Collection<Project> publishedProjects = this.repository.findAllDraftModeProjects();
+		projects = SelectChoices.from(publishedProjects, "code", object.getProject());
 
 		choices = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
 

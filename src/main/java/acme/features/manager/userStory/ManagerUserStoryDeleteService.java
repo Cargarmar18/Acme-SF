@@ -17,7 +17,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
 import acme.entities.project.UserStory;
 import acme.entities.project.UserStoryProject;
@@ -86,15 +85,15 @@ public class ManagerUserStoryDeleteService extends AbstractService<Manager, User
 		this.repository.delete(object);
 	}
 
-	@Override
-	public void unbind(final UserStory object) {
-		assert object != null;
-
-		Dataset dataset;
-
-		dataset = super.unbind(object, "title", "description", "cost", "acceptanceCriteria", "priority", "link", "draftMode");
-
-		super.getResponse().addData(dataset);
-	}
+	//	@Override
+	//	public void unbind(final UserStory object) {
+	//		assert object != null;
+	//
+	//		Dataset dataset;
+	//
+	//		dataset = super.unbind(object, "title", "description", "cost", "acceptanceCriteria", "priority", "link", "draftMode");
+	//
+	//		super.getResponse().addData(dataset);
+	//	}
 
 }
