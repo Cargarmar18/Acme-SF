@@ -30,25 +30,3 @@ nbdist/
 mvnw
 
 mvnw\.cmd
-src/test/resources/manager/project/create-01.safe
-src/test/resources/manager/project/create.safe
-src/test/resources/manager/project/delete.safe
-src/test/resources/manager/project/list-mine.hack
-src/test/resources/manager/project/list-mine.safe
-src/test/resources/manager/project/publish-01.safe
-src/test/resources/manager/project/publish.safe
-src/test/resources/manager/project/show.hack
-src/test/resources/manager/project/show.safe
-src/test/resources/manager/project/update-01.safe
-src/test/resources/manager/project/update.safe
-src/test/resources/manager/userStory/create-01.safe
-src/test/resources/manager/userStory/create.safe
-src/test/resources/manager/userStory/delete.safe
-src/test/resources/manager/userStory/list-mine.hack
-src/test/resources/manager/userStory/list-mine.safe
-src/test/resources/manager/userStory/publish.safe
-src/test/resources/manager/userStory/show.hack
-src/test/resources/manager/userStory/show.safe
-src/test/resources/manager/userStory/update-01.safe
-src/test/resources/manager/userStory/update.safe
-src/test/resources/manager/userStoryProject/create.safe
