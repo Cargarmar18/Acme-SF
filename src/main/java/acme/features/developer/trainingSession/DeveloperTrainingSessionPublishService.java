@@ -119,12 +119,6 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 			super.state(codeValid == null || codeValid.equals(object), "code", "developer.training-session.form.error.duplicated");
 		}
 
-		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode() == true, "draftMode", "developer.training-session.form.error.draftModePublish");
-
-		if (!super.getBuffer().getErrors().hasErrors("trainingModule"))
-			super.state(trainingModule.isDraftMode() == true, "trainingModule", "developer.training-session.form.error.cannotPublishSessionsInPublishedModules");
-
 	}
 
 	@Override
