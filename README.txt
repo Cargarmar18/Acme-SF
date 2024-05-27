@@ -19,4 +19,21 @@ taking into account that you must link the appropriate version of the Acme-Frame
 the following resources:
 
 - **/fragments/**
- 
+
+
+Project Considerations and Hypothetical Offset Period Notes
+
+- Publish Feature Issue: 
+  - The initial implementation of the publish feature in the JSP did not account for the ID, potentially causing a panic when accessing other features. To address this, we decided that if an error occurs during the publish form submission, the only available options would be to either return or resubmit the publish. This decision was made after further analyzing the repercussions and impact following the implementation of the test cases.
+
+- Impact on Testing Due to Sample Data Inconsistencies:
+  - During the testing phase, some inconsistencies were discovered in the sample data after defining the test suite. Changing this data would cause all tests to fail. To resolve this, we created a new sample data set (sample data-01) where the affected entities (Training Session, Sponsorship, and Invoices) are corrected, thus meeting the complete sample data requirements.
+
+- .gitignore Issues and Test Report Inconsistencies:
+  - Due to issues with the `.gitignore` file, some test cases for the manager had to be redone. This might cause inconsistencies when attempting to recreate the testing performance. To address this, we have included a CSV file with the previous test cases for reference and any further analysis required for corrections.
+
+- Link and Email Validation:
+  - The lower interval for link and email validity is set to the default (0) since the validity is established by their notation. The only affected incomplete URL would be "ftp://", but this is an isolated case, as "http://" is also considered invalid and would be acceptable. Any further changes to these limitations would be made during the offset period.
+
+- Invoices Hacking Test Cases:
+  - Hacking test cases for Invoices generate a 404 error instead of a 500 error. Despite this, the integrity and security of this section function as expected.
