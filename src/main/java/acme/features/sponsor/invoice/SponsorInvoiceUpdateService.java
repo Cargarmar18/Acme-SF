@@ -71,7 +71,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	public void bind(final Invoice object) {
 		assert object != null;
 
-		super.bind(object, "code", "dueDate", "invoiceQuantity", "tax", "link", "invoice.sponsorship");
+		super.bind(object, "code", "dueDate", "invoiceQuantity", "tax", "link", "sponsorship");
 	}
 
 	@Override
@@ -89,25 +89,22 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		}
 
 		if (!errors.hasErrors("dueDate")) {
-			super.state(MomentHelper.isAfter(object.getDueDate(), MomentHelper.getCurrentMoment()), "dueDate", "sponsor.invoice.form.error.dueDate");
-			super.state(MomentHelper.isLongEnough(object.getRegistrationTime(), object.getDueDate(), 1, ChronoUnit.MONTHS), "dueDate", "sponsor.invoice.form.error.period");
-			if (!super.getBuffer().getErrors().hasErrors("dueDate"))
-				super.state(MomentHelper.isBefore(object.getDueDate(), aboveMoment), "dueDate", "sponsor.invoide.form.error.dueDateAboveLimit");
+			super.state(MomentHelper.isAfter(object.getDueDate(), object.getRegistrationTime()), "dueDate", "sponsor.invoice.form.error.dueDateAfterMoment");
+			super.state(MomentHelper.isLongEnough(object.getRegistrationTime(), object.getDueDate(), 30, ChronoUnit.DAYS), "dueDate", "sponsor.invoice.form.error.period");
+			super.state(MomentHelper.isBefore(object.getDueDate(), aboveMoment), "dueDate", "sponsor.invoide.form.error.dueDateAboveLimit");
 
 		}
 
 		if (!errors.hasErrors("sponsorship"))
-			super.state(object.getSponsorship().isDraftMode(), "sponsorship", "sponsor.invoice.form.error.sponsorship");
+			if (!errors.hasErrors("invoiceQuantity")) {
+				super.state(object.getInvoiceQuantity().getAmount() <= object.getSponsorship().getAmount().getAmount(), "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
+				super.state(object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "invoiceQuantity", "sponsor.invoice.form.error.sponsorshipCurrency");
+			}
+		if (!errors.hasErrors("invoiceQuantity"))
+			super.state(object.getInvoiceQuantity().getAmount() >= 0.00 && object.getInvoiceQuantity().getAmount() <= 1000000.00, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
 
 		if (!errors.hasErrors("draftMode"))
 			super.state(object.isDraftMode(), "draftMode", "sponsor.invoice.form.error.draftMode");
-
-		if (!errors.hasErrors("invoiceQuantity")) {
-			Double invoiceAmount = object.getInvoiceQuantity().getAmount();
-			super.state(invoiceAmount.compareTo(Double.valueOf(1000000.00)) <= 0 && invoiceAmount.compareTo(Double.valueOf(-1000000.00)) >= 0, "invoiceQuantity", "sponsor.invoice.form.error.outOfRange");
-			super.state(object.getInvoiceQuantity().getCurrency().equals(object.getSponsorship().getAmount().getCurrency()), "invoiceQuantity", "sponsor.invoice.form.error.wrongCurrency");
-		}
-
 	}
 
 	@Override
@@ -127,7 +124,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		Collection<Sponsorship> sponsorSponsorships = this.repository.findSponsorshipBySponsorId(sponsorId);
 		sponsorships = SelectChoices.from(sponsorSponsorships, "code", object.getSponsorship());
 
-		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "invoiceQuantity", "tax", "link", "draftMode");
+		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "invoiceQuantity", "tax", "link", "draftMode", "sponsorship");
 		Sponsorship selectedSponsorship = this.repository.findOneSponsorshipById(Integer.valueOf(sponsorships.getSelected().getKey()));
 		dataset.put("sponsorship", sponsorships.getSelected().getKey());
 
