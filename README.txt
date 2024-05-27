@@ -37,3 +37,6 @@ Project Considerations and Hypothetical Offset Period Notes
 
 - Invoices Hacking Test Cases:
   - Hacking test cases for Invoices generate a 404 error instead of a 500 error. Despite this, the integrity and security of this section function as expected.
+
+- Error null respones for non-feature id requests in banner:
+  - During the replay of banner, some random feature may obtain an error message specifying that a request is null. After futher analysis and checking in the csv, the "random null" is associated to images, css or random libraries not related to the banner feature.
