@@ -19,8 +19,11 @@ import org.springframework.stereotype.Service;
 
 import acme.client.data.models.Dataset;
 import acme.client.services.AbstractService;
+import acme.client.views.SelectChoices;
+import acme.entities.project.Project;
 import acme.entities.sponsorships.Invoice;
 import acme.entities.sponsorships.Sponsorship;
+import acme.entities.sponsorships.SponsorshipType;
 import acme.features.sponsor.invoice.SponsorInvoiceRepository;
 import acme.roles.Sponsor;
 
@@ -50,6 +53,7 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 		status = sponsorship.isDraftMode() && sponsorship != null && super.getRequest().getPrincipal().hasRole(sponsorship.getSponsor());
 
 		super.getResponse().setAuthorised(status);
+
 	}
 
 	@Override
@@ -78,6 +82,18 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 
 		if (!super.getBuffer().getErrors().hasErrors("code"))
 			super.state(this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId()) == 0, "draftMode", "sponsor.sponsorship.form.error.deleteWithPublishedInvoices");
+
+		if (!super.getBuffer().getErrors().hasErrors("code")) {
+			Collection<Invoice> invoices;
+
+			boolean allInvoicesPublished;
+
+			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
+			allInvoicesPublished = invoices.stream().filter(i -> i.isDraftMode() == false).count() == invoices.size();
+			if (!allInvoicesPublished)
+				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.publishedInvoices");
+
+		}
 	}
 
 	@Override
@@ -97,10 +113,20 @@ public class SponsorSponsorshipDeleteService extends AbstractService<Sponsor, Sp
 	@Override
 	public void unbind(final Sponsorship object) {
 		assert object != null;
-
 		Dataset dataset;
+		SelectChoices choices;
+		SelectChoices projects;
 
-		dataset = super.unbind(object, "code", "moment", "startSponsor", "endSponsor", "amount", "sponsorshipType", "email", "moreInfo", "draftMode", "project");
+		Collection<Project> publishedProjects = this.repository.findAllDraftModeProjects();
+		projects = SelectChoices.from(publishedProjects, "code", object.getProject());
+
+		choices = SelectChoices.from(SponsorshipType.class, object.getSponsorshipType());
+
+		dataset = super.unbind(object, "code", "startSponsor", "endSponsor", "sponsorshipType", "amount", "email", "moreInfo", "draftMode");
+		dataset.put("types", choices);
+
+		dataset.put("project", projects.getSelected().getKey());
+		dataset.put("projects", projects);
 
 		super.getResponse().addData(dataset);
 	}

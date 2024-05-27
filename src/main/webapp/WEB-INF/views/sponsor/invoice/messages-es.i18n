@@ -8,31 +8,41 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-sponsor.invoices.list.title = Listing of my invoices
-sponsor.invoices.form.title = Invoices details:
+sponsor.invoice.list.title = Listado de mis facturas
+sponsor.invoice.form.title = Detalles de las facturas
 
+sponsor.invoice.form.label.code = Código
+sponsor.invoice.form.label.registrationTime = Hora de registro
+sponsor.invoice.form.label.dueDate = Fecha de vencimiento
+sponsor.invoice.form.label.invoiceQuantity = Cantidad de la factura
+sponsor.invoice.form.label.tax = Impuesto
+sponsor.invoice.form.label.link = Enlace
+sponsor.invoice.form.label.sponsorship = Patrocinio
 
-sponsor.invoice.form.label.code = Code
-sponsor.invoice.form.label.registrationTime = Registration time
-sponsor.invoice.form.label.dueDate = Due date
-sponsor.invoice.form.label.invoiceQuantity = Invoice quantity
-sponsor.invoice.form.label.tax = Tax
-sponsor.invoice.form.label.link = Link
-sponsor.invoice.form.label.sponsorship = Sponsorship
+sponsor.invoice.list-mine.button.create = Crear factura
+sponsor.invoice.form.button.create = Crear
+sponsor.invoice.form.button.publish = Publicar
+sponsor.invoice.form.button.delete = Eliminar
+sponsor.invoice.form.button.update = Actualizar
 
-sponsor.invoice.form.button.create = Create
-sponsor.invoice.form.button.publish = Publish
-sponsor.invoice.form.button.delete = Delete
-sponsor.invoice.form.button.update = Update
+sponsor.invoice.form.error.duplicated = El código ya está en uso
+sponsor.invoice.form.error.fatalError = No se puede publicar una factura con errores fatales
 
-sponsor.invoices.form.error.duplicated = The code is taken
-sponsor.invoices.form.error.fatalError = Cannot publish a invoices with fatal errors
+sponsor.invoice.list-mine.label.code = Código
+sponsor.invoice.list-mine.label.dueDate = Fecha de vencimiento
+sponsor.invoice.list-mine.label.registrationTime = Hora de registro
+sponsor.invoice.list-mine.label.totalAmount = Cantidad de la factura
+sponsor.invoice.list-mine.label.draftMode = Modo borrador
+sponsor.invoice.list-mine.label.sponsorship = Patrocinio
 
-sponsor.invoice.list-mine.label.code = Code
-sponsor.invoice.list-mine.label.dueDate = Due date
-sponsor.invoice.list-mine.label.registrationTime = Registration time
-sponsor.invoice.list-mine.label.totalAmount = Invoice quantity
-sponsor.invoice.list-mine.label.draftMode = Draft mode
-sponsor.invoice.list-mine.label.sponsorship = Sponsorship
+sponsor.invoice.list-mine.button.create = Crear
+sponsor.invoice.form.error.dueDateAboveLimit = Fecha de vencimiento fuera del límite
+sponsor.invoice.form.error.sponsorshipCurrency = La factura debe tener la misma moneda que el patrocinio
+sponsor.invoice.form.error.period = La diferencia entre la fecha de vencimiento y la hora de registro debe ser de al menos 1 mes
+sponsor.invoice.form.error.dueDateAfterMoment = El momento de instanciación debe ser antes de la fecha de vencimiento
 
-sponsor.invoice.list-mine.button.create = Create
+sponsor.invoice.form.error.wrongCurrency = La moneda del patrocinio y de la factura debe ser la misma
+sponsor.invoice.form.error.dueDate = La fecha de vencimiento no puede ser antes del momento de instanciación
+sponsor.invoice.form.error.wrongAmount = La cantidad de las facturas y el patrocinio debe ser la misma para ser publicada
+sponsor.invoice.form.error.outOfRange = La cantidad de la factura no puede ser mayor que la del patrocinio ni menor a 0.
+sponsor.invoice.form.error.duplicate = El codigo de la factura esta siendo usado ya
