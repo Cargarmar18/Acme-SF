@@ -6,7 +6,6 @@ developer.training-session.list-mine.label.location = Localización
 developer.training-session.list-mine.label.instructor = Instructor
 developer.training-session.list-mine.label.draftMode = Modo borrador
 
-
 developer.training-session.list-mine.button.create = Crear
 
 developer.training-session.form.label.code = Código
@@ -18,7 +17,6 @@ developer.training-session.form.label.contactEmail = Email de contacto
 developer.training-session.form.label.link = Link (opcional)
 developer.training-session.form.label.trainingModule = Código del módulo de entrenamiento
 
-
 developer.training-session.list-mine.button.create = Crear
 
 developer.training-session.form.button.create = Crear
@@ -28,11 +26,13 @@ developer.training-session.form.button.publish = Publicar
 
 developer.training-session.form.error.duplicated = Este código ya existe
 developer.training-session.form.error.beginningMomentAfterCreationMoment = El momento de inicio debe ser al menos una semana más tarde de la fecha de creación del módulo de entrenamiento
-developer.training-session.form.error.beginningMomentAfterLowerLimit = El momento de inicio debe ser después de 01/01/2000 00:00
+developer.training-session.form.error.beginningMomentAfterLowerLimit = El momento de inicio debe ser después del límite inferior
 developer.training-session.form.error.endMomentAfterBeginningMoment = El momento de fin debe ser al menos una semana después del momento de inicio
-developer.training-session.form.error.endMomentBeforeUpperLimit = El momento de fin debe ser antes de 31/12/2200 23:59
-developer.training-session.form.error.beginningMomentBeforeLimit = El momento de inicio debe ser antes de 24/12/2200 23:59
+developer.training-session.form.error.endMomentBeforeUpperLimit = El momento de fin debe ser antes del límite superior
+developer.training-session.form.error.beginningMomentBeforeLimit = El momento de inicio debe ser antes de (o igual a) 24/12/2200 23:59
 developer.training-session.form.error.draftMode = Esta sesión de entrenamiento no puede ser eliminada ni editada una vez publicada
 developer.training-session.form.error.draftModePublish = Una sesión de entrenamiento ya publicada no puede ser publicada
 developer.training-session.form.error.cannotPublishSessionsInPublishedModules = No se pueden publicar sesiones de entrenamiento en módulos de entrenamiento ya publicados
 developer.training-session.form.error.cannotLinkSessionsToAlreadyPublishedModules = Las sesiones de entrenamiento no se pueden asignar a módulos de entrenamiento ya publicados
+developer.training-session.form.error.endMomentTwoWeeks = El momento de fin debe ser al menos 2 semanas más tarde del momento de creación
+developer.training-session.form.error.endMomentAfterLowerLimit = El momento de fin debe ser después del límite inferior

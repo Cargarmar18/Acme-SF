@@ -26,11 +26,13 @@ developer.training-session.form.button.publish = Publish
 
 developer.training-session.form.error.duplicated = This code already exists
 developer.training-session.form.error.beginningMomentAfterCreationMoment = The beginning moment must be at least one week after the training module's creation
-developer.training-session.form.error.beginningMomentAfterLowerLimit = The beginning moment must be after 2000/01/01 00:00
+developer.training-session.form.error.beginningMomentAfterLowerLimit = The beginning moment must be after the lower limit
 developer.training-session.form.error.draftModePublish = You cannot publish an already published training session
 developer.training-session.form.error.endMomentAfterBeginningMoment = The end moment must be at least one week after the beginning moment
-developer.training-session.form.error.endMomentBeforeUpperLimit = The end moment must be before 2200/12/31 23:59
-developer.training-session.form.error.beginningMomentBeforeLimit = The beginning moment must be before 2200/12/24 23:59
+developer.training-session.form.error.endMomentBeforeUpperLimit = The end moment must be before the upper limit
+developer.training-session.form.error.beginningMomentBeforeLimit = The beginning moment must be before (or equal) 2200/12/24 23:59
 developer.training-session.form.error.draftMode = This training session cannot be deleted nor updated once published
 developer.training-session.form.error.cannotPublishSessionsInPublishedModules = Training sessions cannot be published into already published training modules
 developer.training-session.form.error.cannotLinkSessionsToAlreadyPublishedModules = Training sessions cannot be assigned to already published training modules
+developer.training-session.form.error.endMomentTwoWeeks = The end moment must be at least two weeks after the creation moment
+developer.training-session.form.error.endMomentAfterLowerLimit = The end moment must be after the lower limit

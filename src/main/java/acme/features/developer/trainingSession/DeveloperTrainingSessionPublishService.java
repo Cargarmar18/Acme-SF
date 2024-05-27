@@ -76,13 +76,20 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 
 		if (trainingModule != null) {
 			creationMoment = trainingModule.getCreationMoment();
-
 			if (!super.getBuffer().getErrors().hasErrors("beginningMoment")) {
 				Date minimumBeginning;
 
 				minimumBeginning = MomentHelper.deltaFromMoment(creationMoment, 7, ChronoUnit.DAYS);
 				super.state(MomentHelper.isAfterOrEqual(object.getBeginningMoment(), minimumBeginning), "beginningMoment", "developer.training-session.form.error.beginningMomentAfterCreationMoment");
 			}
+			if (!super.getBuffer().getErrors().hasErrors("endMoment")) {
+				Date endLowerLimit;
+
+				endLowerLimit = MomentHelper.deltaFromMoment(creationMoment, 14, ChronoUnit.DAYS);
+				super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), endLowerLimit), "endMoment", "developer.training-session.form.error.endMomentTwoWeeks");
+
+			}
+
 		}
 		if (!super.getBuffer().getErrors().hasErrors("beginningMoment"))
 			super.state(MomentHelper.isAfterOrEqual(object.getBeginningMoment(), lowerLimit), "beginningMoment", "developer.training-session.form.error.beginningMomentAfterLowerLimit");
@@ -90,18 +97,19 @@ public class DeveloperTrainingSessionPublishService extends AbstractService<Deve
 		if (!super.getBuffer().getErrors().hasErrors("beginningMoment"))
 			super.state(MomentHelper.isBeforeOrEqual(object.getBeginningMoment(), beginningUpper), "beginningMoment", "developer.training-session.form.error.beginningMomentBeforeLimit");
 
-		if (!super.getBuffer().getErrors().hasErrors("endMoment")) {
-			Date minimumEnd;
+		if (object.getBeginningMoment() != null)
+			if (!super.getBuffer().getErrors().hasErrors("endMoment")) {
+				Date minimumEnd;
 
-			minimumEnd = MomentHelper.deltaFromMoment(object.getBeginningMoment(), 7, ChronoUnit.DAYS);
-			super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), minimumEnd), "endMoment", "developer.training-session.form.error.endMomentAfterBeginningMoment");
-		}
+				minimumEnd = MomentHelper.deltaFromMoment(object.getBeginningMoment(), 7, ChronoUnit.DAYS);
+				super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), minimumEnd), "endMoment", "developer.training-session.form.error.endMomentAfterBeginningMoment");
+			}
 
 		if (!super.getBuffer().getErrors().hasErrors("endMoment"))
 			super.state(MomentHelper.isBeforeOrEqual(object.getEndMoment(), upperLimit), "endMoment", "developer.training-session.form.error.endMomentBeforeUpperLimit");
 
 		if (!super.getBuffer().getErrors().hasErrors("endMoment"))
-			super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), lowerLimit), "endMoment", "developer.training-session.form.error.endMomentBeforeUpperLimit");
+			super.state(MomentHelper.isAfterOrEqual(object.getEndMoment(), lowerLimit), "endMoment", "developer.training-session.form.error.endMomentAfterLowerLimit");
 
 		if (!super.getBuffer().getErrors().hasErrors("code")) {
 			TrainingSession codeValid;
