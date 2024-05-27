@@ -1,0 +1,83 @@
+key,instatiationUpdateMoment,startDisplay,end-display,picture-link,slogan,target-link
+banner-01,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/8YcXhS0.png,Just do it better?,https://example.com/1
+banner-02,2000/01/01 00:00,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/MtBRoNP.png,Just do it better?,https://example.com/1
+banner-03,2000/01/01 00:01,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/NGLSjk6.png,Just do it better?,https://example.com/1
+banner-04,2022/07/30 00:00,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/fihihcF.png,Just do it better?,https://example.com/1
+banner-05,2022/07/29 23:59,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/2eVF1HG.png,Just do it better?,https://example.com/1
+banner-06,2010/12/31 23:59,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/CqtMSmM.png,Just do it better?,https://example.com/1
+banner-07,2011/01/01 00:00,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,https://example.com/1
+banner-08,2016/02/27 23:59,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/qu5SrLN.png,Just do it better?,https://example.com/1
+banner-09,2016/02/28 00:00,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/8YcXhS0.png,Just do it better?,https://example.com/1
+banner-10,2016/02/29 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/MtBRoNP.png,Just do it better?,https://example.com/1
+banner-11,2020/03/31 23:59,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/NGLSjk6.png,Just do it better?,https://example.com/1
+banner-12,2020/04/01 00:00,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/fihihcF.png,Just do it better?,https://example.com/1
+banner-13,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/2eVF1HG.png,Just do it better?,https://example.com/1
+banner-14,2020/03/14 15:32,2020/03/14 15:32,2024/07/30 15:32,https://i.imgur.com/CqtMSmM.png,Just do it better?,https://example.com/1
+banner-15,2020/03/14 15:32,2020/03/14 15:33,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,https://example.com/1
+banner-16,2020/03/14 15:32,2200/12/24 23:59,2200/12/31 23:59,https://i.imgur.com/qu5SrLN.png,Just do it better?,https://example.com/1
+banner-17,2020/03/14 15:32,2200/12/24 23:58,2200/12/31 23:59,https://i.imgur.com/8YcXhS0.png,Just do it better?,https://example.com/1
+banner-18,2020/03/14 15:32,2023/12/31 23:59,2024/07/30 15:32,https://i.imgur.com/MtBRoNP.png,Just do it better?,https://example.com/1
+banner-19,2020/03/14 15:32,2024/01/01 00:00,2024/07/30 15:32,https://i.imgur.com/NGLSjk6.png,Just do it better?,https://example.com/1
+banner-20,2020/03/14 15:32,2024/02/27 23:59,2024/07/30 15:32,https://i.imgur.com/fihihcF.png,Just do it better?,https://example.com/1
+banner-21,2020/03/14 15:32,2024/02/28 00:00,2024/07/30 15:32,https://i.imgur.com/2eVF1HG.png,Just do it better?,https://example.com/1
+banner-22,2020/03/14 15:32,2024/02/29 15:32,2024/07/30 15:32,https://i.imgur.com/CqtMSmM.png,Just do it better?,https://example.com/1
+banner-23,2020/03/14 15:32,2020/03/31 23:59,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,https://example.com/1
+banner-24,2020/03/14 15:32,2020/04/01 00:00,2024/07/30 15:32,https://i.imgur.com/qu5SrLN.png,Just do it better?,https://example.com/1
+banner-25,2020/03/14 15:32,2023/07/30 15:32,2023/08/06 15:32,https://i.imgur.com/8YcXhS0.png,Just do it better?,https://example.com/1
+banner-26,2020/03/14 15:32,2023/07/30 15:32,2023/08/06 15:33,https://i.imgur.com/MtBRoNP.png,Just do it better?,https://example.com/1
+banner-27,2020/03/14 15:32,2023/07/30 15:32,2023/09/06 15:33,https://i.imgur.com/NGLSjk6.png,Just do it better?,https://example.com/1
+banner-28,2020/03/14 15:32,2023/07/30 15:32,2200/12/31 23:59,https://i.imgur.com/fihihcF.png,Just do it better?,https://example.com/1
+banner-29,2020/03/14 15:32,2023/07/30 15:32,2200/12/31 23:58,https://i.imgur.com/2eVF1HG.png,Just do it better?,https://example.com/1
+banner-30,2020/03/14 15:32,2023/07/30 15:32,2023/12/31 23:59,https://i.imgur.com/CqtMSmM.png,Just do it better?,https://example.com/1
+banner-31,2020/03/14 15:32,2023/07/30 15:32,2024/01/01 00:00,https://i.imgur.com/sgx1bFo.png,Just do it better?,https://example.com/1
+banner-32,2020/03/14 15:32,2023/07/30 15:32,2024/02/27 23:59,https://i.imgur.com/qu5SrLN.png,Just do it better?,https://example.com/1
+banner-33,2020/03/14 15:32,2023/07/30 15:32,2024/02/28 00:00,https://i.imgur.com/8YcXhS0.png,Just do it better?,https://example.com/1
+banner-34,2020/03/14 15:32,2023/07/30 15:32,2024/02/29 15:32,https://i.imgur.com/MtBRoNP.png,Just do it better?,https://example.com/1
+banner-35,2020/03/14 15:32,2023/07/30 15:32,2024/03/31 23:59,https://i.imgur.com/NGLSjk6.png,Just do it better?,https://example.com/1
+banner-36,2020/03/14 15:32,2023/07/30 15:32,2024/04/01 00:00,https://i.imgur.com/fihihcF.png,Just do it better?,https://example.com/1
+banner-37,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"ftp://a",Just do it better?,https://example.com/1
+banner-38,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"ftp://a.b",Just do it better?,https://example.com/1
+banner-39,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/",Just do it better?,https://example.com/1
+banner-40,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X",Just do it better?,https://example.com/1
+banner-41,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"https://www.lorem-ipsum.org",Just do it better?,https://example.com/1
+banner-42,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"ftp://www.lorem-ipsum.org",Just do it better?,https://example.com/1
+banner-43,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://www.lorem-ipsum.org/dolor/sit.html",Just do it better?,https://example.com/1
+banner-44,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://www.lorem-ipsum.org/dolor/sit.html#dolor",Just do it better?,https://example.com/1
+banner-45,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org?a=1&b=2",Just do it better?,https://example.com/1
+banner-46,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org?",Just do it better?,https://example.com/1
+banner-47,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org?a",Just do it better?,https://example.com/1
+banner-48,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org?a&b",Just do it better?,https://example.com/1
+banner-49,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org/",Just do it better?,https://example.com/1
+banner-50,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org/a",Just do it better?,https://example.com/1
+banner-51,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org/a/b",Just do it better?,https://example.com/1
+banner-52,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org/a/b?",Just do it better?,https://example.com/1
+banner-53,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,"http://example.org/a/b?a&b",Just do it better?,https://example.com/1
+banner-54,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/NGLSjk6.png,a,https://example.com/1
+banner-55,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/fihihcF.png,ab,https://example.com/1
+banner-56,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/2eVF1HG.png,ejemploabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdejkljañlkajs,https://example.com/1
+banner-57,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/CqtMSmM.png,ejemploabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdejkljañlkaj,https://example.com/1
+banner-58,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,عندما تكون مستعدًا، ابدأ ال,https://example.com/1
+banner-59,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/qu5SrLN.png,洛雷姆·伊普苏姆,https://example.com/1
+banner-60,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/8YcXhS0.png,Лорем Ипсум,https://example.com/1
+banner-61,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/MtBRoNP.png,κείμενο,https://example.com/1
+banner-62,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/NGLSjk6.png,*/``´`ç!?'¿|º¨¨¡(´´,https://example.com/1
+banner-63,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/fihihcF.png,मूलपाठ,https://example.com/1
+banner-64,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/2eVF1HG.png,<script>alert('hi')</script>,https://example.com/1
+banner-65,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/CqtMSmM.png,';X;--,https://example.com/1
+banner-66,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"ftp://a"
+banner-67,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"ftp://a.b"
+banner-68,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/"
+banner-69,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://www.lorem-ipsum.org/dolor/sit/amet,/consectetur/adipiscing/elit,/sed/do/eiusmod/tempor/incididunt/ut/labore/et/dolore/magna/aliqua/Ut/enim/ad/minim/veniam/quis/nostrud/exercitation/ullamco/laboris/nisi/ut/aliquip/ex/ea/commodo/consequat/duis/aute/X"
+banner-70,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"https://www.lorem-ipsum.org"
+banner-71,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"ftp://www.lorem-ipsum.org"
+banner-72,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://www.lorem-ipsum.org/dolor/sit.html"
+banner-73,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://www.lorem-ipsum.org/dolor/sit.html#dolor"
+banner-74,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org?a=1&b=2"
+banner-75,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org?"
+banner-76,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org?a"
+banner-77,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org?a&b"
+banner-78,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org/"
+banner-79,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org/a"
+banner-80,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org/a/b"
+banner-81,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org/a/b?"
+banner-82,2020/03/14 15:32,2023/07/30 15:32,2024/07/30 15:32,https://i.imgur.com/sgx1bFo.png,Just do it better?,"http://example.org/a/b?a&b"
