@@ -59,9 +59,6 @@ public class DeveloperTrainingModuleDeleteService extends AbstractService<Develo
 	public void validate(final TrainingModule object) {
 		assert object != null;
 
-		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
-			super.state(object.isDraftMode() == true, "draftMode", "developer.training-module.form.error.draftMode");
-
 	}
 
 	@Override
