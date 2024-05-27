@@ -76,8 +76,8 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 	@Override
 	public void bind(final Invoice object) {
 		assert object != null;
-		super.bind(object, "published");
 
+		super.bind(object, "code", "dueDate", "invoiceQuantity", "tax", "link", "sponsorship");
 	}
 
 	@Override
@@ -111,7 +111,6 @@ public class SponsorInvoicePublishService extends AbstractService<Sponsor, Invoi
 
 		if (!errors.hasErrors("draftMode"))
 			super.state(object.isDraftMode(), "draftMode", "sponsor.invoice.form.error.draftMode");
-
 	}
 
 	@Override

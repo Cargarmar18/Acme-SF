@@ -122,20 +122,26 @@ public class SponsorSponsorshipPublishService extends AbstractService<Sponsor, S
 		if (!super.getBuffer().getErrors().hasErrors("draftMode"))
 			super.state(object.isDraftMode() == true, "code", "sponsor.sponsorship.form.error.draftMode");
 
-		Collection<Invoice> invoices;
-		double sponsorshipAmount;
-		double invoicesTotalAmount;
-		int allInvoicesPublished;
+		if (!super.getBuffer().getErrors().hasErrors("amount")) {
+			Collection<Invoice> invoices;
+			double sponsorshipAmount;
+			double invoicesTotalAmount;
+			boolean allInvoicesPublished;
 
-		invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
-		allInvoicesPublished = this.repository.countUnfinishedInvoicesBySponsorshipId(object.getId());
-		super.state(allInvoicesPublished == 0, "*", "sponsor.sponsorship.form.error.unfinishedInvoices");
+			invoices = this.repository.findAllInvoicesBySponsorshipId(object.getId());
 
-		sponsorshipAmount = object.getAmount().getAmount();
-		invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
+			sponsorshipAmount = object.getAmount().getAmount();
+			invoicesTotalAmount = invoices.stream().mapToDouble(i -> i.totalAmount().getAmount()).sum();
+			allInvoicesPublished = invoices.stream().filter(i -> i.isDraftMode() == false).count() == invoices.size();
+			if (!allInvoicesPublished)
+				super.state(allInvoicesPublished, "*", "sponsor.sponsorship.form.error.publishedInvoices");
 
-		super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.valuesDifference");
+			super.state(sponsorshipAmount == invoicesTotalAmount, "*", "sponsor.sponsorship.form.error.valuesDifference");
 
+			int allInvoices = this.repository.countAllInvoicesBySponsorshipId(object.getId());
+			super.state(allInvoices != 0, "*", "sponsor.sponsorship.form.error.unfinishedInvoices");
+
+		}
 	}
 
 	@Override

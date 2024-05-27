@@ -45,3 +45,4 @@ sponsor.invoice.form.error.wrongCurrency = La moneda del patrocinio y de la fact
 sponsor.invoice.form.error.dueDate = La fecha de vencimiento no puede ser antes del momento de instanciación
 sponsor.invoice.form.error.wrongAmount = La cantidad de las facturas y el patrocinio debe ser la misma para ser publicada
 sponsor.invoice.form.error.outOfRange = La cantidad de la factura no puede ser mayor que la del patrocinio ni menor a 0.
+sponsor.invoice.form.error.duplicate = El codigo de la factura esta siendo usado ya

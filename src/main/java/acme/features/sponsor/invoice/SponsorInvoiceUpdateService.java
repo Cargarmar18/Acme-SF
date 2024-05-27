@@ -71,7 +71,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 	public void bind(final Invoice object) {
 		assert object != null;
 
-		super.bind(object, "code", "dueDate", "invoiceQuantity", "tax", "link", "invoice.sponsorship");
+		super.bind(object, "code", "dueDate", "invoiceQuantity", "tax", "link", "sponsorship");
 	}
 
 	@Override
@@ -124,7 +124,7 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		Collection<Sponsorship> sponsorSponsorships = this.repository.findSponsorshipBySponsorId(sponsorId);
 		sponsorships = SelectChoices.from(sponsorSponsorships, "code", object.getSponsorship());
 
-		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "invoiceQuantity", "tax", "link", "draftMode");
+		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "invoiceQuantity", "tax", "link", "draftMode", "sponsorship");
 		Sponsorship selectedSponsorship = this.repository.findOneSponsorshipById(Integer.valueOf(sponsorships.getSelected().getKey()));
 		dataset.put("sponsorship", sponsorships.getSelected().getKey());
 

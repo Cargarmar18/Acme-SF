@@ -76,7 +76,7 @@ public class SponsorInvoiceShowService extends AbstractService<Sponsor, Invoice>
 
 		dataset.put("sponsorship", sponsorships.getSelected().getKey());
 
-		sponsorSponsorships = this.repository.findSponsorDraftModeSponsorship(sponsorId);
+		sponsorSponsorships = this.repository.findSponsorshipBySponsorId(sponsorId);
 
 		sponsorships = SelectChoices.from(sponsorSponsorships, "code", object.getSponsorship());
 
