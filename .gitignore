@@ -30,6 +30,7 @@ nbdist/
 mvnw
 
 mvnw\.cmd
+
 src/test/resources/manager/project/create-01.safe
 src/test/resources/manager/project/create.safe
 src/test/resources/manager/project/delete.safe
@@ -74,3 +75,4 @@ src/test/resources/developer/training-module/list.safe
 src/test/resources/developer/training-module/list.hack
 src/test/resources/developer/training-module/delete.safe
 src/test/resources/developer/training-module/create.safe
+
