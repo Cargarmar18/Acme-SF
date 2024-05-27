@@ -125,12 +125,12 @@ public class SponsorInvoiceUpdateService extends AbstractService<Sponsor, Invoic
 		sponsorships = SelectChoices.from(sponsorSponsorships, "code", object.getSponsorship());
 
 		dataset = super.unbind(object, "code", "link", "registrationTime", "dueDate", "invoiceQuantity", "tax", "link", "draftMode", "sponsorship");
-		Sponsorship selectedSponsorship = this.repository.findOneSponsorshipById(Integer.valueOf(sponsorships.getSelected().getKey()));
+		//Sponsorship selectedSponsorship = this.repository.findOneSponsorshipById(Integer.valueOf(sponsorships.getSelected().getKey()));
 		dataset.put("sponsorship", sponsorships.getSelected().getKey());
 
 		sponsorSponsorships = this.repository.findSponsorDraftModeSponsorship(sponsorId);
-		if (!sponsorSponsorships.contains(selectedSponsorship) && selectedSponsorship != null)
-			sponsorSponsorships.add(selectedSponsorship);
+		//if (!sponsorSponsorships.contains(selectedSponsorship) && selectedSponsorship != null)
+		//sponsorSponsorships.add(selectedSponsorship); 
 
 		sponsorships = SelectChoices.from(sponsorSponsorships, "code", object.getSponsorship());
 		dataset.put("sponsorships", sponsorships);
